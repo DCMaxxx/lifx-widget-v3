@@ -204,12 +204,10 @@
 		9C0585241E545E7900CF3AFA /* LIFX Widget */ = {
 			isa = PBXGroup;
 			children = (
-				9C0585251E545E7900CF3AFA /* AppDelegate.swift */,
-				9C0585271E545E7900CF3AFA /* ViewController.swift */,
-				9C0585291E545E7900CF3AFA /* Main.storyboard */,
-				9C05852C1E545E7900CF3AFA /* Assets.xcassets */,
-				9C05852E1E545E7900CF3AFA /* LaunchScreen.storyboard */,
-				9C0585311E545E7900CF3AFA /* Info.plist */,
+				9C7102611E5463D70058E8C4 /* Controllers */,
+				9C7102601E5463CD0058E8C4 /* Other sources */,
+				9C71025F1E5463C10058E8C4 /* Storyboards */,
+				9C71025E1E5463B60058E8C4 /* Resources */,
 			);
 			path = "LIFX Widget";
 			sourceTree = "<group>";
@@ -217,9 +215,8 @@
 		9C0585381E545E7900CF3AFA /* LIFX Widget WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
-				9C0585391E545E7900CF3AFA /* Interface.storyboard */,
-				9C05853C1E545E7900CF3AFA /* Assets.xcassets */,
-				9C05853E1E545E7900CF3AFA /* Info.plist */,
+				9C7102621E5463F60058E8C4 /* Storyboards */,
+				9C7102631E5463FC0058E8C4 /* Resources */,
 			);
 			path = "LIFX Widget WatchKit App";
 			sourceTree = "<group>";
@@ -227,10 +224,9 @@
 		9C0585471E545E7900CF3AFA /* LIFX Widget WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				9C0585481E545E7900CF3AFA /* InterfaceController.swift */,
-				9C05854A1E545E7900CF3AFA /* ExtensionDelegate.swift */,
-				9C05854C1E545E7900CF3AFA /* Assets.xcassets */,
-				9C05854E1E545E7900CF3AFA /* Info.plist */,
+				9C7102661E5464220058E8C4 /* Controllers */,
+				9C7102651E54640F0058E8C4 /* Other sources */,
+				9C7102641E54640A0058E8C4 /* Resources */,
 			);
 			path = "LIFX Widget WatchKit Extension";
 			sourceTree = "<group>";
@@ -250,11 +246,111 @@
 		9C0585641E5460E500CF3AFA /* LIFX Widget Today Extension */ = {
 			isa = PBXGroup;
 			children = (
-				9C0585651E5460E500CF3AFA /* TodayViewController.swift */,
-				9C0585671E5460E500CF3AFA /* MainInterface.storyboard */,
-				9C05856A1E5460E500CF3AFA /* Info.plist */,
+				9C7102691E5464350058E8C4 /* Controllers */,
+				9C7102681E5464300058E8C4 /* Storyboards */,
+				9C7102671E54642B0058E8C4 /* Resources */,
 			);
 			path = "LIFX Widget Today Extension";
+			sourceTree = "<group>";
+		};
+		9C71025E1E5463B60058E8C4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9C05852C1E545E7900CF3AFA /* Assets.xcassets */,
+				9C0585311E545E7900CF3AFA /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		9C71025F1E5463C10058E8C4 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				9C0585291E545E7900CF3AFA /* Main.storyboard */,
+				9C05852E1E545E7900CF3AFA /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		9C7102601E5463CD0058E8C4 /* Other sources */ = {
+			isa = PBXGroup;
+			children = (
+				9C0585251E545E7900CF3AFA /* AppDelegate.swift */,
+			);
+			name = "Other sources";
+			sourceTree = "<group>";
+		};
+		9C7102611E5463D70058E8C4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9C0585271E545E7900CF3AFA /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		9C7102621E5463F60058E8C4 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				9C0585391E545E7900CF3AFA /* Interface.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		9C7102631E5463FC0058E8C4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9C05853C1E545E7900CF3AFA /* Assets.xcassets */,
+				9C05853E1E545E7900CF3AFA /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		9C7102641E54640A0058E8C4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9C05854C1E545E7900CF3AFA /* Assets.xcassets */,
+				9C05854E1E545E7900CF3AFA /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		9C7102651E54640F0058E8C4 /* Other sources */ = {
+			isa = PBXGroup;
+			children = (
+				9C05854A1E545E7900CF3AFA /* ExtensionDelegate.swift */,
+			);
+			name = "Other sources";
+			sourceTree = "<group>";
+		};
+		9C7102661E5464220058E8C4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9C0585481E545E7900CF3AFA /* InterfaceController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		9C7102671E54642B0058E8C4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9C05856A1E5460E500CF3AFA /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		9C7102681E5464300058E8C4 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				9C0585671E5460E500CF3AFA /* MainInterface.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		9C7102691E5464350058E8C4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9C0585651E5460E500CF3AFA /* TodayViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -941,6 +1037,7 @@
 				9C05856F1E5460E500CF3AFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
