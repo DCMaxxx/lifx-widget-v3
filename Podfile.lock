@@ -29,6 +29,7 @@ PODS:
   - Reveal-SDK (6)
   - SVProgressHUD (2.1.2)
   - SwiftLint (0.16.1)
+  - SwiftyUserDefaults (3.0.0)
 
 DEPENDENCIES:
   - BrightFutures (~> 5.1)
@@ -37,6 +38,7 @@ DEPENDENCIES:
   - Reveal-SDK
   - SVProgressHUD (~> 2.1)
   - SwiftLint (~> 0.16)
+  - SwiftyUserDefaults (~> 3.0)
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
@@ -47,7 +49,8 @@ SPEC CHECKSUMS:
   Reveal-SDK: 67460e58f93711c7b18631d12c2b5de7740e48b5
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   SwiftLint: b8b683208cc09640898f16318a7a452274e91f61
+  SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
 
-PODFILE CHECKSUM: e399430b16b801925e7635072d87b371ecdff60a
+PODFILE CHECKSUM: db43bf6d9fdb34633aa2dde69c7d6199abe39966
 
 COCOAPODS: 1.2.0

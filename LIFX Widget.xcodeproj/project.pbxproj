@@ -26,6 +26,9 @@
 		9C0585661E5460E500CF3AFA /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0585651E5460E500CF3AFA /* TodayViewController.swift */; };
 		9C0585691E5460E500CF3AFA /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C0585671E5460E500CF3AFA /* MainInterface.storyboard */; };
 		9C05856D1E5460E500CF3AFA /* LIFX Widget Today Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9C0585601E5460E500CF3AFA /* LIFX Widget Today Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9C5184811E54AD5300FBF02A /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184801E54AD5300FBF02A /* Defaults.swift */; };
+		9C5184821E54AD5300FBF02A /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184801E54AD5300FBF02A /* Defaults.swift */; };
+		9C5184831E54AD5300FBF02A /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184801E54AD5300FBF02A /* Defaults.swift */; };
 		9C7102701E5489F60058E8C4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C71026F1E5489F60058E8C4 /* API.swift */; };
 		9C7102711E5489F60058E8C4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C71026F1E5489F60058E8C4 /* API.swift */; };
 		9C7102721E5489F60058E8C4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C71026F1E5489F60058E8C4 /* API.swift */; };
@@ -126,6 +129,9 @@
 		9C0585651E5460E500CF3AFA /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		9C0585681E5460E500CF3AFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		9C05856A1E5460E500CF3AFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C5184801E54AD5300FBF02A /* Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Defaults.swift; path = Common/Defaults.swift; sourceTree = SOURCE_ROOT; };
+		9C5184841E54B13B00FBF02A /* LIFX Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "LIFX Widget.entitlements"; sourceTree = "<group>"; };
+		9C5184851E54B15300FBF02A /* LIFX Widget Today Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "LIFX Widget Today Extension.entitlements"; sourceTree = "<group>"; };
 		9C71026F1E5489F60058E8C4 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = Common/API.swift; sourceTree = SOURCE_ROOT; };
 		9C7102741E548EC10058E8C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9C7102761E548F1F0058E8C4 /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Localized.swift"; path = "Common/String+Localized.swift"; sourceTree = SOURCE_ROOT; };
@@ -215,6 +221,7 @@
 		9C0585241E545E7900CF3AFA /* LIFX Widget */ = {
 			isa = PBXGroup;
 			children = (
+				9C5184841E54B13B00FBF02A /* LIFX Widget.entitlements */,
 				9C7102611E5463D70058E8C4 /* Controllers */,
 				9C7102601E5463CD0058E8C4 /* Other sources */,
 				9C71025F1E5463C10058E8C4 /* Storyboards */,
@@ -257,6 +264,7 @@
 		9C0585641E5460E500CF3AFA /* LIFX Widget Today Extension */ = {
 			isa = PBXGroup;
 			children = (
+				9C5184851E54B15300FBF02A /* LIFX Widget Today Extension.entitlements */,
 				9C7102691E5464350058E8C4 /* Controllers */,
 				9C7102681E5464300058E8C4 /* Storyboards */,
 				9C7102671E54642B0058E8C4 /* Resources */,
@@ -369,6 +377,7 @@
 			isa = PBXGroup;
 			children = (
 				9C71026F1E5489F60058E8C4 /* API.swift */,
+				9C5184801E54AD5300FBF02A /* Defaults.swift */,
 				9C7102761E548F1F0058E8C4 /* String+Localized.swift */,
 			);
 			name = Common;
@@ -476,6 +485,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 8DGT2SD8VC;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					9C0585331E545E7900CF3AFA = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -491,6 +505,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 8DGT2SD8VC;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -728,6 +747,7 @@
 			files = (
 				9C0585281E545E7900CF3AFA /* HomeViewController.swift in Sources */,
 				9C7102701E5489F60058E8C4 /* API.swift in Sources */,
+				9C5184811E54AD5300FBF02A /* Defaults.swift in Sources */,
 				9C7102771E548F1F0058E8C4 /* String+Localized.swift in Sources */,
 				9C0585261E545E7900CF3AFA /* AppDelegate.swift in Sources */,
 			);
@@ -739,6 +759,7 @@
 			files = (
 				9C05854B1E545E7900CF3AFA /* ExtensionDelegate.swift in Sources */,
 				9C7102721E5489F60058E8C4 /* API.swift in Sources */,
+				9C5184831E54AD5300FBF02A /* Defaults.swift in Sources */,
 				9C7102791E548F1F0058E8C4 /* String+Localized.swift in Sources */,
 				9C0585491E545E7900CF3AFA /* InterfaceController.swift in Sources */,
 			);
@@ -749,6 +770,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C7102781E548F1F0058E8C4 /* String+Localized.swift in Sources */,
+				9C5184821E54AD5300FBF02A /* Defaults.swift in Sources */,
 				9C0585661E5460E500CF3AFA /* TodayViewController.swift in Sources */,
 				9C7102711E5489F60058E8C4 /* API.swift in Sources */,
 			);
@@ -919,7 +941,7 @@
 				DEVELOPMENT_TEAM = 8DGT2SD8VC;
 				INFOPLIST_FILE = "LIFX Widget WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.maxime-dechalendar.LIFX-Widget.watchkitapp.watchkitextension";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maxime-dechalendar.LiFXWidget.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -937,7 +959,7 @@
 				DEVELOPMENT_TEAM = 8DGT2SD8VC;
 				INFOPLIST_FILE = "LIFX Widget WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.maxime-dechalendar.LIFX-Widget.watchkitapp.watchkitextension";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maxime-dechalendar.LiFXWidget.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -956,7 +978,7 @@
 				DEVELOPMENT_TEAM = 8DGT2SD8VC;
 				IBSC_MODULE = LIFX_Widget_WatchKit_Extension;
 				INFOPLIST_FILE = "LIFX Widget WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.maxime-dechalendar.LIFX-Widget.watchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maxime-dechalendar.LiFXWidget.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -975,7 +997,7 @@
 				DEVELOPMENT_TEAM = 8DGT2SD8VC;
 				IBSC_MODULE = LIFX_Widget_WatchKit_Extension;
 				INFOPLIST_FILE = "LIFX Widget WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.maxime-dechalendar.LIFX-Widget.watchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maxime-dechalendar.LiFXWidget.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -991,10 +1013,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "LIFX Widget/LIFX Widget.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 8DGT2SD8VC;
 				INFOPLIST_FILE = "LIFX Widget/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.maxime-dechalendar.LIFX-Widget";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maxime-dechalendar.LiFXWidget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1006,10 +1030,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "LIFX Widget/LIFX Widget.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 8DGT2SD8VC;
 				INFOPLIST_FILE = "LIFX Widget/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.maxime-dechalendar.LIFX-Widget";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maxime-dechalendar.LiFXWidget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1019,10 +1045,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 99E300BA004279B8AF499332 /* Pods-LIFX Widget Today Extension.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "LIFX Widget Today Extension/LIFX Widget Today Extension.entitlements";
 				DEVELOPMENT_TEAM = 8DGT2SD8VC;
 				INFOPLIST_FILE = "LIFX Widget Today Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.maxime-dechalendar.LIFX-Widget.LIFX-Widget-Today-Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maxime-dechalendar.LiFXWidget.Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -1033,10 +1060,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 235E60BFD2B96E08E5C5834E /* Pods-LIFX Widget Today Extension.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "LIFX Widget Today Extension/LIFX Widget Today Extension.entitlements";
 				DEVELOPMENT_TEAM = 8DGT2SD8VC;
 				INFOPLIST_FILE = "LIFX Widget Today Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.maxime-dechalendar.LIFX-Widget.LIFX-Widget-Today-Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maxime-dechalendar.LiFXWidget.Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;

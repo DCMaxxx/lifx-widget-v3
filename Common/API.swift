@@ -14,9 +14,6 @@ import BrightFutures
 // aren't typed.
 // swiftlint:disable force_cast
 
-// TODO: This will be fetch from the API later on
-let kLIFXAPIToken = "Don't put your token on GitHub :)"
-
 final class API {
 
     static let shared = API()
@@ -24,7 +21,13 @@ final class API {
     fileprivate let internAPI: LIFXAPIWrapper = .shared()
 
     private init() {
-        internAPI.setOAuthToken(kLIFXAPIToken)
+        if let token = SharedDefaults[.token] {
+            configure(token: token)
+        }
+    }
+
+    func configure(token: String) {
+        internAPI.setOAuthToken(token)
     }
 
 }

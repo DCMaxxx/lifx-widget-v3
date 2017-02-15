@@ -26,7 +26,7 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>WKCompanionAppBundleIdentifier</key>
-	<string>com.maxime-dechalendar.LIFX-Widget</string>
+	<string>com.maxime-dechalendar.LiFXWidget</string>
 	<key>WKWatchKitApp</key>
 	<true/>
 </dict>
