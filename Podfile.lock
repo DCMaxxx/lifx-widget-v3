@@ -1,0 +1,41 @@
+PODS:
+  - AFNetworking (2.6.3):
+    - AFNetworking/NSURLConnection (= 2.6.3)
+    - AFNetworking/NSURLSession (= 2.6.3)
+    - AFNetworking/Reachability (= 2.6.3)
+    - AFNetworking/Security (= 2.6.3)
+    - AFNetworking/Serialization (= 2.6.3)
+    - AFNetworking/UIKit (= 2.6.3)
+  - AFNetworking/NSURLConnection (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.3)
+  - AFNetworking/Security (2.6.3)
+  - AFNetworking/Serialization (2.6.3)
+  - AFNetworking/UIKit (2.6.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - LIFXAPIWrapper (0.0.5):
+    - AFNetworking (~> 2.3)
+  - MSColorPicker (1.0.0)
+  - SVProgressHUD (2.1.2)
+
+DEPENDENCIES:
+  - LIFXAPIWrapper (~> 0.0)
+  - MSColorPicker (~> 1.0)
+  - SVProgressHUD (~> 2.1)
+
+SPEC CHECKSUMS:
+  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  LIFXAPIWrapper: 5b5bf340e71a03015986e584d8b51ce9b8b868fc
+  MSColorPicker: 1d11c8f6b74a811ac5a9dace4cc5211ef8002c5c
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+
+PODFILE CHECKSUM: f05f4c60a7b897ae780cce909ae4d7495f8900b8
+
+COCOAPODS: 1.2.0
