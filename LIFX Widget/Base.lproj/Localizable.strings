@@ -14,3 +14,7 @@
 "home.alert.error.title" = "Error";
 "home.alert.error.new_token" = "Create a new token";
 "home.alert.error.cancel" = "Cancel";
+
+"tutorial.alert.auth_required.title" = "Authentication";
+"tutorial.alert.auth_required.body" = "You need to setup your LIFX Cloud account in order to user LIFX Widget";
+"tutorial.alert.auth_required.cancel" = "Cancel";

@@ -29,6 +29,9 @@
 		9C5184811E54AD5300FBF02A /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184801E54AD5300FBF02A /* Defaults.swift */; };
 		9C5184821E54AD5300FBF02A /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184801E54AD5300FBF02A /* Defaults.swift */; };
 		9C5184831E54AD5300FBF02A /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184801E54AD5300FBF02A /* Defaults.swift */; };
+		9C5184891E54B92500FBF02A /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184881E54B92500FBF02A /* TutorialViewController.swift */; };
+		9C51848E1E54BE9800FBF02A /* TutorialAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C51848D1E54BE9800FBF02A /* TutorialAnimatedTransitioning.swift */; };
+		9C5184921E54C42D00FBF02A /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184911E54C42D00FBF02A /* TutorialView.swift */; };
 		9C7102701E5489F60058E8C4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C71026F1E5489F60058E8C4 /* API.swift */; };
 		9C7102711E5489F60058E8C4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C71026F1E5489F60058E8C4 /* API.swift */; };
 		9C7102721E5489F60058E8C4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C71026F1E5489F60058E8C4 /* API.swift */; };
@@ -132,6 +135,9 @@
 		9C5184801E54AD5300FBF02A /* Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Defaults.swift; path = Common/Defaults.swift; sourceTree = SOURCE_ROOT; };
 		9C5184841E54B13B00FBF02A /* LIFX Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "LIFX Widget.entitlements"; sourceTree = "<group>"; };
 		9C5184851E54B15300FBF02A /* LIFX Widget Today Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "LIFX Widget Today Extension.entitlements"; sourceTree = "<group>"; };
+		9C5184881E54B92500FBF02A /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		9C51848D1E54BE9800FBF02A /* TutorialAnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialAnimatedTransitioning.swift; sourceTree = "<group>"; };
+		9C5184911E54C42D00FBF02A /* TutorialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		9C71026F1E5489F60058E8C4 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = Common/API.swift; sourceTree = SOURCE_ROOT; };
 		9C7102741E548EC10058E8C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9C7102761E548F1F0058E8C4 /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Localized.swift"; path = "Common/String+Localized.swift"; sourceTree = SOURCE_ROOT; };
@@ -272,6 +278,24 @@
 			path = "LIFX Widget Today Extension";
 			sourceTree = "<group>";
 		};
+		9C5184861E54B8ED00FBF02A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9C0585271E545E7900CF3AFA /* HomeViewController.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		9C5184871E54B8F300FBF02A /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				9C5184881E54B92500FBF02A /* TutorialViewController.swift */,
+				9C51848D1E54BE9800FBF02A /* TutorialAnimatedTransitioning.swift */,
+				9C5184911E54C42D00FBF02A /* TutorialView.swift */,
+			);
+			name = Tutorial;
+			sourceTree = "<group>";
+		};
 		9C71025E1E5463B60058E8C4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,7 +326,8 @@
 		9C7102611E5463D70058E8C4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9C0585271E545E7900CF3AFA /* HomeViewController.swift */,
+				9C5184861E54B8ED00FBF02A /* Home */,
+				9C5184871E54B8F300FBF02A /* Tutorial */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -746,9 +771,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C0585281E545E7900CF3AFA /* HomeViewController.swift in Sources */,
+				9C51848E1E54BE9800FBF02A /* TutorialAnimatedTransitioning.swift in Sources */,
 				9C7102701E5489F60058E8C4 /* API.swift in Sources */,
 				9C5184811E54AD5300FBF02A /* Defaults.swift in Sources */,
+				9C5184921E54C42D00FBF02A /* TutorialView.swift in Sources */,
 				9C7102771E548F1F0058E8C4 /* String+Localized.swift in Sources */,
+				9C5184891E54B92500FBF02A /* TutorialViewController.swift in Sources */,
 				9C0585261E545E7900CF3AFA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

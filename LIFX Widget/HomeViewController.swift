@@ -9,6 +9,8 @@
 import UIKit
 import LIFXAPIWrapper
 import SVProgressHUD
+import BrightFutures
+import Result
 
 class HomeViewController: UIViewController {
 
@@ -17,7 +19,38 @@ class HomeViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        fetchLightsIfNeeded()
+        if !presentTutorialViewControllerIfNeeded() {
+            self.fetchLightsIfNeeded()
+        }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.destination {
+        case let destination as TutorialViewController:
+            configure(tutorialController: destination)
+        default:
+            break
+        }
+    }
+
+}
+
+// MARK: - Tutorial
+extension HomeViewController {
+
+    fileprivate func presentTutorialViewControllerIfNeeded() -> Bool {
+        guard SharedDefaults[.token] == nil else {
+            return false
+        }
+
+        performSegue(withIdentifier: "TutorialSegue", sender: nil)
+        return true
+    }
+
+    fileprivate func configure(tutorialController controller: TutorialViewController) {
+        controller.onCompletion = { [weak self] lights in
+            self?.update(lights: lights)
+        }
     }
 
 }
@@ -36,7 +69,7 @@ extension HomeViewController {
             .onFailure(callback: display(error:))
     }
 
-    private func update(lights: [LIFXLight]) {
+    fileprivate func update(lights: [LIFXLight]) {
         SVProgressHUD.dismiss()
 
         self.lights = lights
@@ -68,7 +101,8 @@ extension HomeViewController {
     }
 
     private func resetToken() {
-        print("Token is invalid") // TODO : Present the OAuth token picker
+        SharedDefaults[.token] = nil
+        _ = presentTutorialViewControllerIfNeeded()
     }
 
 }
