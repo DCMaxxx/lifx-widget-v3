@@ -7,6 +7,7 @@ target 'LIFX Widget' do
        platform :ios, '9.0'
 
        pod 'SwiftLint', '~> 0.16'
+       pod 'BrightFutures', '~> 5.1'
        pod 'LIFXAPIWrapper', '~> 0.0'
        pod 'SVProgressHUD', '~> 2.1'
        pod 'MSColorPicker', '~> 1.0'
@@ -17,6 +18,7 @@ target 'LIFX Widget Today Extension' do
 
        pod 'SwiftLint', '~> 0.16'
        pod 'LIFXAPIWrapper', '~> 0.0'
+       pod 'BrightFutures', '~> 5.1'
 end
 
 target 'LIFX Widget WatchKit App' do
@@ -28,4 +30,5 @@ target 'LIFX Widget WatchKit Extension' do
 
        pod 'SwiftLint', '~> 0.16'
        pod 'LIFXAPIWrapper', '~> 0.0'
+       pod 'BrightFutures', '~> 5.1'
 end
