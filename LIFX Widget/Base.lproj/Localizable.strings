@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  LIFX Widget
+
+  Created by Maxime de Chalendar on 15/02/2017.
+  Copyright © 2017 DCMaxxx. All rights reserved.
+*/
+
+"home.loader.fetching_lights" = "Fetching lights...";
+
+"home.error.invalid_token" = "LIFX API invalidated your token. Please generate a new one ({desc})";
+"home.error.other" = "LIFX API Responded with an error ({code}): {desc}";
+
+"home.alert.error.title" = "Error";
+"home.alert.error.new_token" = "Create a new token";
+"home.alert.error.cancel" = "Cancel";

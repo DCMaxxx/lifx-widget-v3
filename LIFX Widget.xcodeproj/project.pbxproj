@@ -29,6 +29,10 @@
 		9C7102701E5489F60058E8C4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C71026F1E5489F60058E8C4 /* API.swift */; };
 		9C7102711E5489F60058E8C4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C71026F1E5489F60058E8C4 /* API.swift */; };
 		9C7102721E5489F60058E8C4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C71026F1E5489F60058E8C4 /* API.swift */; };
+		9C7102751E548EC10058E8C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C7102731E548EC10058E8C4 /* Localizable.strings */; };
+		9C7102771E548F1F0058E8C4 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7102761E548F1F0058E8C4 /* String+Localized.swift */; };
+		9C7102781E548F1F0058E8C4 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7102761E548F1F0058E8C4 /* String+Localized.swift */; };
+		9C7102791E548F1F0058E8C4 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7102761E548F1F0058E8C4 /* String+Localized.swift */; };
 		D48F821AEB90669BC62BE834 /* Pods_LIFX_Widget_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6C7F0FC16A47CC7DC8C9559 /* Pods_LIFX_Widget_WatchKit_Extension.framework */; };
 /* End PBXBuildFile section */
 
@@ -123,6 +127,8 @@
 		9C0585681E5460E500CF3AFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		9C05856A1E5460E500CF3AFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C71026F1E5489F60058E8C4 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = Common/API.swift; sourceTree = SOURCE_ROOT; };
+		9C7102741E548EC10058E8C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9C7102761E548F1F0058E8C4 /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Localized.swift"; path = "Common/String+Localized.swift"; sourceTree = SOURCE_ROOT; };
 		C6C7F0FC16A47CC7DC8C9559 /* Pods_LIFX_Widget_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LIFX_Widget_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7AD68985F779096452056C0 /* Pods_LIFX_Widget_Today_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LIFX_Widget_Today_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4E30C8B8AFA86C211E0342 /* Pods_LIFX_Widget_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LIFX_Widget_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -262,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				9C05852C1E545E7900CF3AFA /* Assets.xcassets */,
+				9C7102731E548EC10058E8C4 /* Localizable.strings */,
 				9C0585311E545E7900CF3AFA /* Info.plist */,
 			);
 			name = Resources;
@@ -362,6 +369,8 @@
 			isa = PBXGroup;
 			children = (
 				9C71026F1E5489F60058E8C4 /* API.swift */,
+				9C7102761E548F1F0058E8C4 /* String+Localized.swift */,
+			);
 			name = Common;
 			path = "LIFX Widget";
 			sourceTree = "<group>";
@@ -512,6 +521,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C0585301E545E7900CF3AFA /* LaunchScreen.storyboard in Resources */,
+				9C7102751E548EC10058E8C4 /* Localizable.strings in Resources */,
 				9C05852D1E545E7900CF3AFA /* Assets.xcassets in Resources */,
 				9C05852B1E545E7900CF3AFA /* Main.storyboard in Resources */,
 			);
@@ -718,6 +728,7 @@
 			files = (
 				9C0585281E545E7900CF3AFA /* HomeViewController.swift in Sources */,
 				9C7102701E5489F60058E8C4 /* API.swift in Sources */,
+				9C7102771E548F1F0058E8C4 /* String+Localized.swift in Sources */,
 				9C0585261E545E7900CF3AFA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -728,6 +739,7 @@
 			files = (
 				9C05854B1E545E7900CF3AFA /* ExtensionDelegate.swift in Sources */,
 				9C7102721E5489F60058E8C4 /* API.swift in Sources */,
+				9C7102791E548F1F0058E8C4 /* String+Localized.swift in Sources */,
 				9C0585491E545E7900CF3AFA /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -736,6 +748,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C7102781E548F1F0058E8C4 /* String+Localized.swift in Sources */,
 				9C0585661E5460E500CF3AFA /* TodayViewController.swift in Sources */,
 				9C7102711E5489F60058E8C4 /* API.swift in Sources */,
 			);
@@ -792,6 +805,14 @@
 				9C0585681E5460E500CF3AFA /* Base */,
 			);
 			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		9C7102731E548EC10058E8C4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C7102741E548EC10058E8C4 /* Base */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
