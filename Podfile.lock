@@ -26,6 +26,7 @@ PODS:
     - AFNetworking (~> 2.3)
   - MSColorPicker (1.0.0)
   - Result (3.1.0)
+  - Reveal-SDK (6)
   - SVProgressHUD (2.1.2)
   - SwiftLint (0.16.1)
 
@@ -33,6 +34,7 @@ DEPENDENCIES:
   - BrightFutures (~> 5.1)
   - LIFXAPIWrapper (~> 0.0)
   - MSColorPicker (~> 1.0)
+  - Reveal-SDK
   - SVProgressHUD (~> 2.1)
   - SwiftLint (~> 0.16)
 
@@ -42,9 +44,10 @@ SPEC CHECKSUMS:
   LIFXAPIWrapper: 5b5bf340e71a03015986e584d8b51ce9b8b868fc
   MSColorPicker: 1d11c8f6b74a811ac5a9dace4cc5211ef8002c5c
   Result: 4e3ed5995ed94d0cd6a09be9a431fce3f3624bbf
+  Reveal-SDK: 67460e58f93711c7b18631d12c2b5de7740e48b5
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   SwiftLint: b8b683208cc09640898f16318a7a452274e91f61
 
-PODFILE CHECKSUM: 8a5ea64a0e562375887a4e369118d658fe16476a
+PODFILE CHECKSUM: e399430b16b801925e7635072d87b371ecdff60a
 
 COCOAPODS: 1.2.0
