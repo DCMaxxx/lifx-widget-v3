@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  LIFX Widget
 //
 //  Created by Maxime de Chalendar on 15/02/2017.
@@ -8,7 +8,6 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
 
 }
-
