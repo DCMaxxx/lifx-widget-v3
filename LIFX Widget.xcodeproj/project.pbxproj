@@ -361,6 +361,7 @@
 			buildConfigurationList = 9C0585591E545E7900CF3AFA /* Build configuration list for PBXNativeTarget "LIFX Widget" */;
 			buildPhases = (
 				3DE7104F8BDEC5185DF01C06 /* [CP] Check Pods Manifest.lock */,
+				9C71026A1E546A6E0058E8C4 /* SwiftLint */,
 				9C05851E1E545E7900CF3AFA /* Sources */,
 				9C05851F1E545E7900CF3AFA /* Frameworks */,
 				9C0585201E545E7900CF3AFA /* Resources */,
@@ -605,6 +606,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LIFX Widget WatchKit App/Pods-LIFX Widget WatchKit App-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		9C71026A1E546A6E0058E8C4 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		9E98B50E9EB61485A0A4514D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
