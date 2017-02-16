@@ -14,10 +14,5 @@ import SwiftyUserDefaults
 
 // swiftlint:disable variable_name
 // swiftlint:disable force_unwrap
+
 let SharedDefaults = UserDefaults(suiteName: "group.LiFXWidgetSharingDefaults")!
-
-extension DefaultsKeys {
-
-    static let token = DefaultsKey<String?>("lifx-api-token")
-
-}

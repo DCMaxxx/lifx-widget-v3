@@ -8,6 +8,7 @@
 
 import LIFXAPIWrapper
 import BrightFutures
+import SwiftyUserDefaults
 
 // We're getting objects from Objective-C APIs,
 // the doc mentions the type but the NSArray
@@ -67,5 +68,13 @@ extension API {
             })
         }
     }
+
+}
+
+// MARK: - SwiftyUserDefaults extensions
+
+fileprivate extension DefaultsKeys {
+
+    static let token = DefaultsKey<String?>("lifx-api-token")
 
 }
