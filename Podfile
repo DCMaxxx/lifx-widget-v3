@@ -7,6 +7,7 @@ def api_pods
        pod 'BrightFutures', '~> 5.1'
        pod 'LIFXAPIWrapper', '~> 0.0'
        pod 'SwiftyUserDefaults', '~> 3.0'
+       pod 'SwiftyJSON', '~> 3.1'
 end
 
 target 'LIFX Widget' do
