@@ -39,6 +39,7 @@
 		9C5184A21E55E3BF00FBF02A /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184991E55DCF400FBF02A /* Target.swift */; };
 		9C5184A41E55E3C000FBF02A /* JSONable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C51849E1E55E28400FBF02A /* JSONable.swift */; };
 		9C5184A51E55E3C000FBF02A /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184991E55DCF400FBF02A /* Target.swift */; };
+		9C5184AA1E55EB5F00FBF02A /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184A91E55EB5F00FBF02A /* PersistanceManager.swift */; };
 		9C7102701E5489F60058E8C4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C71026F1E5489F60058E8C4 /* API.swift */; };
 		9C7102711E5489F60058E8C4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C71026F1E5489F60058E8C4 /* API.swift */; };
 		9C7102721E5489F60058E8C4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C71026F1E5489F60058E8C4 /* API.swift */; };
@@ -148,6 +149,7 @@
 		9C5184941E559AE400FBF02A /* TokenPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenPickerViewController.swift; sourceTree = "<group>"; };
 		9C5184991E55DCF400FBF02A /* Target.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
 		9C51849E1E55E28400FBF02A /* JSONable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONable.swift; sourceTree = "<group>"; };
+		9C5184A91E55EB5F00FBF02A /* PersistanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistanceManager.swift; sourceTree = "<group>"; };
 		9C71026F1E5489F60058E8C4 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = Common/API.swift; sourceTree = SOURCE_ROOT; };
 		9C7102741E548EC10058E8C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9C7102761E548F1F0058E8C4 /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Localized.swift"; path = "Common/String+Localized.swift"; sourceTree = SOURCE_ROOT; };
@@ -317,6 +319,7 @@
 		9C51849D1E55E27C00FBF02A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9C5184A91E55EB5F00FBF02A /* PersistanceManager.swift */,
 				9C51849E1E55E28400FBF02A /* JSONable.swift */,
 				9C5184991E55DCF400FBF02A /* Target.swift */,
 			);
@@ -802,6 +805,7 @@
 				9C0585281E545E7900CF3AFA /* HomeViewController.swift in Sources */,
 				9C5184951E559AE400FBF02A /* TokenPickerViewController.swift in Sources */,
 				9C51848E1E54BE9800FBF02A /* TutorialAnimatedTransitioning.swift in Sources */,
+				9C5184AA1E55EB5F00FBF02A /* PersistanceManager.swift in Sources */,
 				9C7102701E5489F60058E8C4 /* API.swift in Sources */,
 				9C5184811E54AD5300FBF02A /* Defaults.swift in Sources */,
 				9C51849A1E55DCF400FBF02A /* Target.swift in Sources */,

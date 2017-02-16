@@ -73,6 +73,7 @@ extension HomeViewController {
         SVProgressHUD.dismiss()
 
         self.lights = lights
+        PersistanceManager.updateTargets(with: lights)
     }
 
     private func display(error: NSError) {
