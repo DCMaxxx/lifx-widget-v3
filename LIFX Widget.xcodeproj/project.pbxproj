@@ -40,6 +40,7 @@
 		9C7102771E548F1F0058E8C4 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7102761E548F1F0058E8C4 /* String+Localized.swift */; };
 		9C7102781E548F1F0058E8C4 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7102761E548F1F0058E8C4 /* String+Localized.swift */; };
 		9C7102791E548F1F0058E8C4 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7102761E548F1F0058E8C4 /* String+Localized.swift */; };
+		9C7D2D491E5651A4007D89E3 /* UIView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7D2D481E5651A4007D89E3 /* UIView+Animations.swift */; };
 		D48F821AEB90669BC62BE834 /* Pods_LIFX_Widget_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6C7F0FC16A47CC7DC8C9559 /* Pods_LIFX_Widget_WatchKit_Extension.framework */; };
 /* End PBXBuildFile section */
 
@@ -143,6 +144,7 @@
 		9C71026F1E5489F60058E8C4 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = Common/API.swift; sourceTree = SOURCE_ROOT; };
 		9C7102741E548EC10058E8C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9C7102761E548F1F0058E8C4 /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Localized.swift"; path = "Common/String+Localized.swift"; sourceTree = SOURCE_ROOT; };
+		9C7D2D481E5651A4007D89E3 /* UIView+Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Animations.swift"; sourceTree = "<group>"; };
 		C6C7F0FC16A47CC7DC8C9559 /* Pods_LIFX_Widget_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LIFX_Widget_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7AD68985F779096452056C0 /* Pods_LIFX_Widget_Today_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LIFX_Widget_Today_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4E30C8B8AFA86C211E0342 /* Pods_LIFX_Widget_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LIFX_Widget_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -231,6 +233,7 @@
 			children = (
 				9C5184841E54B13B00FBF02A /* LIFX Widget.entitlements */,
 				9C7102611E5463D70058E8C4 /* Controllers */,
+				9C7D2D471E565198007D89E3 /* Extensions */,
 				9C7102601E5463CD0058E8C4 /* Other sources */,
 				9C71025F1E5463C10058E8C4 /* Storyboards */,
 				9C71025E1E5463B60058E8C4 /* Resources */,
@@ -418,6 +421,14 @@
 			);
 			name = Common;
 			path = "LIFX Widget";
+			sourceTree = "<group>";
+		};
+		9C7D2D471E565198007D89E3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9C7D2D481E5651A4007D89E3 /* UIView+Animations.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -788,6 +799,7 @@
 				9C5184811E54AD5300FBF02A /* Defaults.swift in Sources */,
 				9C5184921E54C42D00FBF02A /* TutorialView.swift in Sources */,
 				9C7102771E548F1F0058E8C4 /* String+Localized.swift in Sources */,
+				9C7D2D491E5651A4007D89E3 /* UIView+Animations.swift in Sources */,
 				9C5184891E54B92500FBF02A /* TutorialViewController.swift in Sources */,
 				9C0585261E545E7900CF3AFA /* AppDelegate.swift in Sources */,
 			);

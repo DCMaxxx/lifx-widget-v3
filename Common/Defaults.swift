@@ -13,7 +13,6 @@ import SwiftyUserDefaults
 // force_unwrap: Nothing's going to work if the user defaults doesn't exist.
 
 // swiftlint:disable variable_name
-// swiftlint:disable force_unwrap
 let SharedDefaults = UserDefaults(suiteName: "group.LiFXWidgetSharingDefaults")!
 
 extension DefaultsKeys {
