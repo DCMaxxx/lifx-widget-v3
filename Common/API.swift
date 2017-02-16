@@ -26,8 +26,32 @@ final class API {
         }
     }
 
+}
+
+extension API {
+
+    static let tokenURL = URL(string: "https://cloud.lifx.com/settings")!
+
+    static func validate(token: String) -> Bool {
+        let charsCount = token.characters.count
+        let invalidCharsSet = CharacterSet(charactersIn: "0123456789ABCDEFabcdef").inverted
+        let invalidCharsRange = token.rangeOfCharacter(from: invalidCharsSet)
+
+        return charsCount == 64 && invalidCharsRange == nil
+    }
+
+    var isConfigured: Bool {
+        return SharedDefaults[.token] != nil
+    }
+
     func configure(token: String) {
+        SharedDefaults[.token] = token
         internAPI.setOAuthToken(token)
+    }
+
+    func reset() {
+        SharedDefaults[.token] = nil
+        internAPI.setOAuthToken(nil)
     }
 
 }

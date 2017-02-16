@@ -9,6 +9,7 @@
 import UIKit
 import LIFXAPIWrapper
 import SwiftyUserDefaults
+import SVProgressHUD
 
 final class TutorialViewController: UIViewController {
 
@@ -38,10 +39,30 @@ final class TutorialViewController: UIViewController {
         modalPresentationCapturesStatusBarAppearance = true
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.destination {
+        case let destination as TokenPickerViewController:
+            configure(tokenPicker: destination)
+        default:
+            break
+        }
+    }
+
+    private func configure(tokenPicker: TokenPickerViewController) {
+        tokenPicker.onValidation = { [weak self] token in
+            self?.fetchLights(with: token)
+        }
+    }
+
+}
+
+// MARK: - Dismissal
+extension TutorialViewController {
+
     fileprivate func dismissIfPossible() {
-        guard SharedDefaults[.token] != nil else {
+        guard API.shared.isConfigured else {
             presentAuthenticationAlert()
-            scrollToLIFXCloudSetupPage()
+            scrollTo(page: .setup)
             return
         }
 
@@ -49,7 +70,7 @@ final class TutorialViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 
-    private func presentAuthenticationAlert() {
+    fileprivate func presentAuthenticationAlert() {
         let alertController = UIAlertController(title: "tutorial.alert.auth_required.title".localized(),
                                                 message: "tutorial.alert.auth_required.body".localized(),
                                                 preferredStyle: .alert)
@@ -60,6 +81,54 @@ final class TutorialViewController: UIViewController {
 
 }
 
+// MARK: Validating token
+extension TutorialViewController {
+
+    fileprivate func fetchLights(with token: String?) {
+        guard let token = token else {
+            return
+        }
+
+        SVProgressHUD.show(withStatus: "token_picker.loader.validate_token".localized())
+        API.shared.configure(token: token)
+        API.shared.lights()
+            .onSuccess(callback: update(lights:))
+            .onFailure(callback: display(error:))
+    }
+
+    private func update(lights: [LIFXLight]) {
+        SVProgressHUD.dismiss()
+
+        self.lights = lights
+
+        hiddenValidOAuthTokenViewConstraint.priority = UILayoutPriorityDefaultLow
+        // swiftlint:disable:next line_length
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: UIViewAnimationOptions(), animations: {
+            self.scrollView.layoutIfNeeded()
+        }, completion: { _ in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.scrollTo(page: .conclusion)
+            }
+        })
+    }
+
+    private func display(error: Error) {
+        SVProgressHUD.dismiss()
+
+        let alertController = UIAlertController(title: "tutorial.alert.invalid_token.title".localized(),
+                                                message: "tutorial.alert.invalid_token.body".localized(withVariables: [
+                                                    "desc": error.localizedDescription
+                                                    ]),
+                                                preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "tutorial.alert.invalid_token.cancel".localized(),
+                                                style: .cancel,
+                                                handler: nil))
+        present(alertController, animated: true, completion: nil)
+    }
+
+}
+
+// MARK: - UIGestureRecognizerDelegate
 extension TutorialViewController: UIGestureRecognizerDelegate {
 
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
@@ -69,43 +138,52 @@ extension TutorialViewController: UIGestureRecognizerDelegate {
 
 }
 
+// MARK: - UIScrollViewDelegate
 extension TutorialViewController: UIScrollViewDelegate {
 
+    fileprivate enum Page: Int {
+        case intro
+        case setup
+        case conclusion
+    }
+
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        updatePageControlWithCurrentPage()
+        updateScrollFromPosition()
     }
 
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if !decelerate {
-            updatePageControlWithCurrentPage()
+            updateScrollFromPosition()
         }
     }
 
-    fileprivate func scrollToLIFXCloudSetupPage() {
-        scrollToPageAtIndex(1)
-    }
-
-    private var scrollViewPageWidth: Float {
-        return Float(scrollView.bounds.width)
-    }
-
-    private func updatePageControlWithCurrentPage() {
-        updatePageControl(with: Float(scrollView.contentOffset.x))
-    }
-
-    private func updatePageControl(with xOffset: Float) {
-        pageControler.currentPage = Int(xOffset / scrollViewPageWidth)
-    }
-
-    private func scrollToPageAtIndex(_ index: Int) {
-        let offsetForRequestedPage = scrollViewPageWidth * Float(index)
-        let point = CGPoint(x: CGFloat(offsetForRequestedPage), y: 0)
-        updatePageControl(with: offsetForRequestedPage)
+    fileprivate func scrollTo(page: Page) {
+        let offsetForRequestedPage = scrollViewPageWidth * CGFloat(page.rawValue)
+        let point = CGPoint(x: offsetForRequestedPage, y: 0)
+        pageControler.currentPage = page.rawValue
         scrollView.setContentOffset(point, animated: true)
+    }
+
+    private func updateScrollFromPosition() {
+        pageControler.currentPage = currentPageIdx
+
+        if currentPageIdx > Page.setup.rawValue && !API.shared.isConfigured {
+            presentAuthenticationAlert()
+            scrollTo(page: .setup)
+        }
+    }
+
+    private var scrollViewPageWidth: CGFloat {
+        return scrollView.bounds.width
+    }
+
+    private var currentPageIdx: Int {
+        return Int(scrollView.contentOffset.x / scrollViewPageWidth)
     }
 
 }
 
+// MARK: - UIViewControllerTransitioningDelegate
 extension TutorialViewController: UIViewControllerTransitioningDelegate {
 
     func animationController(forPresented presented: UIViewController,

@@ -18,3 +18,12 @@
 "tutorial.alert.auth_required.title" = "Authentication";
 "tutorial.alert.auth_required.body" = "You need to setup your LIFX Cloud account in order to user LIFX Widget";
 "tutorial.alert.auth_required.cancel" = "Cancel";
+"tutorial.alert.invalid_token.title" = "Error";
+"tutorial.alert.invalid_token.body" = "We couldn't fetch your lights ({desc}). You should probably generate a new token.";
+"tutorial.alert.invalid_token.cancel" = "Cancel";
+
+"token_picker.alert.invalid_token.title" = "Warning";
+"token_picker.alert.invalid_token.body" = "You didn't seem to have copied your token. Without it, you won't be able to use LIFX Widget";
+"token_picker.alert.invalid_token.cancel" = "Go back & copy it";
+"token_picker.alert.invalid_token.confirm" = "I did copy it";
+"token_picker.loader.validate_token" = "Validating token...";

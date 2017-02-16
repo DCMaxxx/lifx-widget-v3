@@ -39,7 +39,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController {
 
     fileprivate func presentTutorialViewControllerIfNeeded() -> Bool {
-        guard SharedDefaults[.token] == nil else {
+        guard !API.shared.isConfigured else {
             return false
         }
 
@@ -101,7 +101,7 @@ extension HomeViewController {
     }
 
     private func resetToken() {
-        SharedDefaults[.token] = nil
+        API.shared.reset()
         _ = presentTutorialViewControllerIfNeeded()
     }
 
