@@ -10,7 +10,7 @@ import Foundation
 import LIFXAPIWrapper
 import SwiftyJSON
 
-final class Target: Model {
+final class Target: NSObject, Model {
 
     let identifier: String
     let name: String

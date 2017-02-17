@@ -16,6 +16,12 @@ class HomeViewController: UIViewController {
 
     fileprivate var lights: [LIFXLight] = []
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
@@ -28,6 +34,8 @@ class HomeViewController: UIViewController {
         switch segue.destination {
         case let destination as TutorialViewController:
             configure(tutorialController: destination)
+        case let destination as TargetsPickerViewController:
+            configure(targetsPicker: destination)
         default:
             break
         }
@@ -51,6 +59,15 @@ extension HomeViewController {
         controller.onCompletion = { [weak self] lights in
             self?.update(lights: lights)
         }
+    }
+
+}
+
+// MARK: - Prepare segues
+extension HomeViewController {
+
+    fileprivate func configure(targetsPicker controller: TargetsPickerViewController) {
+        controller.configure(with: lights)
     }
 
 }

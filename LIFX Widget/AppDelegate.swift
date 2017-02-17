@@ -46,6 +46,7 @@ extension AppDelegate {
 
         UISlider.appearance().tintColor = mainColor
         UIButton.appearance().tintColor = mainColor
+        TargetPickerTableViewCellSelectedView.appearance().tintColor = mainColor
 
         application.statusBarStyle = .lightContent
     }

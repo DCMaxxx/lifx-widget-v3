@@ -27,3 +27,7 @@
 "token_picker.alert.invalid_token.cancel" = "Go back & copy it";
 "token_picker.alert.invalid_token.confirm" = "I did copy it";
 "token_picker.loader.validate_token" = "Validating token...";
+
+"target_picker.cell.type.location" = "Location";
+"target_picker.cell.type.group" = "Group";
+"target_picker.cell.type.bulb" = "Bulb";
