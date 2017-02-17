@@ -10,9 +10,7 @@ import LIFXAPIWrapper
 import BrightFutures
 import SwiftyUserDefaults
 
-// We're getting objects from Objective-C APIs,
-// the doc mentions the type but the NSArray
-// aren't typed.
+// force_cast: We're getting objects from Objective-C APIs, the doc mentions the type but the NSArray aren't typed.
 // swiftlint:disable force_cast
 
 final class API {
@@ -31,6 +29,8 @@ final class API {
 
 extension API {
 
+    // force_unwrapping: We need this URL to be valid, else, the app won't work.
+    // swiftlint:disable:next force_unwrapping
     static let tokenURL = URL(string: "https://cloud.lifx.com/settings")!
 
     static func validate(token: String) -> Bool {

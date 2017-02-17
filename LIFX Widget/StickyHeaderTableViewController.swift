@@ -41,9 +41,11 @@ extension StickyHeaderTableViewController {
     }
 
     fileprivate func pinTableViewToHeader() {
+        guard let headerHeight = tableView.tableHeaderView?.bounds.height else {
+            return
+        }
         var contentOffset = tableView.contentOffset
         let scrollPosition = contentOffset.y + tableView.contentInset.top
-        let headerHeight = tableView.tableHeaderView!.bounds.height
         if scrollPosition < headerHeight / 2 {
             contentOffset.y = 0
         } else if scrollPosition < headerHeight {

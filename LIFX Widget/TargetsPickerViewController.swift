@@ -83,9 +83,8 @@ extension TargetsPickerViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: TargetPickerTableViewCell.identifier,
-                                                 for: indexPath) as! TargetPickerTableViewCell
-        // swiftlint:disable:previous force_cast
+        // swiftlint:disable:next line_length force_cast
+        let cell = tableView.dequeueReusableCell(withIdentifier: TargetPickerTableViewCell.identifier, for: indexPath) as! TargetPickerTableViewCell
         let model = orderedLIFXModels[indexPath.row]
         cell.configure(with: model)
         return cell

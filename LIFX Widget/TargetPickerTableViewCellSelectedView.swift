@@ -8,8 +8,6 @@
 
 import UIKit
 
-// swiftlint:disable line_length
-
 final class TargetPickerTableViewCellSelectedView: UIView {
 
     fileprivate var circleLayer: CAShapeLayer!
@@ -53,8 +51,10 @@ extension TargetPickerTableViewCellSelectedView {
         let edgesFormat = "|-[tickImageView]-|"
         let opts = NSLayoutFormatOptions()
         let views: [String: UIView] = ["tickImageView": tickImageView]
-        let hConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:\(edgesFormat)", options: opts, metrics: nil, views: views)
-        let vConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:\(edgesFormat)", options: opts, metrics: nil, views: views)
+        let hConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:\(edgesFormat)", options: opts,
+                                                          metrics: nil, views: views)
+        let vConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:\(edgesFormat)", options: opts,
+                                                          metrics: nil, views: views)
         addConstraints(hConstraints)
         addConstraints(vConstraints)
 
@@ -71,13 +71,14 @@ extension TargetPickerTableViewCellSelectedView {
 
         if visible {
             circleLayer.strokeEnd = 1
-            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: UIViewAnimationOptions(), animations: {
-                self.tickImageView.transform = CGAffineTransform.identity
-            }, completion: nil)
+            UIView.animate(withDuration: 0.5, springDamping: 0.6, animations: {
+                self.tickImageView.transform = .identity
+            })
         } else {
             circleLayer.strokeEnd = 0
             UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn, animations: {
-                self.tickImageView.transform = CGAffineTransform(scaleX: 0.0001, y: 0.0001)
+                let zero = CGFloat.leastNormalMagnitude
+                self.tickImageView.transform = CGAffineTransform(scaleX: zero, y: zero)
             }, completion: nil)
         }
     }

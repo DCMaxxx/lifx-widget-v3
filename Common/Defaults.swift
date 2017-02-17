@@ -9,8 +9,8 @@
 import Foundation
 import SwiftyUserDefaults
 
-// variable_name: We want to keep coherence with SwiftyUserDefautls' `Defaults` variable.
-// force_unwrap: Nothing's going to work if the user defaults doesn't exist.
+// variable_name: We want to keep consistency with SwiftyUserDefaults' `Defaults` variable.
+// force_unwrapping: Nothing's going to work if the user defaults doesn't exist.
 
-// swiftlint:disable variable_name
+// swiftlint:disable:next variable_name force_unwrapping
 let SharedDefaults = UserDefaults(suiteName: "group.LiFXWidgetSharingDefaults")!

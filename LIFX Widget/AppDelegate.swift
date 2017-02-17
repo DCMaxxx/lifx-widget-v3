@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate {
 
     fileprivate func theme(application: UIApplication) {
-        let mainColor = UIColor(red: 35/255, green: 178/255, blue: 184/255, alpha: 1)
+        let mainColor = #colorLiteral(red: 0.137254902, green: 0.6980392157, blue: 0.7215686275, alpha: 1)
 
         SVProgressHUD.setBackgroundColor(.white)
         SVProgressHUD.setForegroundColor(mainColor)
@@ -36,7 +36,7 @@ extension AppDelegate {
         navbarAppearance.titleTextAttributes = [ NSForegroundColorAttributeName: UIColor.white ]
 
         UIToolbar.appearance().barTintColor = .black
-        let barButtonItemAppearance =  UIBarButtonItem.appearance()
+        let barButtonItemAppearance = UIBarButtonItem.appearance()
         barButtonItemAppearance.setTitleTextAttributes([
             NSForegroundColorAttributeName: UIColor.white,
             NSFontAttributeName: UIFont.boldSystemFont(ofSize: 14)], for: .normal)
