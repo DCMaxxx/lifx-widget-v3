@@ -11,6 +11,7 @@ import LIFXAPIWrapper
 
 final class TargetsPickerViewController: StickyHeaderTableViewController {
 
+    fileprivate var lights: [LIFXLight] = []
     fileprivate var orderedLIFXModels: [LIFXModel] = [] // of LIFXLocation, LIFXGroup and LIFXLight
 
     override func viewWillAppear(_ animated: Bool) {
@@ -30,6 +31,7 @@ extension TargetsPickerViewController {
     }
 
     private func configureOrderedTargets(with lights: [LIFXLight]) {
+        self.lights = lights
         lights.forEach { light in
             guard let locationIdx = orderedLIFXModels.index(of: light.location) else {
                 // We don't have the location yet. Let's add location, then group, then target
@@ -55,7 +57,7 @@ extension TargetsPickerViewController {
         let targets = PersistanceManager.targets
 
         orderedLIFXModels.enumerated().flatMap { idx, model in
-            isModelSelected(model, in: targets) ? idx : nil
+            targets.contains(where: { $0.targets(model: model) }) ? idx : nil
         }.map {
             IndexPath(row: $0, section: 0)
         }.forEach {
@@ -63,19 +65,9 @@ extension TargetsPickerViewController {
         }
     }
 
-    private func isModelSelected(_ model: LIFXModel, in targets: [Target]) -> Bool {
-        return targets.contains(where: { target -> Bool in
-            switch model {
-            case let light as LIFXLight:        return light.identifier == target.identifier
-            case let group as LIFXBaseGroup:    return group.identifier == target.identifier
-            default:                            return false
-            }
-        })
-    }
-
 }
 
-// MARK: - UITableViewDataSource
+// MARK: - UITableViewDataSource, UITableViewDelegate
 extension TargetsPickerViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -85,9 +77,73 @@ extension TargetsPickerViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // swiftlint:disable:next line_length force_cast
         let cell = tableView.dequeueReusableCell(withIdentifier: TargetPickerTableViewCell.identifier, for: indexPath) as! TargetPickerTableViewCell
-        let model = orderedLIFXModels[indexPath.row]
+        let model = getModel(at: indexPath)
         cell.configure(with: model)
         return cell
+    }
+
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if PersistanceManager.targets.count == PersistanceManager.maximumTargetsCount - 1 {
+            presentTooManyTargetsAlert()
+            return nil
+        }
+        return indexPath
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = getModel(at: indexPath)
+        addToTargets(model: model)
+    }
+
+    override func tableView(_ tableView: UITableView, willDeselectRowAt indexPath: IndexPath) -> IndexPath? {
+        if PersistanceManager.targets.count == 1 {
+            presentEmptyTargetsAlert()
+            return nil
+        }
+        return indexPath
+    }
+
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let model = getModel(at: indexPath)
+        removeFromTargets(model: model)
+    }
+
+    private func addToTargets(model: LIFXModel) {
+        guard let target = Target(model: model) else {
+            return
+        }
+        PersistanceManager.targets.append(target)
+    }
+
+    private func removeFromTargets(model: LIFXModel) {
+        guard let idx = PersistanceManager.targets.index(where: { $0.targets(model: model) }) else {
+            return
+        }
+        PersistanceManager.targets.remove(at: idx)
+    }
+
+    private func presentTooManyTargetsAlert() {
+        let max = PersistanceManager.maximumTargetsCount
+        let body = "target_picker.alert.too_many_targets.body".localized(withVariables: ["count": "\(max)"])
+        let alertController = UIAlertController(title: "target_picker.alert.too_many_targets.title".localized(),
+                                                message: body,
+                                                preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "target_picker.alert.too_many_targets.cancel".localized(),
+                                                style: .default, handler: nil))
+        present(alertController, animated: true, completion: nil)
+    }
+
+    private func presentEmptyTargetsAlert() {
+        let alertController = UIAlertController(title: "target_picker.alert.no_targets.title".localized(),
+                                                message: "target_picker.alert.no_targets.body".localized(),
+                                                preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "target_picker.alert.no_targets.cancel".localized(),
+                                                style: .default, handler: nil))
+        present(alertController, animated: true, completion: nil)
+    }
+
+    private func getModel(at indexPath: IndexPath) -> LIFXModel {
+        return orderedLIFXModels[indexPath.row]
     }
 
 }

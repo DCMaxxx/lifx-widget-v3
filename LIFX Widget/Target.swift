@@ -24,6 +24,16 @@ final class Target: NSObject, Model {
     }
 
     // MARK: - LIFX's inits
+    convenience init?(model: LIFXModel) {
+        switch model {
+        case let light as LIFXLight:        self.init(light: light)
+        case let group as LIFXBaseGroup:    self.init(group: group)
+        default:
+            print("Couldn't create a target from a LIFX model: \(model)")
+            return nil
+        }
+    }
+
     convenience init(light: LIFXLight) {
         self.init(identifier: light.identifier, name: light.label, selector: light.targetSelector())
     }
@@ -75,6 +85,14 @@ final class Target: NSObject, Model {
     // MARK: Equatable
     static func == (lhs: Target, rhs: Target) -> Bool {
         return lhs.identifier == rhs.identifier
+    }
+
+    func targets(model: LIFXModel) -> Bool {
+        switch model {
+        case let light as LIFXLight:        return light.identifier == identifier
+        case let group as LIFXBaseGroup:    return group.identifier == identifier
+        default:                            return false
+        }
     }
 
 }

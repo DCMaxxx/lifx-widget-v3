@@ -31,3 +31,9 @@
 "target_picker.cell.type.location" = "Location";
 "target_picker.cell.type.group" = "Group";
 "target_picker.cell.type.bulb" = "Bulb";
+"target_picker.alert.no_targets.title" = "Error";
+"target_picker.alert.no_targets.body" = "You must keep at least one target !";
+"target_picker.alert.no_targets.cancel" = "Cancel";
+"target_picker.alert.too_many_targets.title" = "Error";
+"target_picker.alert.too_many_targets.body" = "Given your device, the widget's maximum size only allows you to display {count} targets.";
+"target_picker.alert.too_many_targets.cancel" = "Cancel";

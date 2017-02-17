@@ -14,6 +14,10 @@ import LIFXAPIWrapper
 
 final class PersistanceManager {
 
+    static var maximumTargetsCount: Int {
+        return 5 // TODO: Calculate it based on the device and OS version.
+    }
+
     static var targets: [Target] {
         get { return SharedDefaults[.targets] }
         set { SharedDefaults[.targets] = newValue }
@@ -34,7 +38,7 @@ extension PersistanceManager {
 
     private class func setDefaultsTargets(with lights: [LIFXLight]) {
         // Default values for lights are all lights, but no groups / locations.
-        targets = lights.map(Target.init)
+        targets = lights.prefix(PersistanceManager.maximumTargetsCount).map(Target.init)
     }
 
     private class func filterTargets(with lights: [LIFXLight]) {
