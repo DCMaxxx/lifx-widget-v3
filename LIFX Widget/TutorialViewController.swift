@@ -102,14 +102,11 @@ extension TutorialViewController {
         self.lights = lights
 
         hiddenValidOAuthTokenViewConstraint.priority = UILayoutPriorityDefaultLow
-        // swiftlint:disable:next line_length
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: UIViewAnimationOptions(), animations: {
-            self.scrollView.layoutIfNeeded()
-        }, completion: { _ in
+        scrollView.layoutIfNeeded(animationDuration: 0.5, springDamping: 0.5) { _ in
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 self.scrollTo(page: .conclusion)
             }
-        })
+        }
     }
 
     private func display(error: Error) {

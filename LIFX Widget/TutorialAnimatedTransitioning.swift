@@ -48,8 +48,7 @@ extension TutorialAnimatedTransitioning: UIViewControllerAnimatedTransitioning {
             controller.view.alpha = 1
         }, completion: { finished in
 
-            // swiftlint:disable:next line_length
-            UIView.animate(withDuration: duration / 3 * 2, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: UIViewAnimationOptions(), animations: {
+            UIView.animate(withDuration: duration / 3 * 2, springDamping: 0.5, animations: {
                 controller.layoutVisibleView()
             }, completion: { finished in
                 transitionContext.completeTransition(finished)
@@ -67,8 +66,7 @@ extension TutorialAnimatedTransitioning: UIViewControllerAnimatedTransitioning {
 
         let duration = transitionDuration(using: transitionContext)
 
-        // swiftlint:disable:next line_length
-        UIView.animate(withDuration: duration / 3 * 2, delay: 0, usingSpringWithDamping: 0.95, initialSpringVelocity: 0, options: UIViewAnimationOptions(), animations: {
+        UIView.animate(withDuration: duration / 3 * 2, springDamping: 0.95, animations: {
             controller.layoutHiddenView()
         }, completion: { finished in
 
