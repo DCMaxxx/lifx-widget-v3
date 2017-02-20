@@ -58,6 +58,9 @@
 		9CA5D0801E58B78400975C96 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D07F1E58B78400975C96 /* Color.swift */; };
 		9CA5D0811E58B78400975C96 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D07F1E58B78400975C96 /* Color.swift */; };
 		9CA5D0821E58B78400975C96 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D07F1E58B78400975C96 /* Color.swift */; };
+		9CA5D0841E5B6EE500975C96 /* UIColor+HSBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D0831E5B6EE500975C96 /* UIColor+HSBA.swift */; };
+		9CA5D0851E5B6EE500975C96 /* UIColor+HSBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D0831E5B6EE500975C96 /* UIColor+HSBA.swift */; };
+		9CA5D0861E5B6EE500975C96 /* UIColor+HSBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D0831E5B6EE500975C96 /* UIColor+HSBA.swift */; };
 		D48F821AEB90669BC62BE834 /* Pods_LIFX_Widget_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6C7F0FC16A47CC7DC8C9559 /* Pods_LIFX_Widget_WatchKit_Extension.framework */; };
 /* End PBXBuildFile section */
 
@@ -172,6 +175,7 @@
 		9C7D2D481E5651A4007D89E3 /* UIView+Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Animations.swift"; sourceTree = "<group>"; };
 		9CA5D07D1E58B76B00975C96 /* ColorsPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsPickerViewController.swift; sourceTree = "<group>"; };
 		9CA5D07F1E58B78400975C96 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		9CA5D0831E5B6EE500975C96 /* UIColor+HSBA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+HSBA.swift"; sourceTree = "<group>"; };
 		C6C7F0FC16A47CC7DC8C9559 /* Pods_LIFX_Widget_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LIFX_Widget_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7AD68985F779096452056C0 /* Pods_LIFX_Widget_Today_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LIFX_Widget_Today_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4E30C8B8AFA86C211E0342 /* Pods_LIFX_Widget_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LIFX_Widget_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -478,6 +482,7 @@
 				9C5184801E54AD5300FBF02A /* Defaults.swift */,
 				9C7102761E548F1F0058E8C4 /* String+Localized.swift */,
 				9C5184B71E5612A900FBF02A /* UITableViewCell+ReuseIdentifier.swift */,
+				9CA5D0831E5B6EE500975C96 /* UIColor+HSBA.swift */,
 				9C51849D1E55E27C00FBF02A /* Models */,
 			);
 			name = Common;
@@ -864,6 +869,7 @@
 				9C5184B41E5605D600FBF02A /* TargetPickerTableViewCell.swift in Sources */,
 				9C0585281E545E7900CF3AFA /* HomeViewController.swift in Sources */,
 				9C5184B21E56050600FBF02A /* TargetsPickerViewController.swift in Sources */,
+				9CA5D0841E5B6EE500975C96 /* UIColor+HSBA.swift in Sources */,
 				9C5184951E559AE400FBF02A /* TokenPickerViewController.swift in Sources */,
 				9C51848E1E54BE9800FBF02A /* TutorialAnimatedTransitioning.swift in Sources */,
 				9C5184B01E56033900FBF02A /* StickyHeaderTableViewController.swift in Sources */,
@@ -888,6 +894,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CA5D0861E5B6EE500975C96 /* UIColor+HSBA.swift in Sources */,
 				9C05854B1E545E7900CF3AFA /* ExtensionDelegate.swift in Sources */,
 				9C7102721E5489F60058E8C4 /* API.swift in Sources */,
 				9C5184831E54AD5300FBF02A /* Defaults.swift in Sources */,
@@ -903,6 +910,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CA5D0851E5B6EE500975C96 /* UIColor+HSBA.swift in Sources */,
 				9C5184A21E55E3BF00FBF02A /* Target.swift in Sources */,
 				9C5184A11E55E3BF00FBF02A /* JSONable.swift in Sources */,
 				9C7102781E548F1F0058E8C4 /* String+Localized.swift in Sources */,

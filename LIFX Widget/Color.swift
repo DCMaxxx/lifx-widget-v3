@@ -14,33 +14,48 @@ final class Color: NSObject, Model {
 
     enum Kind {
         case color(color: UIColor)
-        case white(kelvin: Int)
+        case white(kelvin: Int, brightness: Float)
     }
 
     let kind: Kind
-    let brightness: Float
 
     // MARK: - Init
-    init(kind: Kind, brightness: Float) {
+    init(kind: Kind) {
         self.kind = kind
-        self.brightness = brightness
     }
 
     // MARK: - JSONable
     convenience init?(json: JSON) {
-        guard
-            let kind = json["kind"].string,
-            let brightness = json["brightness"].float else {
-                print("Couldn't initialize a color from its JSON: \(json)")
-                return nil
+        guard let kind = json["kind"].string else {
+            print("Couldn't initialize a color from its JSON: \(json)")
+            return nil
         }
-        _ = brightness
+
         switch kind {
         case "color":
-            return nil
+            guard
+                let hue = json["color"]["hue"].float,
+                let saturation = json["color"]["saturation"].float,
+                let brightness = json["color"]["brightness"].float else {
+                    print("Couldn't initialize a color from its JSON: \(json)")
+                    return nil
+            }
+            let color = UIColor(hue: CGFloat(hue), saturation: CGFloat(saturation),
+                                brightness: CGFloat(brightness), alpha: 1)
+            self.init(kind: .color(color: color))
+
         case "white":
+            guard
+                let kelvin = json["kelvin"].int,
+                let brightness = json["brightness"].float else {
+                    print("Couldn't initialize a color from its JSON: \(json)")
+                    return nil
+            }
+            self.init(kind: .white(kelvin: kelvin, brightness: brightness))
             return nil
+
         default:
+            print("Couldn't initialize a color from its JSON: \(json)")
             return nil
         }
     }
@@ -48,14 +63,23 @@ final class Color: NSObject, Model {
     var json: JSON {
         switch kind {
         case .color(let color):
-            _ = color
+            guard let hsba = color.hsba else {
+                print("Coudln't get the HSBA values for a color: \(color)")
+                return []
+            }
             return [
-                "kind": "color"
+                "kind": "color",
+                "color": [
+                    "hue": Float(hsba.hue),
+                    "saturation": Float(hsba.saturation),
+                    "brightness": Float(hsba.brightness)
+                ]
             ]
-        case .white(let kelvin):
-            _ = kelvin
+        case .white(let kelvin, let brightness):
             return [
-                "kind": "white"
+                "kind": "white",
+                "temperature": kelvin,
+                "brightness": brightness
             ]
         }
     }
