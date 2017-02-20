@@ -23,6 +23,17 @@ final class PersistanceManager {
         set { SharedDefaults[.targets] = newValue }
     }
 
+    static var colors: [Color] {
+        get {
+            print("getting")
+            return SharedDefaults[.colors]
+        }
+        set {
+            print("seting to \(newValue)")
+            SharedDefaults[.colors] = newValue
+        }
+    }
+
 }
 
 // MARK: - Targets
@@ -51,6 +62,25 @@ extension PersistanceManager {
 
 }
 
+extension PersistanceManager {
+
+    class func setDefaultColorsIfNeeded() {
+        guard colors.isEmpty else {
+            return
+        }
+
+        colors = [
+            Color(kind: .color(color: #colorLiteral(red: 1, green: 0.2146629095, blue: 0.138574928, alpha: 1))),
+            Color(kind: .color(color: #colorLiteral(red: 0.7886506915, green: 0.2526551187, blue: 0.912491858, alpha: 1))),
+            Color(kind: .color(color: #colorLiteral(red: 0.4274981618, green: 0.5163844228, blue: 0.9852721095, alpha: 1))),
+            Color(kind: .color(color: #colorLiteral(red: 0.1577041149, green: 0.9904380441, blue: 0.9570897222, alpha: 1))),
+            Color(kind: .white(kelvin: 9_000, brightness: 1)),
+            Color(kind: .white(kelvin: 2_500, brightness: 1))
+        ]
+    }
+
+}
+
 // MARK: - SwiftyUserDefaults extensions
 
 fileprivate extension UserDefaults {
@@ -60,10 +90,20 @@ fileprivate extension UserDefaults {
         set { archive(key, newValue) }
     }
 
+    subscript(key: DefaultsKey<[Color]>) -> [Color] {
+        get {
+            print("unarchiving... -> \(unarchive(key))")
+            return unarchive(key) ?? [] }
+        set { print("archiving... -> \(newValue)")
+            print("res : \(archive(key, newValue))")
+            archive(key, newValue) }
+    }
+
 }
 
 fileprivate extension DefaultsKeys {
 
-    static let targets = DefaultsKey<[Target]>("targets")
+    static let targets = DefaultsKey<[Target]>("com.maxime-dechalendar.targets")
+    static let colors = DefaultsKey<[Color]>("com.maxime-dechalendar.colors")
 
 }

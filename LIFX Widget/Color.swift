@@ -19,6 +19,20 @@ final class Color: NSObject, Model {
 
     let kind: Kind
 
+    var displayColor: UIColor {
+        switch kind {
+        case .color(let color):
+            return color
+        case .white(let kelvin, let brightness):
+            let kelvinColor = UIColor(kelvin: kelvin)
+            guard let hsba = kelvinColor.hsba else {
+                return kelvinColor
+            }
+            return UIColor(hue: hsba.hue, saturation: hsba.saturation,
+                           brightness: CGFloat(brightness), alpha: hsba.alpha)
+        }
+    }
+
     // MARK: - Init
     init(kind: Kind) {
         self.kind = kind
@@ -27,7 +41,7 @@ final class Color: NSObject, Model {
     // MARK: - JSONable
     convenience init?(json: JSON) {
         guard let kind = json["kind"].string else {
-            print("Couldn't initialize a color from its JSON: \(json)")
+            print("Couldn't initialize a color from its JSON - no kind: \(json)")
             return nil
         }
 
@@ -37,7 +51,7 @@ final class Color: NSObject, Model {
                 let hue = json["color"]["hue"].float,
                 let saturation = json["color"]["saturation"].float,
                 let brightness = json["color"]["brightness"].float else {
-                    print("Couldn't initialize a color from its JSON: \(json)")
+                    print("Couldn't initialize a color from its JSON - no hue, saturation, brightness: \(json)")
                     return nil
             }
             let color = UIColor(hue: CGFloat(hue), saturation: CGFloat(saturation),
@@ -48,14 +62,13 @@ final class Color: NSObject, Model {
             guard
                 let kelvin = json["kelvin"].int,
                 let brightness = json["brightness"].float else {
-                    print("Couldn't initialize a color from its JSON: \(json)")
+                    print("Couldn't initialize a color from its JSON - no kelvin, brightness: \(json)")
                     return nil
             }
             self.init(kind: .white(kelvin: kelvin, brightness: brightness))
-            return nil
 
         default:
-            print("Couldn't initialize a color from its JSON: \(json)")
+            print("Couldn't initialize a color from its JSON - invalid kind: \(json)")
             return nil
         }
     }
@@ -78,7 +91,7 @@ final class Color: NSObject, Model {
         case .white(let kelvin, let brightness):
             return [
                 "kind": "white",
-                "temperature": kelvin,
+                "kelvin": kelvin,
                 "brightness": brightness
             ]
         }
