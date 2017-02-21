@@ -118,8 +118,19 @@ final class Color: NSObject, Model {
     }
 
     // MARK: - Equatable
+    override func isEqual(_ object: Any?) -> Bool {
+        guard let other = object as? Color else {
+            return false
+        }
+        return self.equals(other: other)
+    }
+
     static func == (lhs: Color, rhs: Color) -> Bool {
-        switch (lhs.kind, rhs.kind) {
+        return lhs.equals(other: rhs)
+    }
+
+    private func equals(other: Color) -> Bool {
+        switch (self.kind, other.kind) {
         case (.color(let lhsColor), .color(let rhsColor)):
             return lhsColor == rhsColor
         case (.white(let lhsKelvin), .white(let rhsKelvin)):

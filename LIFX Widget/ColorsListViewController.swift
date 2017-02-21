@@ -11,7 +11,6 @@ import UIKit
 final class ColorsListViewController: StickyHeaderTableViewController {
 
     fileprivate var colors: [Color] {
-        print("getting here")
         return PersistanceManager.colors
     }
 
@@ -38,7 +37,24 @@ extension ColorsListViewController {
         return cell
     }
 
-    fileprivate func getColor(at indexPath: IndexPath) -> Color {
+    override func tableView(_ tableView: UITableView,
+                            commit editingStyle: UITableViewCellEditingStyle,
+                            forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            removeColor(at: indexPath)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+
+    private func removeColor(at indexPath: IndexPath) {
+        let color = getColor(at: indexPath)
+        guard let idx = PersistanceManager.colors.index(of: color) else {
+            return
+        }
+        PersistanceManager.colors.remove(at: idx)
+    }
+
+    private func getColor(at indexPath: IndexPath) -> Color {
         return colors[indexPath.row]
     }
 

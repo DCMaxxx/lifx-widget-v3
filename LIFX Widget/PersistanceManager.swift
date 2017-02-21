@@ -24,14 +24,8 @@ final class PersistanceManager {
     }
 
     static var colors: [Color] {
-        get {
-            print("getting")
-            return SharedDefaults[.colors]
-        }
-        set {
-            print("seting to \(newValue)")
-            SharedDefaults[.colors] = newValue
-        }
+        get { return SharedDefaults[.colors] }
+        set { SharedDefaults[.colors] = newValue }
     }
 
 }
@@ -91,12 +85,8 @@ fileprivate extension UserDefaults {
     }
 
     subscript(key: DefaultsKey<[Color]>) -> [Color] {
-        get {
-            print("unarchiving... -> \(unarchive(key))")
-            return unarchive(key) ?? [] }
-        set { print("archiving... -> \(newValue)")
-            print("res : \(archive(key, newValue))")
-            archive(key, newValue) }
+        get { return unarchive(key) ?? [] }
+        set { archive(key, newValue) }
     }
 
 }
