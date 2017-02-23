@@ -1,5 +1,5 @@
 //
-//  UIColor+HSBA.swift
+//  UIColor+LIFX.swift
 //  LIFX Widget
 //
 //  Created by Maxime de Chalendar on 20/02/2017.
@@ -56,6 +56,13 @@ extension UIColor {
         }
 
         self.init(red: red / 255, green: green / 255, blue: blue / 255, alpha: 1.0)
+    }
+
+    static var random: UIColor {
+        return UIColor(hue:         CGFloat(arc4random_uniform(100)) / 100,
+                       saturation:  CGFloat(arc4random_uniform(100)) / 100,
+                       brightness:  CGFloat(arc4random_uniform(100)) / 100,
+                       alpha:       1)
     }
 
 }
