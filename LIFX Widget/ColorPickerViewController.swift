@@ -9,10 +9,12 @@
 import UIKit
 import MSColorPicker
 
+typealias ColorSelectionClosure = ((Color) -> Void)
+
 final class ColorPickerViewController: UIViewController {
 
     fileprivate var color: Color! // Always set in configure(with: onSelection:)
-    fileprivate var onSelection: ((Color) -> Void)?
+    fileprivate var onSelection: ColorSelectionClosure?
 
     @IBOutlet fileprivate var headerButtons: [UIBarButtonItem]!
     @IBOutlet fileprivate weak var contentScrollView: UIScrollView!
@@ -37,12 +39,43 @@ final class ColorPickerViewController: UIViewController {
         preselectDefaultPage()
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.destination {
+        case let destination as ColorPickerColorController:
+            configure(colorController: destination)
+        default:
+            break
+        }
+    }
+
+}
+
+// MARK: - Prepare segues
+extension ColorPickerViewController {
+
+    func configure(colorController: ColorPickerColorController) {
+        let onSelection: ColorSelectionClosure = { [weak self] color in
+            self?.childControllerDidUpdate(color: color)
+        }
+
+        switch color.kind {
+        case .color(let color):
+            colorController.configure(with: color, onSelection: onSelection)
+        default:
+            colorController.configure(with: .random, onSelection: onSelection)
+        }
+    }
+
+    fileprivate func childControllerDidUpdate(color: Color) {
+        self.color = color
+    }
+
 }
 
 // MARK: - Public configuration method
 extension ColorPickerViewController {
 
-    func configure(with color: Color?, onSelection: ((Color) -> Void)?) {
+    func configure(with color: Color?, onSelection: ColorSelectionClosure?) {
         self.color = color ?? Color(kind: .color(color: .random))
         self.onSelection = onSelection
     }
