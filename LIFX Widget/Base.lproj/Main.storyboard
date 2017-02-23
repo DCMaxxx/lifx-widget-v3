@@ -200,7 +200,7 @@
                                                                 <rect key="frame" x="26" y="77" width="249" height="134"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTx-e0-AN3">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="229" height="45"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="229" height="44.5"/>
                                                                         <attributedString key="attributedText">
                                                                             <fragment content="1. ">
                                                                                 <attributes>
@@ -227,7 +227,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIa-5U-2Lq">
-                                                                        <rect key="frame" x="0.0" y="45" width="229" height="45"/>
+                                                                        <rect key="frame" x="0.0" y="44.5" width="229" height="45"/>
                                                                         <attributedString key="attributedText">
                                                                             <fragment content="2. Tap &quot;">
                                                                                 <attributes>
@@ -254,7 +254,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MLh-Sf-waf">
-                                                                        <rect key="frame" x="0.0" y="90" width="229" height="44"/>
+                                                                        <rect key="frame" x="0.0" y="89.5" width="229" height="44.5"/>
                                                                         <attributedString key="attributedText">
                                                                             <fragment content="3. Name it as you wish, then ">
                                                                                 <attributes>
@@ -678,7 +678,7 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
                                 <rect key="frame" x="0.0" y="147" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TGR-gP-nDu" id="lfJ-Ou-5GH">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -724,7 +724,7 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="yVF-TO-7Df"/>
                                     <barButtonItem title="COLORS" id="CKj-JF-9go">
                                         <connections>
-                                            <action selector="tappedHeaderButton:" destination="GFs-vs-7i7" id="90s-ew-IOB"/>
+                                            <action selector="tappedHeaderButton:" destination="GFs-vs-7i7" id="gr5-N8-lFb"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="G2A-WO-jbf"/>
@@ -833,10 +833,10 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
                     </navigationItem>
                     <connections>
                         <outlet property="colorPickerView" destination="Mh0-Vb-NyL" id="qlt-mD-FCw"/>
-                        <outlet property="colorsButton" destination="CKj-JF-9go" id="rEW-eN-DII"/>
                         <outlet property="contentScrollView" destination="B8G-lA-4XS" id="8Wc-eG-aIr"/>
                         <outlet property="liveFeedbackTargetButton" destination="Q0w-qe-pKZ" id="3sk-ee-xLv"/>
-                        <outlet property="whitesButtons" destination="2M6-E7-3uT" id="UBH-pI-hwF"/>
+                        <outletCollection property="headerButtons" destination="CKj-JF-9go" id="Rwf-Qt-KZa"/>
+                        <outletCollection property="headerButtons" destination="2M6-E7-3uT" id="i83-2g-HaF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MdV-jC-j7l" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -965,6 +965,6 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
         <image name="tutorial_image_valid_token" width="85" height="85"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zB1-lQ-srj"/>
+        <segue reference="SiO-Gx-EOO"/>
     </inferredMetricsTieBreakers>
 </document>
