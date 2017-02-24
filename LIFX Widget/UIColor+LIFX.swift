@@ -30,7 +30,7 @@ extension UIColor {
             return red + (green * value) + (blue * log(value))
         }
 
-        let ranged = CGFloat(max(1_000, min(kelvin, 40_000)))
+        let ranged = CGFloat(kelvin.rangedBetween(min: 1_000, max: 40_000))
         var red: CGFloat
         var green: CGFloat
         var blue: CGFloat
