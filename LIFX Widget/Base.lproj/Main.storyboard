@@ -835,8 +835,8 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
                         <outlet property="colorPickerView" destination="Mh0-Vb-NyL" id="qlt-mD-FCw"/>
                         <outlet property="contentScrollView" destination="B8G-lA-4XS" id="8Wc-eG-aIr"/>
                         <outlet property="liveFeedbackTargetButton" destination="Q0w-qe-pKZ" id="3sk-ee-xLv"/>
-                        <outletCollection property="headerButtons" destination="CKj-JF-9go" id="Rwf-Qt-KZa"/>
-                        <outletCollection property="headerButtons" destination="2M6-E7-3uT" id="i83-2g-HaF"/>
+                        <outletCollection property="headerButtons" destination="CKj-JF-9go" collectionClass="NSMutableArray" id="Rwf-Qt-KZa"/>
+                        <outletCollection property="headerButtons" destination="2M6-E7-3uT" collectionClass="NSMutableArray" id="i83-2g-HaF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MdV-jC-j7l" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -881,7 +881,7 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
                                     <constraint firstAttribute="height" constant="30" id="hHC-Pd-xRw"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vre-iT-z5j">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vre-iT-z5j" customClass="WhiteGradientView" customModule="LIFX_Widget" customModuleProvider="target">
                                 <rect key="frame" x="20" y="70" width="335" height="375"/>
                                 <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
@@ -890,7 +890,7 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
                                     <outletCollection property="gestureRecognizers" destination="jM3-ZC-kOz" appends="YES" id="wqt-Ie-Xr6"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uQM-da-y1c">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uQM-da-y1c" customClass="WhiteGradientIndicatorView" customModule="LIFX_Widget" customModuleProvider="target">
                                 <rect key="frame" x="4" y="54" width="33" height="33"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -898,7 +898,7 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
                                     <constraint firstAttribute="width" secondItem="uQM-da-y1c" secondAttribute="height" id="o1Z-cI-2x6"/>
                                 </constraints>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="ob2-6V-n2s" appends="YES" id="NtM-4X-5V4"/>
+                                    <outletCollection property="gestureRecognizers" destination="PNe-Wf-Aec" appends="YES" id="xWN-JO-oeE"/>
                                 </connections>
                             </view>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZEg-Uy-URm">
@@ -948,13 +948,18 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
                         <action selector="pannedGradientView:" destination="cDn-Nn-qdN" id="ZG2-4Q-uHa"/>
                     </connections>
                 </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="PNe-Wf-Aec">
+                    <connections>
+                        <action selector="pannedGradientView:" destination="cDn-Nn-qdN" id="02V-78-aeR"/>
+                    </connections>
+                </panGestureRecognizer>
                 <tapGestureRecognizer id="jM3-ZC-kOz">
                     <connections>
                         <action selector="tappedGradientView:" destination="cDn-Nn-qdN" id="SHc-j1-2Ra"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2473" y="372"/>
+            <point key="canvasLocation" x="2472.8000000000002" y="371.96401799100454"/>
         </scene>
     </scenes>
     <resources>

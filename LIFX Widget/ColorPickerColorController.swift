@@ -11,7 +11,7 @@ import MSColorPicker
 
 final class ColorPickerColorController: UIViewController {
 
-    fileprivate var color: UIColor!
+    fileprivate var baseColor: UIColor!
     fileprivate var onSelection: ColorSelectionClosure?
 
     fileprivate var colorPickerview: MSHSBView {
@@ -32,13 +32,13 @@ final class ColorPickerColorController: UIViewController {
 extension ColorPickerColorController {
 
     func configure(with color: UIColor, onSelection: ColorSelectionClosure?) {
-        self.color = color
+        self.baseColor = color
         self.onSelection = onSelection
     }
 
     fileprivate func configureColorView() {
         colorPickerview.delegate = self
-        colorPickerview.color = color
+        colorPickerview.color = baseColor
     }
 
 }

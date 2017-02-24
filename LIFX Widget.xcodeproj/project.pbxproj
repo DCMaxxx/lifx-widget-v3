@@ -66,6 +66,8 @@
 		9CA5D08E1E5CE37500975C96 /* ColorPickerColorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D08D1E5CE37500975C96 /* ColorPickerColorController.swift */; };
 		9CA5D0901E5CE38200975C96 /* ColorPickerWhiteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D08F1E5CE38200975C96 /* ColorPickerWhiteController.swift */; };
 		9CCAA2421E5F311200AE10D0 /* Array+Replace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA2411E5F311200AE10D0 /* Array+Replace.swift */; };
+		9CCAA2441E5F4AC700AE10D0 /* WhiteGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA2431E5F4AC700AE10D0 /* WhiteGradientView.swift */; };
+		9CCAA2491E5F4BD700AE10D0 /* WhiteGradientIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA2481E5F4BD700AE10D0 /* WhiteGradientIndicatorView.swift */; };
 		9CCAA24B1E602C1E00AE10D0 /* Comparable+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA24A1E602C1E00AE10D0 /* Comparable+Range.swift */; };
 		9CCAA24C1E602C6600AE10D0 /* Comparable+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA24A1E602C1E00AE10D0 /* Comparable+Range.swift */; };
 		9CCAA24D1E602C6700AE10D0 /* Comparable+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA24A1E602C1E00AE10D0 /* Comparable+Range.swift */; };
@@ -189,6 +191,8 @@
 		9CA5D08D1E5CE37500975C96 /* ColorPickerColorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerColorController.swift; sourceTree = "<group>"; };
 		9CA5D08F1E5CE38200975C96 /* ColorPickerWhiteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerWhiteController.swift; sourceTree = "<group>"; };
 		9CCAA2411E5F311200AE10D0 /* Array+Replace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Replace.swift"; sourceTree = "<group>"; };
+		9CCAA2431E5F4AC700AE10D0 /* WhiteGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteGradientView.swift; sourceTree = "<group>"; };
+		9CCAA2481E5F4BD700AE10D0 /* WhiteGradientIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteGradientIndicatorView.swift; sourceTree = "<group>"; };
 		9CCAA24A1E602C1E00AE10D0 /* Comparable+Range.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comparable+Range.swift"; sourceTree = "<group>"; };
 		C6C7F0FC16A47CC7DC8C9559 /* Pods_LIFX_Widget_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LIFX_Widget_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7AD68985F779096452056C0 /* Pods_LIFX_Widget_Today_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LIFX_Widget_Today_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -531,8 +535,8 @@
 			isa = PBXGroup;
 			children = (
 				9CA5D08B1E5CE29400975C96 /* ColorPickerViewController.swift */,
-				9CA5D08D1E5CE37500975C96 /* ColorPickerColorController.swift */,
-				9CA5D08F1E5CE38200975C96 /* ColorPickerWhiteController.swift */,
+				9CCAA2451E5F4B8600AE10D0 /* Colors */,
+				9CCAA2461E5F4B8C00AE10D0 /* Whites */,
 			);
 			name = Picker;
 			sourceTree = "<group>";
@@ -547,6 +551,32 @@
 				9CCAA24A1E602C1E00AE10D0 /* Comparable+Range.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		9CCAA2451E5F4B8600AE10D0 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				9CA5D08D1E5CE37500975C96 /* ColorPickerColorController.swift */,
+			);
+			name = Colors;
+			sourceTree = "<group>";
+		};
+		9CCAA2461E5F4B8C00AE10D0 /* Whites */ = {
+			isa = PBXGroup;
+			children = (
+				9CA5D08F1E5CE38200975C96 /* ColorPickerWhiteController.swift */,
+				9CCAA2471E5F4B9200AE10D0 /* Views */,
+			);
+			name = Whites;
+			sourceTree = "<group>";
+		};
+		9CCAA2471E5F4B9200AE10D0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9CCAA2431E5F4AC700AE10D0 /* WhiteGradientView.swift */,
+				9CCAA2481E5F4BD700AE10D0 /* WhiteGradientIndicatorView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -919,6 +949,8 @@
 				9CCAA24B1E602C1E00AE10D0 /* Comparable+Range.swift in Sources */,
 				9C51848E1E54BE9800FBF02A /* TutorialAnimatedTransitioning.swift in Sources */,
 				9C5184B01E56033900FBF02A /* StickyHeaderTableViewController.swift in Sources */,
+				9CCAA2491E5F4BD700AE10D0 /* WhiteGradientIndicatorView.swift in Sources */,
+				9CCAA2441E5F4AC700AE10D0 /* WhiteGradientView.swift in Sources */,
 				9CA5D0881E5B87FD00975C96 /* ColorTableViewCell.swift in Sources */,
 				9C5184AA1E55EB5F00FBF02A /* PersistanceManager.swift in Sources */,
 				9CA5D07E1E58B76B00975C96 /* ColorsListViewController.swift in Sources */,

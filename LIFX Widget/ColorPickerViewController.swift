@@ -43,6 +43,8 @@ final class ColorPickerViewController: UIViewController {
         switch segue.destination {
         case let destination as ColorPickerColorController:
             configure(colorController: destination)
+        case let destination as ColorPickerWhiteController:
+            configure(whiteController: destination)
         default:
             break
         }
@@ -61,8 +63,21 @@ extension ColorPickerViewController {
         switch color.kind {
         case .color(let color):
             colorController.configure(with: color, onSelection: onSelection)
-        default:
+        case .white:
             colorController.configure(with: .random, onSelection: onSelection)
+        }
+    }
+
+    fileprivate func configure(whiteController: ColorPickerWhiteController) {
+        let onSelection: ColorSelectionClosure = { [weak self] color in
+            self?.childControllerDidUpdate(color: color)
+        }
+
+        switch color.kind {
+        case .white(let kelvin, let brightness):
+            whiteController.configure(with: kelvin, brightness: brightness, onSelection: onSelection)
+        case .color:
+            whiteController.configure(with: 5_500, brightness: 0.8, onSelection: onSelection)
         }
     }
 
