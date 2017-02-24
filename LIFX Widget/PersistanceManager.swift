@@ -68,8 +68,8 @@ extension PersistanceManager {
             Color(kind: .color(color: #colorLiteral(red: 0.7886506915, green: 0.2526551187, blue: 0.912491858, alpha: 1))),
             Color(kind: .color(color: #colorLiteral(red: 0.4274981618, green: 0.5163844228, blue: 0.9852721095, alpha: 1))),
             Color(kind: .color(color: #colorLiteral(red: 0.1577041149, green: 0.9904380441, blue: 0.9570897222, alpha: 1))),
-            Color(kind: .white(kelvin: 9_000, brightness: 1)),
-            Color(kind: .white(kelvin: 2_500, brightness: 1))
+            Color(kind: .white(kelvin: Int.maxLifxKelvin, brightness: 1)),
+            Color(kind: .white(kelvin: Int.minLifxKelvin, brightness: 1))
         ]
     }
 

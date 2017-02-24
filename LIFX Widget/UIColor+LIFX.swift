@@ -66,3 +66,15 @@ extension UIColor {
     }
 
 }
+
+extension Int {
+
+    static var minLifxKelvin: Int {
+        return 2_500
+    }
+
+    static var maxLifxKelvin: Int {
+        return 9_000
+    }
+
+}
