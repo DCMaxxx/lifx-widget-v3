@@ -70,6 +70,8 @@
 		9CBC51E61E61CD390040E4CC /* Brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51E51E61CD390040E4CC /* Brightness.swift */; };
 		9CBC51E71E61CD390040E4CC /* Brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51E51E61CD390040E4CC /* Brightness.swift */; };
 		9CBC51E81E61CD390040E4CC /* Brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51E51E61CD390040E4CC /* Brightness.swift */; };
+		9CBC51EC1E61D3DC0040E4CC /* BrightnessesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51EB1E61D3DC0040E4CC /* BrightnessesListViewController.swift */; };
+		9CBC51EE1E61D4630040E4CC /* BrightnessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51ED1E61D4630040E4CC /* BrightnessTableViewCell.swift */; };
 		9CCAA2421E5F311200AE10D0 /* Array+Replace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA2411E5F311200AE10D0 /* Array+Replace.swift */; };
 		9CCAA2441E5F4AC700AE10D0 /* WhiteGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA2431E5F4AC700AE10D0 /* WhiteGradientView.swift */; };
 		9CCAA2491E5F4BD700AE10D0 /* WhiteGradientIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA2481E5F4BD700AE10D0 /* WhiteGradientIndicatorView.swift */; };
@@ -198,6 +200,8 @@
 		9CBC51E01E61B1D00040E4CC /* TargetsPickerPersistanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetsPickerPersistanceViewController.swift; sourceTree = "<group>"; };
 		9CBC51E21E61B32F0040E4CC /* TargetsPickerFeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetsPickerFeedbackViewController.swift; sourceTree = "<group>"; };
 		9CBC51E51E61CD390040E4CC /* Brightness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brightness.swift; sourceTree = "<group>"; };
+		9CBC51EB1E61D3DC0040E4CC /* BrightnessesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrightnessesListViewController.swift; sourceTree = "<group>"; };
+		9CBC51ED1E61D4630040E4CC /* BrightnessTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrightnessTableViewCell.swift; sourceTree = "<group>"; };
 		9CCAA2411E5F311200AE10D0 /* Array+Replace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Replace.swift"; sourceTree = "<group>"; };
 		9CCAA2431E5F4AC700AE10D0 /* WhiteGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteGradientView.swift; sourceTree = "<group>"; };
 		9CCAA2481E5F4BD700AE10D0 /* WhiteGradientIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteGradientIndicatorView.swift; sourceTree = "<group>"; };
@@ -394,6 +398,7 @@
 				9C5184AF1E56033900FBF02A /* StickyHeaderTableViewController.swift */,
 				9C5184AD1E56031D00FBF02A /* Targets picker */,
 				9CA5D07C1E58B71F00975C96 /* Colors picker */,
+				9CBC51E91E61D37C0040E4CC /* Brightnesses picker */,
 			);
 			name = Pickers;
 			sourceTree = "<group>";
@@ -558,6 +563,23 @@
 				9CBC51E21E61B32F0040E4CC /* TargetsPickerFeedbackViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		9CBC51E91E61D37C0040E4CC /* Brightnesses picker */ = {
+			isa = PBXGroup;
+			children = (
+				9CBC51EA1E61D3910040E4CC /* List */,
+			);
+			name = "Brightnesses picker";
+			sourceTree = "<group>";
+		};
+		9CBC51EA1E61D3910040E4CC /* List */ = {
+			isa = PBXGroup;
+			children = (
+				9CBC51EB1E61D3DC0040E4CC /* BrightnessesListViewController.swift */,
+				9CBC51ED1E61D4630040E4CC /* BrightnessTableViewCell.swift */,
+			);
+			name = List;
 			sourceTree = "<group>";
 		};
 		9CCAA2401E5F30EA00AE10D0 /* Extensions */ = {
@@ -967,11 +989,13 @@
 				9CA5D0841E5B6EE500975C96 /* UIColor+LIFX.swift in Sources */,
 				9C5184951E559AE400FBF02A /* TokenPickerViewController.swift in Sources */,
 				9CCAA24B1E602C1E00AE10D0 /* Comparable+Range.swift in Sources */,
+				9CBC51EE1E61D4630040E4CC /* BrightnessTableViewCell.swift in Sources */,
 				9C51848E1E54BE9800FBF02A /* TutorialAnimatedTransitioning.swift in Sources */,
 				9C5184B01E56033900FBF02A /* StickyHeaderTableViewController.swift in Sources */,
 				9CCAA2491E5F4BD700AE10D0 /* WhiteGradientIndicatorView.swift in Sources */,
 				9CCAA2441E5F4AC700AE10D0 /* WhiteGradientView.swift in Sources */,
 				9CA5D0881E5B87FD00975C96 /* ColorTableViewCell.swift in Sources */,
+				9CBC51EC1E61D3DC0040E4CC /* BrightnessesListViewController.swift in Sources */,
 				9C5184AA1E55EB5F00FBF02A /* PersistanceManager.swift in Sources */,
 				9CA5D07E1E58B76B00975C96 /* ColorsListViewController.swift in Sources */,
 				9C7102701E5489F60058E8C4 /* API.swift in Sources */,

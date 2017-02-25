@@ -14,6 +14,17 @@ final class Brightness: NSObject, Model {
 
     let value: Float
 
+    var icon: UIImage {
+        switch value {
+        case 0...0.33:
+            return #imageLiteral(resourceName: "brightness_low")
+        case 0.33...0.66:
+            return #imageLiteral(resourceName: "brightness_medium")
+        default:
+            return #imageLiteral(resourceName: "brightness_high")
+        }
+    }
+
     // MARK: - Init
     init(value: Float) {
         self.value = value
