@@ -8,6 +8,7 @@
 
 import UIKit
 import MSColorPicker
+import LIFXAPIWrapper
 
 typealias ColorSelectionClosure = ((Color) -> Void)
 
@@ -15,6 +16,10 @@ final class ColorPickerViewController: UIViewController {
 
     fileprivate var color: Color! // Always set in configure(with: onSelection:)
     fileprivate var onSelection: ColorSelectionClosure?
+
+    fileprivate var feedbackTarget: LIFXTargetable?
+    fileprivate var updateFeedbackTarget: DispatchWorkItem?
+    fileprivate static let feedbackDelay: TimeInterval = 0.05
 
     @IBOutlet fileprivate var headerButtons: [UIBarButtonItem]!
     @IBOutlet fileprivate weak var contentScrollView: UIScrollView!
@@ -45,6 +50,8 @@ final class ColorPickerViewController: UIViewController {
             configure(colorController: destination)
         case let destination as ColorPickerWhiteController:
             configure(whiteController: destination)
+        case let destination as TargetsPickerFeedbackViewController:
+            configure(feedbackPickerController: destination)
         default:
             break
         }
@@ -81,8 +88,41 @@ extension ColorPickerViewController {
         }
     }
 
-    fileprivate func childControllerDidUpdate(color: Color) {
+    fileprivate func configure(feedbackPickerController: TargetsPickerFeedbackViewController) {
+        feedbackPickerController.configure { [weak self] name, target in
+            self?.updateFeedbackTarget(name: name, target: target)
+        }
+    }
+
+    private func updateFeedbackTarget(name: String, target: LIFXTargetable) {
+        let buttonTitle = "color_picker.button.title.picked_feedback_light"
+        liveFeedbackTargetButton.title = buttonTitle.localized(withVariables: ["name": name]).uppercased()
+
+        feedbackTarget = target
+        notifyFeedbackTarget()
+    }
+
+    private func childControllerDidUpdate(color: Color) {
         self.color = color
+        notifyFeedbackTarget()
+    }
+
+    private func notifyFeedbackTarget() {
+        guard feedbackTarget != nil else {
+            return
+        }
+
+        updateFeedbackTarget?.cancel()
+        updateFeedbackTarget = DispatchWorkItem { [weak self] in
+            guard let target = self?.feedbackTarget, let operation = self?.color?.updateOperation else {
+                return
+            }
+
+            _ = API.shared.update(target: target, with: operation)
+        }
+        if let task = updateFeedbackTarget {
+            DispatchQueue.main.asyncAfter(deadline: .now() + ColorPickerViewController.feedbackDelay, execute: task)
+        }
     }
 
 }

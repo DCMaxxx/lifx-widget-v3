@@ -18,6 +18,8 @@ final class PersistanceManager {
         return 5 // TODO: Calculate it based on the device and OS version.
     }
 
+    static var availableLights: [LIFXLight] = [] // not saved across sessions
+
     static var targets: [Target] {
         get { return SharedDefaults[.targets] }
         set { SharedDefaults[.targets] = newValue }

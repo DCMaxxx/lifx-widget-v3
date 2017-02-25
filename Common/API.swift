@@ -11,7 +11,8 @@ import BrightFutures
 import SwiftyUserDefaults
 
 // force_cast: We're getting objects from Objective-C APIs, the doc mentions the type but the NSArray aren't typed.
-// swiftlint:disable force_cast
+// line_length: We're dealing with Obj-C's types, with long names
+// swiftlint:disable force_cast line_length
 
 final class API {
 
@@ -63,6 +64,16 @@ extension API {
         return Future { complete in
             internAPI.getAllLights(completion: { lights in
                 complete(.success(lights as! [LIFXLight]))
+            }, onFailure: { error in
+                complete(.failure(error as! NSError))
+            })
+        }
+    }
+
+    func update(target: LIFXTargetable, with operation: LIFXTargetOperationUpdate) -> Future<[LIFXTargetOperationResult], NSError> {
+        return Future { complete in
+            internAPI.apply(operation, toTarget: target, onCompletion: { results in
+                complete(.success(results as! [LIFXTargetOperationResult]))
             }, onFailure: { error in
                 complete(.failure(error as! NSError))
             })
