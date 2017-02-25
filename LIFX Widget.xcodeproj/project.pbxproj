@@ -73,6 +73,8 @@
 		9CBC51EC1E61D3DC0040E4CC /* BrightnessesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51EB1E61D3DC0040E4CC /* BrightnessesListViewController.swift */; };
 		9CBC51EE1E61D4630040E4CC /* BrightnessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51ED1E61D4630040E4CC /* BrightnessTableViewCell.swift */; };
 		9CBC51F11E61FB970040E4CC /* BrightnessPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51F01E61FB970040E4CC /* BrightnessPickerViewController.swift */; };
+		9CBC51F41E6219670040E4CC /* TargetsReorderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51F31E6219670040E4CC /* TargetsReorderViewController.swift */; };
+		9CBC51F61E621A0B0040E4CC /* TargetsReorderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51F51E621A0B0040E4CC /* TargetsReorderTableViewCell.swift */; };
 		9CCAA2421E5F311200AE10D0 /* Array+Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA2411E5F311200AE10D0 /* Array+Misc.swift */; };
 		9CCAA2441E5F4AC700AE10D0 /* WhiteGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA2431E5F4AC700AE10D0 /* WhiteGradientView.swift */; };
 		9CCAA2491E5F4BD700AE10D0 /* WhiteGradientIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA2481E5F4BD700AE10D0 /* WhiteGradientIndicatorView.swift */; };
@@ -204,6 +206,8 @@
 		9CBC51EB1E61D3DC0040E4CC /* BrightnessesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrightnessesListViewController.swift; sourceTree = "<group>"; };
 		9CBC51ED1E61D4630040E4CC /* BrightnessTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrightnessTableViewCell.swift; sourceTree = "<group>"; };
 		9CBC51F01E61FB970040E4CC /* BrightnessPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrightnessPickerViewController.swift; sourceTree = "<group>"; };
+		9CBC51F31E6219670040E4CC /* TargetsReorderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetsReorderViewController.swift; sourceTree = "<group>"; };
+		9CBC51F51E621A0B0040E4CC /* TargetsReorderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetsReorderTableViewCell.swift; sourceTree = "<group>"; };
 		9CCAA2411E5F311200AE10D0 /* Array+Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Misc.swift"; sourceTree = "<group>"; };
 		9CCAA2431E5F4AC700AE10D0 /* WhiteGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteGradientView.swift; sourceTree = "<group>"; };
 		9CCAA2481E5F4BD700AE10D0 /* WhiteGradientIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteGradientIndicatorView.swift; sourceTree = "<group>"; };
@@ -388,6 +392,7 @@
 			isa = PBXGroup;
 			children = (
 				9CBC51DF1E61B1810040E4CC /* Controller */,
+				9CBC51F21E62192C0040E4CC /* Reorder */,
 				9C5184B31E5605D600FBF02A /* TargetPickerTableViewCell.swift */,
 				9C5184B51E56061000FBF02A /* TargetPickerTableViewCellSelectedView.swift */,
 			);
@@ -591,6 +596,15 @@
 				9CBC51F01E61FB970040E4CC /* BrightnessPickerViewController.swift */,
 			);
 			name = Picker;
+			sourceTree = "<group>";
+		};
+		9CBC51F21E62192C0040E4CC /* Reorder */ = {
+			isa = PBXGroup;
+			children = (
+				9CBC51F31E6219670040E4CC /* TargetsReorderViewController.swift */,
+				9CBC51F51E621A0B0040E4CC /* TargetsReorderTableViewCell.swift */,
+			);
+			name = Reorder;
 			sourceTree = "<group>";
 		};
 		9CCAA2401E5F30EA00AE10D0 /* Extensions */ = {
@@ -993,6 +1007,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CA5D0901E5CE38200975C96 /* ColorPickerWhiteController.swift in Sources */,
+				9CBC51F41E6219670040E4CC /* TargetsReorderViewController.swift in Sources */,
 				9C5184B41E5605D600FBF02A /* TargetPickerTableViewCell.swift in Sources */,
 				9C0585281E545E7900CF3AFA /* HomeViewController.swift in Sources */,
 				9C5184B21E56050600FBF02A /* TargetsPickerViewController.swift in Sources */,
@@ -1003,6 +1018,7 @@
 				9CBC51EE1E61D4630040E4CC /* BrightnessTableViewCell.swift in Sources */,
 				9C51848E1E54BE9800FBF02A /* TutorialAnimatedTransitioning.swift in Sources */,
 				9C5184B01E56033900FBF02A /* StickyHeaderTableViewController.swift in Sources */,
+				9CBC51F61E621A0B0040E4CC /* TargetsReorderTableViewCell.swift in Sources */,
 				9CCAA2491E5F4BD700AE10D0 /* WhiteGradientIndicatorView.swift in Sources */,
 				9CCAA2441E5F4AC700AE10D0 /* WhiteGradientView.swift in Sources */,
 				9CA5D0881E5B87FD00975C96 /* ColorTableViewCell.swift in Sources */,

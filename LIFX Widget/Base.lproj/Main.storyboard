@@ -629,11 +629,81 @@ Simply tap a light to add - or remove - it.</string>
                             <outlet property="delegate" destination="em8-mT-qzQ" id="SjX-H5-hDQ"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Targets" id="gf1-oS-Rqj">
+                        <barButtonItem key="rightBarButtonItem" title="Reorder" id="UUQ-WU-vNT">
+                            <connections>
+                                <segue destination="Qwt-eZ-u8u" kind="show" id="fKc-8O-Hwa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FLU-lK-zXd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="553" y="-792"/>
+        </scene>
+        <!--Reorder-->
+        <scene sceneID="sHZ-vK-bky">
+            <objects>
+                <viewController title="Reorder" automaticallyAdjustsScrollViewInsets="NO" id="Qwt-eZ-u8u" customClass="TargetsReorderViewController" customModule="LIFX_Widget" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1Cx-KV-f0g"/>
+                        <viewControllerLayoutGuide type="bottom" id="xgQ-g7-qx9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IKd-tl-CUb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="61" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="D4K-Pk-npf">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="d5x-dQ-umM">
+                                    <rect key="frame" x="0.0" y="91" width="375" height="1"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.78431372549019607" green="0.77647058823529413" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" showsReorderControl="YES" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="TargetsReorderTableViewCell" textLabel="eGF-Hk-TUO" rowHeight="63" style="IBUITableViewCellStyleDefault" id="hvY-tv-rmi" customClass="TargetsReorderTableViewCell" customModule="LIFX_Widget" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="63"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hvY-tv-rmi" id="xCu-gM-DNH">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="62"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eGF-Hk-TUO">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="62"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Qwt-eZ-u8u" id="MZg-2r-Egz"/>
+                                    <outlet property="delegate" destination="Qwt-eZ-u8u" id="Hty-uf-CCB"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xgQ-g7-qx9" firstAttribute="top" secondItem="D4K-Pk-npf" secondAttribute="bottom" id="8hC-Xi-Usy"/>
+                            <constraint firstItem="D4K-Pk-npf" firstAttribute="top" secondItem="1Cx-KV-f0g" secondAttribute="bottom" id="Fj6-sG-fT4"/>
+                            <constraint firstAttribute="trailing" secondItem="D4K-Pk-npf" secondAttribute="trailing" id="bE4-Nd-X6u"/>
+                            <constraint firstItem="D4K-Pk-npf" firstAttribute="leading" secondItem="IKd-tl-CUb" secondAttribute="leading" id="d1d-2c-UuL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="D4K-Pk-npf" id="Pb1-eA-Mku"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J8v-TQ-5RD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1596" y="-792.05397301349331"/>
         </scene>
         <!--Colours-->
         <scene sceneID="jWi-4k-Nzf">
@@ -1130,7 +1200,7 @@ Press the '+' on the top right to add an intensity, swipe left a an intensity in
                         <view key="tableFooterView" contentMode="scaleToFill" id="Fdx-Q9-JeO">
                             <rect key="frame" x="0.0" y="265" width="375" height="1"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="0.78431372549019607" green="0.77647058823529413" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BrightnessTableViewCell" rowHeight="63" id="ga0-2H-K2r" customClass="BrightnessTableViewCell" customModule="LIFX_Widget" customModuleProvider="target">
