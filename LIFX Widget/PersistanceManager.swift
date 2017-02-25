@@ -30,6 +30,11 @@ final class PersistanceManager {
         set { SharedDefaults[.colors] = newValue }
     }
 
+    static var brightnesses: [Brightness] {
+        get { return SharedDefaults[.brightnesses] }
+        set { SharedDefaults[.brightnesses] = newValue }
+    }
+
 }
 
 // MARK: - Targets
@@ -77,6 +82,24 @@ extension PersistanceManager {
 
 }
 
+extension PersistanceManager {
+
+    class func setDefaultBrightnessesIfNeeded() {
+        guard brightnesses.isEmpty && !SharedDefaults[.hasSetBrightnesses] else {
+            return
+        }
+        // We don't want to force the user to have brightnesses, just set them once
+        SharedDefaults[.hasSetBrightnesses] = true
+
+        brightnesses = [
+            Brightness(value: 0.1),
+            Brightness(value: 0.5),
+            Brightness(value: 1)
+        ]
+    }
+
+}
+
 // MARK: - SwiftyUserDefaults extensions
 
 fileprivate extension UserDefaults {
@@ -91,11 +114,18 @@ fileprivate extension UserDefaults {
         set { archive(key, newValue) }
     }
 
+    subscript(key: DefaultsKey<[Brightness]>) -> [Brightness] {
+        get { return unarchive(key) ?? [] }
+        set { archive(key, newValue) }
+    }
+
 }
 
 fileprivate extension DefaultsKeys {
 
     static let targets = DefaultsKey<[Target]>("com.maxime-dechalendar.targets")
     static let colors = DefaultsKey<[Color]>("com.maxime-dechalendar.colors")
+    static let brightnesses = DefaultsKey<[Brightness]>("com.maxime-dechalendar.brightnesses")
+    static let hasSetBrightnesses = DefaultsKey<Bool>("com.maxime-dechalendar.hasSetBrightnesses")
 
 }
