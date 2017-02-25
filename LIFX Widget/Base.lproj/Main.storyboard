@@ -968,7 +968,7 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
         <!--Targets-->
         <scene sceneID="DvM-FM-lLv">
             <objects>
-                <tableViewController title="Targets" id="Q0e-De-B0c" customClass="TargetsPickerViewController" customModule="LIFX_Widget" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Targets" id="Q0e-De-B0c" customClass="TargetsPickerFeedbackViewController" customModule="LIFX_Widget" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsMultipleSelection="YES" rowHeight="63" sectionHeaderHeight="22" sectionFooterHeight="22" id="0zQ-wl-Mif">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -981,7 +981,7 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
                                     <rect key="frame" x="20" y="20" width="335" height="85"/>
                                     <string key="text">This screen will let you pick a light to get live feedback when selecting a new color or intensity.
 
-Simply tap a light to get back to the color picker and finely pick your color.</string>
+Simply tap a light to get back to the picker and update the light's color.</string>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
