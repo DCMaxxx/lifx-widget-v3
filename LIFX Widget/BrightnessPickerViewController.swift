@@ -73,7 +73,7 @@ extension BrightnessPickerViewController {
 extension BrightnessPickerViewController {
 
     fileprivate func updateFeedbackTarget(name: String, target: LIFXTargetable) {
-        let buttonTitle = "color_picker.button.title.picked_feedback_light"
+        let buttonTitle = "pickers.button.title.picked_feedback_light"
         liveFeedbackTargetButton.title = buttonTitle.localized(withVariables: ["name": name]).uppercased()
 
         feedbackTarget = target

@@ -64,8 +64,11 @@ extension ColorsListViewController {
                             commit editingStyle: UITableViewCellEditingStyle,
                             forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            removeColor(at: indexPath)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
+            if PersistanceManager.colors.count == 1 {
+                presentEmptyColorsAlert()
+            } else {
+                removeColor(at: indexPath)
+            }
         }
     }
 
@@ -84,6 +87,7 @@ extension ColorsListViewController {
             return
         }
         PersistanceManager.colors.remove(at: idx)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
     }
 
     fileprivate func edit(color: Color, with newColor: Color, at indexPath: IndexPath) {
@@ -102,6 +106,15 @@ extension ColorsListViewController {
         DispatchQueue.main.async {
             self.tableView.scrollToRow(at: lastIndexPath, at: .bottom, animated: true)
         }
+    }
+
+    fileprivate func presentEmptyColorsAlert() {
+        let alertController = UIAlertController(title: "color_picker.alert.no_targets.title".localized(),
+                                                message: "color_picker.alert.no_targets.body".localized(),
+                                                preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "color_picker.alert.no_targets.cancel".localized(),
+                                                style: .default, handler: nil))
+        present(alertController, animated: true, completion: nil)
     }
 
 }
