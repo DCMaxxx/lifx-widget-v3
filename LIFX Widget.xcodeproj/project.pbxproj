@@ -72,7 +72,8 @@
 		9CBC51E81E61CD390040E4CC /* Brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51E51E61CD390040E4CC /* Brightness.swift */; };
 		9CBC51EC1E61D3DC0040E4CC /* BrightnessesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51EB1E61D3DC0040E4CC /* BrightnessesListViewController.swift */; };
 		9CBC51EE1E61D4630040E4CC /* BrightnessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51ED1E61D4630040E4CC /* BrightnessTableViewCell.swift */; };
-		9CCAA2421E5F311200AE10D0 /* Array+Replace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA2411E5F311200AE10D0 /* Array+Replace.swift */; };
+		9CBC51F11E61FB970040E4CC /* BrightnessPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51F01E61FB970040E4CC /* BrightnessPickerViewController.swift */; };
+		9CCAA2421E5F311200AE10D0 /* Array+Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA2411E5F311200AE10D0 /* Array+Misc.swift */; };
 		9CCAA2441E5F4AC700AE10D0 /* WhiteGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA2431E5F4AC700AE10D0 /* WhiteGradientView.swift */; };
 		9CCAA2491E5F4BD700AE10D0 /* WhiteGradientIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA2481E5F4BD700AE10D0 /* WhiteGradientIndicatorView.swift */; };
 		9CCAA24B1E602C1E00AE10D0 /* Comparable+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA24A1E602C1E00AE10D0 /* Comparable+Range.swift */; };
@@ -202,7 +203,8 @@
 		9CBC51E51E61CD390040E4CC /* Brightness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brightness.swift; sourceTree = "<group>"; };
 		9CBC51EB1E61D3DC0040E4CC /* BrightnessesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrightnessesListViewController.swift; sourceTree = "<group>"; };
 		9CBC51ED1E61D4630040E4CC /* BrightnessTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrightnessTableViewCell.swift; sourceTree = "<group>"; };
-		9CCAA2411E5F311200AE10D0 /* Array+Replace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Replace.swift"; sourceTree = "<group>"; };
+		9CBC51F01E61FB970040E4CC /* BrightnessPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrightnessPickerViewController.swift; sourceTree = "<group>"; };
+		9CCAA2411E5F311200AE10D0 /* Array+Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Misc.swift"; sourceTree = "<group>"; };
 		9CCAA2431E5F4AC700AE10D0 /* WhiteGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteGradientView.swift; sourceTree = "<group>"; };
 		9CCAA2481E5F4BD700AE10D0 /* WhiteGradientIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteGradientIndicatorView.swift; sourceTree = "<group>"; };
 		9CCAA24A1E602C1E00AE10D0 /* Comparable+Range.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comparable+Range.swift"; sourceTree = "<group>"; };
@@ -569,6 +571,7 @@
 			isa = PBXGroup;
 			children = (
 				9CBC51EA1E61D3910040E4CC /* List */,
+				9CBC51EF1E61FB760040E4CC /* Picker */,
 			);
 			name = "Brightnesses picker";
 			sourceTree = "<group>";
@@ -582,13 +585,21 @@
 			name = List;
 			sourceTree = "<group>";
 		};
+		9CBC51EF1E61FB760040E4CC /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				9CBC51F01E61FB970040E4CC /* BrightnessPickerViewController.swift */,
+			);
+			name = Picker;
+			sourceTree = "<group>";
+		};
 		9CCAA2401E5F30EA00AE10D0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				9C7102761E548F1F0058E8C4 /* String+Localized.swift */,
 				9C5184B71E5612A900FBF02A /* UITableViewCell+ReuseIdentifier.swift */,
 				9CA5D0831E5B6EE500975C96 /* UIColor+LIFX.swift */,
-				9CCAA2411E5F311200AE10D0 /* Array+Replace.swift */,
+				9CCAA2411E5F311200AE10D0 /* Array+Misc.swift */,
 				9CCAA24A1E602C1E00AE10D0 /* Comparable+Range.swift */,
 			);
 			name = Extensions;
@@ -996,6 +1007,7 @@
 				9CCAA2441E5F4AC700AE10D0 /* WhiteGradientView.swift in Sources */,
 				9CA5D0881E5B87FD00975C96 /* ColorTableViewCell.swift in Sources */,
 				9CBC51EC1E61D3DC0040E4CC /* BrightnessesListViewController.swift in Sources */,
+				9CBC51F11E61FB970040E4CC /* BrightnessPickerViewController.swift in Sources */,
 				9C5184AA1E55EB5F00FBF02A /* PersistanceManager.swift in Sources */,
 				9CA5D07E1E58B76B00975C96 /* ColorsListViewController.swift in Sources */,
 				9C7102701E5489F60058E8C4 /* API.swift in Sources */,
@@ -1007,7 +1019,7 @@
 				9C5184B81E5612A900FBF02A /* UITableViewCell+ReuseIdentifier.swift in Sources */,
 				9CA5D0801E58B78400975C96 /* Color.swift in Sources */,
 				9C7102771E548F1F0058E8C4 /* String+Localized.swift in Sources */,
-				9CCAA2421E5F311200AE10D0 /* Array+Replace.swift in Sources */,
+				9CCAA2421E5F311200AE10D0 /* Array+Misc.swift in Sources */,
 				9C51849F1E55E28400FBF02A /* JSONable.swift in Sources */,
 				9C7D2D491E5651A4007D89E3 /* UIView+Animations.swift in Sources */,
 				9C5184891E54B92500FBF02A /* TutorialViewController.swift in Sources */,

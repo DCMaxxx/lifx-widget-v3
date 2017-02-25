@@ -1168,6 +1168,7 @@ Press the '+' on the top right to add an intensity, swipe left a an intensity in
                                 <connections>
                                     <outlet property="iconView" destination="Da9-jF-1h1" id="dUm-t7-NEJ"/>
                                     <outlet property="titleLabel" destination="1Mj-lI-Ek4" id="Fvk-kh-mGT"/>
+                                    <segue destination="U6Y-d1-Z1i" kind="show" id="VJG-RB-a8f"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1177,13 +1178,122 @@ Press the '+' on the top right to add an intensity, swipe left a an intensity in
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Intensities" id="bn8-6s-h3g">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="pSu-oe-iVg"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="pSu-oe-iVg">
+                            <connections>
+                                <segue destination="U6Y-d1-Z1i" kind="show" id="Epw-Vl-0Mi"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a2o-6x-joo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="944.79999999999995" y="824.43778110944538"/>
+        </scene>
+        <!--Intensity picker-->
+        <scene sceneID="F3a-dv-K8y">
+            <objects>
+                <viewController id="U6Y-d1-Z1i" customClass="BrightnessPickerViewController" customModule="LIFX_Widget" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aPK-WG-WMD"/>
+                        <viewControllerLayoutGuide type="bottom" id="DLa-SA-kEj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rQW-4k-51t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INTENSITY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edn-Wk-Fb0">
+                                <rect key="frame" x="151" y="94" width="73" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZUK-Wd-h5P">
+                                <rect key="frame" x="14" y="120" width="347" height="31"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="U6Y-d1-Z1i" eventType="valueChanged" id="2Wm-j4-dsO"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ek-Df-jGg">
+                                <rect key="frame" x="16" y="103" width="30" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cold" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCJ-pB-Aka">
+                                <rect key="frame" x="0.0" y="0.0" width="30" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Warm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wii-Za-J7H">
+                                <rect key="frame" x="0.0" y="0.0" width="38" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bright" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9M0-Nj-gON">
+                                <rect key="frame" x="320" y="103" width="39" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="icg-up-pA2" userLabel="Bottom toolbar">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="BJK-bs-iaa"/>
+                                    <barButtonItem title="PICK A LIVE FEEDBACK LIGHT" id="72a-J9-yUf">
+                                        <connections>
+                                            <segue destination="Q0e-De-B0c" kind="show" id="r02-EP-thB"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="oea-ha-AbJ"/>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MmZ-4R-mTR">
+                                <rect key="frame" x="174" y="151" width="28" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="icg-up-pA2" firstAttribute="leading" secondItem="rQW-4k-51t" secondAttribute="leading" id="1Fo-db-Nrz"/>
+                            <constraint firstItem="ZUK-Wd-h5P" firstAttribute="top" secondItem="edn-Wk-Fb0" secondAttribute="bottom" constant="9" id="6Bv-Gh-NzJ"/>
+                            <constraint firstAttribute="centerX" secondItem="edn-Wk-Fb0" secondAttribute="centerX" id="SEa-PC-6rF"/>
+                            <constraint firstItem="ZUK-Wd-h5P" firstAttribute="trailing" secondItem="rQW-4k-51t" secondAttribute="trailingMargin" id="T4M-wD-sWq"/>
+                            <constraint firstItem="MmZ-4R-mTR" firstAttribute="top" secondItem="ZUK-Wd-h5P" secondAttribute="bottom" constant="1" id="UQe-8d-cYj"/>
+                            <constraint firstItem="DLa-SA-kEj" firstAttribute="top" secondItem="icg-up-pA2" secondAttribute="bottom" id="UV8-u3-W6r"/>
+                            <constraint firstItem="9M0-Nj-gON" firstAttribute="trailing" secondItem="ZUK-Wd-h5P" secondAttribute="trailing" id="Uhu-yW-Emu"/>
+                            <constraint firstItem="ZUK-Wd-h5P" firstAttribute="leading" secondItem="rQW-4k-51t" secondAttribute="leadingMargin" id="Vgv-mP-UYS"/>
+                            <constraint firstItem="edn-Wk-Fb0" firstAttribute="top" secondItem="aPK-WG-WMD" secondAttribute="bottom" constant="30" id="Xnc-VD-rMY"/>
+                            <constraint firstAttribute="trailing" secondItem="icg-up-pA2" secondAttribute="trailing" id="a3W-TA-pqG"/>
+                            <constraint firstItem="ZUK-Wd-h5P" firstAttribute="leading" secondItem="3Ek-Df-jGg" secondAttribute="leading" id="c43-3q-xqa"/>
+                            <constraint firstItem="ZUK-Wd-h5P" firstAttribute="top" secondItem="9M0-Nj-gON" secondAttribute="bottom" id="cQi-to-KG9"/>
+                            <constraint firstItem="ZUK-Wd-h5P" firstAttribute="centerX" secondItem="MmZ-4R-mTR" secondAttribute="centerX" id="fm0-cZ-pUi"/>
+                            <constraint firstItem="ZUK-Wd-h5P" firstAttribute="top" secondItem="3Ek-Df-jGg" secondAttribute="bottom" id="rIC-cP-dn1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Intensity picker" id="ksE-wE-xRW">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="gSY-rG-mbA">
+                            <connections>
+                                <action selector="tappedDoneButton:" destination="U6Y-d1-Z1i" id="Efm-lx-eQw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="brightnessLabel" destination="MmZ-4R-mTR" id="IC6-Jg-Pgp"/>
+                        <outlet property="brightnessSlider" destination="ZUK-Wd-h5P" id="gPR-1i-kfC"/>
+                        <outlet property="liveFeedbackTargetButton" destination="72a-J9-yUf" id="yuL-WV-Eoh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iu5-d1-M9D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1689" y="824"/>
         </scene>
     </scenes>
     <resources>
@@ -1196,5 +1306,7 @@ Press the '+' on the top right to add an intensity, swipe left a an intensity in
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="SiO-Gx-EOO"/>
+        <segue reference="Epw-Vl-0Mi"/>
+        <segue reference="r02-EP-thB"/>
     </inferredMetricsTieBreakers>
 </document>
