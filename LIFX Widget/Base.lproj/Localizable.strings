@@ -28,6 +28,9 @@
 "token_picker.alert.invalid_token.confirm" = "I did copy it";
 "token_picker.loader.validate_token" = "Validating token...";
 
+"target_picker.title" = "Targets";
+"target_picker.label.header" = "This screen will let you pick wich lights or group should be displayed in the widget.\n\nSimply tap a light to add - or remove - it.";
+"target_picker.button.reorder" = "Reorder";
 "target_picker.cell.type.location" = "Location";
 "target_picker.cell.type.group" = "Group";
 "target_picker.cell.type.bulb" = "Bulb";
@@ -38,8 +41,42 @@
 "target_picker.alert.too_many_targets.body" = "Given your device, the widget's maximum size only allows you to display {count} targets.";
 "target_picker.alert.too_many_targets.cancel" = "Cancel";
 
+"target_reorder.title" = "Reorder";
+
+"color_picker.title" = "Colors";
+"color_picker.label.header" = "This screen will let you pick wich colors should be displayed in the widget.\n\nPress the '+' on the top right to add a color, swipe left a color in the list to remove it.";
 "color_picker.alert.no_targets.title" = "Error";
 "color_picker.alert.no_targets.body" = "You must keep at least one color !";
 "color_picker.alert.no_targets.cancel" = "Cancel";
 
+"color_picker.picker.title" = "Color picker";
+"color_picker.picker.button.header.colors" = "Colors";
+"color_picker.picker.button.header.whites" = "Whites";
+"color_picker.picker.label.brightness" = "Brightness";
+"Brightness" = "Brightness"; // from MSHSBView
+
+"brightness_picker.title" = "Brightnesses";
+"brightness_picker.label.header" = "This screen will let you pick wich intensities should be displayed in the widget.\n\nAn intensity will only change the brightness of the light, without modifying its colour.\n\nPress the '+' on the top right to add an intensity, swipe left a an intensity in the list to remove it.";
+
+"brightness_picker.picker.title" = "Brightness picker";
+"brightness_picker.picker.label.header" = "Brightness";
+"brightness_picker.picker.label.dark" = "Dark";
+"brightness_picker.picker.label.bright" = "Bright";
+
+"pickers.button.title.pick_feedback_light" = "Pick a live feedback light";
 "pickers.button.title.picked_feedback_light" = "Updating {name}";
+
+"feedback_picker.title" = "Targets";
+"feedback_picker.label.header" = "This screen will let you pick a light to get live feedback when selecting a new color or intensity.\n\nSimply tap a light to get back to the picker and update the light's color.";
+
+"tuto.lifx_cloud.title" = "LIFX Cloud";
+"tuto.label.thanks.title" = "Thanks for buying LIFX Widget";
+"tuto.label.thanks.body" = "In order to grant LIFX Widget access to your bulbs, we'll perform a few setup steps";
+"tuto.label.setup.title" = "LIFX Cloud setup";
+"tuto.label.setup.body.step_1" = "1. <b>Login</b> on LIFX Cloud";
+"tuto.label.setup.body.step_2" = "2. Tap \"<b>Generate new token</b>\"";
+"tuto.label.setup.body.step_3" = "3. Name it as you wish, then <b>copy it</b>.";
+"tuto.button.setup.title" = "Open the LIFX Cloud website";
+"tuto.label.finished.title" = "That's it !";
+"tuto.label.finished.body" = "You're now running the default setup.\n\nYou can customize which lights, colours, and intensites are displayed by pressing the corresponding icon on the home screen.";
+"tuto.button.finished.title" = "I'm done";

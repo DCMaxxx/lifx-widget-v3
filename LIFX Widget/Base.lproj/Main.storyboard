@@ -149,23 +149,22 @@
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FBm-Rx-b30" userLabel="Page 1 content" customClass="TutorialView" customModule="LIFX_Widget" customModuleProvider="target">
                                                         <rect key="frame" x="38" y="184" width="300" height="300"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THANKS FOR BUYING LIFX WIDGET !" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IxH-c4-ecq">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[tuto.label.thanks.title]" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IxH-c4-ecq" customClass="UppercasedLabel" customModule="LIFX_Widget" customModuleProvider="target">
                                                                 <rect key="frame" x="20" y="30" width="260" height="17"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="tuto.label.thanks.title"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="baj-rq-kjo">
-                                                                <rect key="frame" x="20" y="118" width="260" height="65"/>
-                                                                <attributedString key="attributedText">
-                                                                    <fragment content="In order to grant LIFX Widget access to your bulbs, we'll perform a few setup steps">
-                                                                        <attributes>
-                                                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="8"/>
-                                                                        </attributes>
-                                                                    </fragment>
-                                                                </attributedString>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="[tuto.label.thanks.body]" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="baj-rq-kjo" customClass="TutorialSpacedLabel" customModule="LIFX_Widget" customModuleProvider="target">
+                                                                <rect key="frame" x="20" y="141.5" width="260" height="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="tuto.label.thanks.body"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.92636108399999995" green="0.92633336779999997" blue="0.92634916310000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -195,87 +194,43 @@
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="97q-hs-9DT" userLabel="Page 2 content" customClass="TutorialView" customModule="LIFX_Widget" customModuleProvider="target">
                                                         <rect key="frame" x="38" y="184" width="300" height="300"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LIFX CLOUD SETUP" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQ6-3p-KoD">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[tuto.label.setup.title]" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQ6-3p-KoD" customClass="UppercasedLabel" customModule="LIFX_Widget" customModuleProvider="target">
                                                                 <rect key="frame" x="20" y="30" width="260" height="17"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="tuto.label.setup.title"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2CQ-AL-dS1">
-                                                                <rect key="frame" x="26" y="77" width="249" height="134"/>
+                                                                <rect key="frame" x="43.5" y="77" width="213" height="134"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTx-e0-AN3">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="229" height="44.5"/>
-                                                                        <attributedString key="attributedText">
-                                                                            <fragment content="1. ">
-                                                                                <attributes>
-                                                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                                                </attributes>
-                                                                            </fragment>
-                                                                            <fragment content="Login">
-                                                                                <attributes>
-                                                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                    <font key="NSFont" size="14" name="HelveticaNeue-Medium"/>
-                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                                                </attributes>
-                                                                            </fragment>
-                                                                            <fragment content=" on LIFX Cloud">
-                                                                                <attributes>
-                                                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                                                </attributes>
-                                                                            </fragment>
-                                                                        </attributedString>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="[tuto.label.setup.body.step_1]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTx-e0-AN3" customClass="TutorialHTMLLabel" customModule="LIFX_Widget" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="193" height="44.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="tuto.label.setup.body.step_1"/>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIa-5U-2Lq">
-                                                                        <rect key="frame" x="0.0" y="44.5" width="229" height="45"/>
-                                                                        <attributedString key="attributedText">
-                                                                            <fragment content="2. Tap &quot;">
-                                                                                <attributes>
-                                                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                                                </attributes>
-                                                                            </fragment>
-                                                                            <fragment content="Generate new token">
-                                                                                <attributes>
-                                                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                    <font key="NSFont" size="14" name="HelveticaNeue-Medium"/>
-                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                                                </attributes>
-                                                                            </fragment>
-                                                                            <fragment content="&quot;">
-                                                                                <attributes>
-                                                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                                                </attributes>
-                                                                            </fragment>
-                                                                        </attributedString>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="[tuto.label.setup.body.step_2]" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIa-5U-2Lq" customClass="TutorialHTMLLabel" customModule="LIFX_Widget" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="44.5" width="193" height="45"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="tuto.label.setup.body.step_2"/>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MLh-Sf-waf">
-                                                                        <rect key="frame" x="0.0" y="89.5" width="229" height="44.5"/>
-                                                                        <attributedString key="attributedText">
-                                                                            <fragment content="3. Name it as you wish, then ">
-                                                                                <attributes>
-                                                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                                                </attributes>
-                                                                            </fragment>
-                                                                            <fragment content="copy it.">
-                                                                                <attributes>
-                                                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                    <font key="NSFont" size="14" name="HelveticaNeue-Medium"/>
-                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                                                </attributes>
-                                                                            </fragment>
-                                                                        </attributedString>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="[tuto.label.setup.body.step_3]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MLh-Sf-waf" customClass="TutorialHTMLLabel" customModule="LIFX_Widget" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="89.5" width="193" height="44.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="tuto.label.setup.body.step_3"/>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                 </subviews>
                                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -294,12 +249,15 @@
                                                                     <constraint firstItem="FTx-e0-AN3" firstAttribute="top" secondItem="2CQ-AL-dS1" secondAttribute="top" id="xLq-Gg-Ip5"/>
                                                                 </constraints>
                                                             </view>
-                                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqP-sh-GPk">
-                                                                <rect key="frame" x="40" y="241" width="220" height="29"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqP-sh-GPk" customClass="UppercasedButton" customModule="LIFX_Widget" customModuleProvider="target">
+                                                                <rect key="frame" x="71.5" y="241" width="157" height="29"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                                                <state key="normal" title="OPEN THE LIFX CLOUD WEBSITE">
+                                                                <state key="normal" title="[tuto.button.setup.title]">
                                                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="tuto.button.setup.title"/>
+                                                                </userDefinedRuntimeAttributes>
                                                                 <connections>
                                                                     <segue destination="JhK-NG-Fmm" kind="presentation" id="nOj-Y8-Isn"/>
                                                                 </connections>
@@ -341,33 +299,32 @@
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T5a-zx-Jx6" userLabel="Page 3 content" customClass="TutorialView" customModule="LIFX_Widget" customModuleProvider="target">
                                                         <rect key="frame" x="38" y="184" width="300" height="300"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THAT'S IT !" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cc3-co-fSp">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[tuto.label.finished.title]" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cc3-co-fSp" customClass="UppercasedLabel" customModule="LIFX_Widget" customModuleProvider="target">
                                                                 <rect key="frame" x="20" y="30" width="260" height="17"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="tuto.label.finished.title"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvY-Cy-nd2">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="[tuto.label.finished.body]" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvY-Cy-nd2" customClass="TutorialSpacedLabel" customModule="LIFX_Widget" customModuleProvider="target">
                                                                 <rect key="frame" x="20" y="67" width="260" height="164"/>
-                                                                <attributedString key="attributedText">
-                                                                    <fragment>
-                                                                        <string key="content">You're now running the default setup.
-
-You can customize which lights, colours, and intensites are displayed by pressing the corresponding icon on the home screen.</string>
-                                                                        <attributes>
-                                                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="8"/>
-                                                                        </attributes>
-                                                                    </fragment>
-                                                                </attributedString>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="tuto.label.finished.body"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zvf-NH-il6">
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zvf-NH-il6" customClass="UppercasedButton" customModule="LIFX_Widget" customModuleProvider="target">
                                                                 <rect key="frame" x="20" y="251" width="260" height="29"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                                                <state key="normal" title="I'M DONE">
+                                                                <state key="normal" title="[tuto.button.finished.title]">
                                                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="tuto.button.finished.title"/>
+                                                                </userDefinedRuntimeAttributes>
                                                                 <connections>
                                                                     <action selector="pressedDoneButton:" destination="ed1-tC-yW2" eventType="touchUpInside" id="296-fs-0ql"/>
                                                                 </connections>
@@ -492,12 +449,15 @@ You can customize which lights, colours, and intensites are displayed by pressin
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="idp-10-C02">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
-                                    <navigationItem title="LIFX Cloud" id="s8J-Hp-IE2">
+                                    <navigationItem title="[tuto.lifx_cloud.title]" id="s8J-Hp-IE2">
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="6np-rB-KXO">
                                             <connections>
                                                 <action selector="pressedConfirmButton:" destination="JhK-NG-Fmm" id="z9N-m7-g5A"/>
                                             </connections>
                                         </barButtonItem>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedTitle" value="tuto.lifx_cloud.title"/>
+                                        </userDefinedRuntimeAttributes>
                                     </navigationItem>
                                 </items>
                                 <connections>
@@ -525,10 +485,10 @@ You can customize which lights, colours, and intensites are displayed by pressin
             </objects>
             <point key="canvasLocation" x="-479" y="1825"/>
         </scene>
-        <!--Targets-->
+        <!--[target_picker.title]-->
         <scene sceneID="77T-fW-Ibq">
             <objects>
-                <tableViewController title="Targets" id="em8-mT-qzQ" customClass="TargetsPickerPersistanceController" customModule="LIFX_Widget" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="[target_picker.title]" id="em8-mT-qzQ" customClass="TargetsPickerPersistanceController" customModule="LIFX_Widget" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsMultipleSelection="YES" rowHeight="63" sectionHeaderHeight="22" sectionFooterHeight="22" id="8C2-gV-bBK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -537,14 +497,14 @@ You can customize which lights, colours, and intensites are displayed by pressin
                             <rect key="frame" x="0.0" y="0.0" width="375" height="125"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUf-GF-N6e">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[target_picker.label.header]" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUf-GF-N6e">
                                     <rect key="frame" x="20" y="20" width="335" height="85"/>
-                                    <string key="text">This screen will let you pick wich lights or group should be displayed in the widget.
-
-Simply tap a light to add - or remove - it.</string>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="target_picker.label.header"/>
+                                    </userDefinedRuntimeAttributes>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aoY-5j-gqi">
                                     <rect key="frame" x="0.0" y="124" width="375" height="1"/>
@@ -629,23 +589,32 @@ Simply tap a light to add - or remove - it.</string>
                             <outlet property="delegate" destination="em8-mT-qzQ" id="SjX-H5-hDQ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Targets" id="gf1-oS-Rqj">
-                        <barButtonItem key="rightBarButtonItem" title="Reorder" id="UUQ-WU-vNT">
+                    <navigationItem key="navigationItem" title="[target_picker.title]" id="gf1-oS-Rqj">
+                        <barButtonItem key="rightBarButtonItem" title="[...reorder]" id="UUQ-WU-vNT">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="target_picker.button.reorder"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <segue destination="Qwt-eZ-u8u" kind="show" id="fKc-8O-Hwa"/>
                             </connections>
                         </barButtonItem>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizedTitle" value="target_picker.title"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="localizedTitle" value="target_picker.title"/>
+                    </userDefinedRuntimeAttributes>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FLU-lK-zXd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="553" y="-792"/>
         </scene>
-        <!--Reorder-->
+        <!--[target_reorder.title]-->
         <scene sceneID="sHZ-vK-bky">
             <objects>
-                <viewController title="Reorder" automaticallyAdjustsScrollViewInsets="NO" id="Qwt-eZ-u8u" customClass="TargetsReorderViewController" customModule="LIFX_Widget" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="[target_reorder.title]" automaticallyAdjustsScrollViewInsets="NO" id="Qwt-eZ-u8u" customClass="TargetsReorderViewController" customModule="LIFX_Widget" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1Cx-KV-f0g"/>
                         <viewControllerLayoutGuide type="bottom" id="xgQ-g7-qx9"/>
@@ -697,6 +666,9 @@ Simply tap a light to add - or remove - it.</string>
                             <constraint firstItem="D4K-Pk-npf" firstAttribute="leading" secondItem="IKd-tl-CUb" secondAttribute="leading" id="d1d-2c-UuL"/>
                         </constraints>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="localizedTitle" value="target_reorder.title"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="tableView" destination="D4K-Pk-npf" id="Pb1-eA-Mku"/>
                     </connections>
@@ -719,14 +691,14 @@ Simply tap a light to add - or remove - it.</string>
                             <rect key="frame" x="0.0" y="0.0" width="375" height="125"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycx-GQ-2SW">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[color_picker.label.header]" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycx-GQ-2SW">
                                     <rect key="frame" x="20" y="20" width="335" height="85"/>
-                                    <string key="text">This screen will let you pick wich colors should be displayed in the widget.
-
-Press the '+' on the top right to add a color, swipe left a color in the list to remove it.</string>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="color_picker.label.header"/>
+                                    </userDefinedRuntimeAttributes>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jFU-WL-1oM">
                                     <rect key="frame" x="0.0" y="124" width="375" height="1"/>
@@ -772,12 +744,15 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Colours" id="fAd-5O-Ens">
+                    <navigationItem key="navigationItem" title="[color_picker.title]" id="fAd-5O-Ens">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="dIH-8k-Ir1">
                             <connections>
                                 <segue destination="GFs-vs-7i7" kind="show" identifier="newColorSegue" id="SiO-Gx-EOO"/>
                             </connections>
                         </barButtonItem>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizedTitle" value="color_picker.title"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>
@@ -785,10 +760,10 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
             </objects>
             <point key="canvasLocation" x="554" y="139"/>
         </scene>
-        <!--Colour picker-->
+        <!--[color_picker.picker.title]-->
         <scene sceneID="pqt-3D-Zqr">
             <objects>
-                <viewController title="Colour picker" automaticallyAdjustsScrollViewInsets="NO" id="GFs-vs-7i7" customClass="ColorPickerViewController" customModule="LIFX_Widget" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="[color_picker.picker.title]" automaticallyAdjustsScrollViewInsets="NO" id="GFs-vs-7i7" customClass="ColorPickerViewController" customModule="LIFX_Widget" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="V7p-3D-SdY"/>
                         <viewControllerLayoutGuide type="bottom" id="aaE-wM-ZPL"/>
@@ -801,13 +776,19 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
                                 <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="yVF-TO-7Df"/>
-                                    <barButtonItem title="COLORS" id="CKj-JF-9go">
+                                    <barButtonItem title="[...colors]" id="CKj-JF-9go" customClass="UppercasedBarButtonItem" customModule="LIFX_Widget" customModuleProvider="target">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="color_picker.picker.button.header.colors"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="tappedHeaderButton:" destination="GFs-vs-7i7" id="gr5-N8-lFb"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="G2A-WO-jbf"/>
-                                    <barButtonItem title="WHITES" id="2M6-E7-3uT">
+                                    <barButtonItem title="[...whites]" id="2M6-E7-3uT" customClass="UppercasedBarButtonItem" customModule="LIFX_Widget" customModuleProvider="target">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="color_picker.picker.button.header.whites"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="tappedHeaderButton:" destination="GFs-vs-7i7" id="n9O-6O-DbI"/>
                                         </connections>
@@ -884,7 +865,10 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="roC-9a-FTr"/>
-                                    <barButtonItem title="PICK A LIVE FEEDBACK LIGHT" id="Q0w-qe-pKZ">
+                                    <barButtonItem title="[pickers.button.title.pick_feedback_light]" id="Q0w-qe-pKZ" customClass="UppercasedBarButtonItem" customModule="LIFX_Widget" customModuleProvider="target">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="pickers.button.title.pick_feedback_light"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="Q0e-De-B0c" kind="show" id="C3L-sa-QNv"/>
                                         </connections>
@@ -907,13 +891,19 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
                             <constraint firstItem="HPa-zw-l1U" firstAttribute="leading" secondItem="tbL-NX-stx" secondAttribute="leading" id="nW0-xp-zBt"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Colour picker" id="Xmg-Fa-63W">
+                    <navigationItem key="navigationItem" title="[color_picker.picker.title]" id="Xmg-Fa-63W">
                         <barButtonItem key="rightBarButtonItem" title="Done" id="aVd-CO-fDq">
                             <connections>
                                 <action selector="tappedDoneButton:" destination="GFs-vs-7i7" id="aqM-Xh-elh"/>
                             </connections>
                         </barButtonItem>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizedTitle" value="color_picker.picker.title"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="localizedTitle" value="color_picker.picker.title"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="colorPickerView" destination="Mh0-Vb-NyL" id="qlt-mD-FCw"/>
                         <outlet property="contentScrollView" destination="B8G-lA-4XS" id="8Wc-eG-aIr"/>
@@ -1044,10 +1034,10 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
             </objects>
             <point key="canvasLocation" x="2273" y="207"/>
         </scene>
-        <!--Targets-->
+        <!--[feedback_picker.title]-->
         <scene sceneID="DvM-FM-lLv">
             <objects>
-                <tableViewController title="Targets" id="Q0e-De-B0c" customClass="TargetsPickerFeedbackViewController" customModule="LIFX_Widget" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="[feedback_picker.title]" id="Q0e-De-B0c" customClass="TargetsPickerFeedbackViewController" customModule="LIFX_Widget" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsMultipleSelection="YES" rowHeight="63" sectionHeaderHeight="22" sectionFooterHeight="22" id="0zQ-wl-Mif">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1056,14 +1046,14 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
                             <rect key="frame" x="0.0" y="0.0" width="375" height="125"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQl-5I-I3w">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[feedback_picker.label.header]" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQl-5I-I3w">
                                     <rect key="frame" x="20" y="20" width="335" height="85"/>
-                                    <string key="text">This screen will let you pick a light to get live feedback when selecting a new color or intensity.
-
-Simply tap a light to get back to the picker and update the light's color.</string>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="feedback_picker.label.header"/>
+                                    </userDefinedRuntimeAttributes>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cL5-IH-YIW">
                                     <rect key="frame" x="0.0" y="124" width="375" height="1"/>
@@ -1149,15 +1139,18 @@ Simply tap a light to get back to the picker and update the light's color.</stri
                         </connections>
                     </tableView>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="localizedTitle" value="feedback_picker.title"/>
+                    </userDefinedRuntimeAttributes>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EJ7-WZ-fXm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2556" y="1036"/>
         </scene>
-        <!--Intensities-->
+        <!--[brightness_picker.title]-->
         <scene sceneID="zI4-cr-24h">
             <objects>
-                <tableViewController title="Intensities" id="ywm-Ug-iQp" customClass="BrightnessesListViewController" customModule="LIFX_Widget" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="[brightness_picker.title]" id="ywm-Ug-iQp" customClass="BrightnessesListViewController" customModule="LIFX_Widget" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="63" sectionHeaderHeight="22" sectionFooterHeight="22" id="ygn-cL-H7G">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1167,16 +1160,14 @@ Simply tap a light to get back to the picker and update the light's color.</stri
                             <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUo-P8-xV2">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[brightness_picker.label.header]" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUo-P8-xV2">
                                     <rect key="frame" x="20" y="20" width="335" height="140"/>
-                                    <string key="text">This screen will let you pick wich intensities should be displayed in the widget.
-
-An intensity will only change the brightness of the light, without modifying its colour.
-
-Press the '+' on the top right to add an intensity, swipe left a an intensity in the list to remove it.</string>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="brightness_picker.label.header"/>
+                                    </userDefinedRuntimeAttributes>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H91-l2-Jn3">
                                     <rect key="frame" x="0.0" y="179" width="375" height="1"/>
@@ -1255,15 +1246,18 @@ Press the '+' on the top right to add an intensity, swipe left a an intensity in
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="localizedTitle" value="brightness_picker.title"/>
+                    </userDefinedRuntimeAttributes>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a2o-6x-joo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="553" y="1036"/>
         </scene>
-        <!--Intensity picker-->
+        <!--brightness_picker.picker.title-->
         <scene sceneID="F3a-dv-K8y">
             <objects>
-                <viewController id="U6Y-d1-Z1i" customClass="BrightnessPickerViewController" customModule="LIFX_Widget" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="brightness_picker.picker.title" id="U6Y-d1-Z1i" customClass="BrightnessPickerViewController" customModule="LIFX_Widget" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aPK-WG-WMD"/>
                         <viewControllerLayoutGuide type="bottom" id="DLa-SA-kEj"/>
@@ -1272,11 +1266,14 @@ Press the '+' on the top right to add an intensity, swipe left a an intensity in
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INTENSITY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edn-Wk-Fb0">
-                                <rect key="frame" x="151" y="94" width="73" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[brightness_picker.picker.label.header]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edn-Wk-Fb0">
+                                <rect key="frame" x="59" y="94" width="258" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="brightness_picker.picker.label.header"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZUK-Wd-h5P">
                                 <rect key="frame" x="14" y="120" width="347" height="31"/>
@@ -1284,11 +1281,14 @@ Press the '+' on the top right to add an intensity, swipe left a an intensity in
                                     <action selector="sliderValueChanged:" destination="U6Y-d1-Z1i" eventType="valueChanged" id="2Wm-j4-dsO"/>
                                 </connections>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ek-Df-jGg">
-                                <rect key="frame" x="16" y="103" width="30" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[...dark]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ek-Df-jGg">
+                                <rect key="frame" x="16" y="103" width="50" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                 <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="brightness_picker.picker.label.dark"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cold" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCJ-pB-Aka">
                                 <rect key="frame" x="0.0" y="0.0" width="30" height="17"/>
@@ -1304,17 +1304,23 @@ Press the '+' on the top right to add an intensity, swipe left a an intensity in
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bright" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9M0-Nj-gON">
-                                <rect key="frame" x="320" y="103" width="39" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="...bright" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9M0-Nj-gON">
+                                <rect key="frame" x="309" y="103" width="50" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                 <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="brightness_picker.picker.label.bright"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <toolbar opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="icg-up-pA2" userLabel="Bottom toolbar">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="BJK-bs-iaa"/>
-                                    <barButtonItem title="PICK A LIVE FEEDBACK LIGHT" id="72a-J9-yUf">
+                                    <barButtonItem title="[pickers.button.title.pick_feedback_light]" id="72a-J9-yUf" customClass="UppercasedBarButtonItem" customModule="LIFX_Widget" customModuleProvider="target">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="pickers.button.title.pick_feedback_light"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="Q0e-De-B0c" kind="show" id="r02-EP-thB"/>
                                         </connections>
@@ -1348,13 +1354,19 @@ Press the '+' on the top right to add an intensity, swipe left a an intensity in
                             <constraint firstItem="ZUK-Wd-h5P" firstAttribute="top" secondItem="3Ek-Df-jGg" secondAttribute="bottom" id="rIC-cP-dn1"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Intensity picker" id="ksE-wE-xRW">
+                    <navigationItem key="navigationItem" title="[brightness_picker.picker.title]" id="ksE-wE-xRW">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="gSY-rG-mbA">
                             <connections>
                                 <action selector="tappedDoneButton:" destination="U6Y-d1-Z1i" id="Efm-lx-eQw"/>
                             </connections>
                         </barButtonItem>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizedTitle" value="brightness_picker.picker.title"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="localizedTitle" value="brightness_picker.picker.title"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="brightnessLabel" destination="MmZ-4R-mTR" id="IC6-Jg-Pgp"/>
                         <outlet property="brightnessSlider" destination="ZUK-Wd-h5P" id="gPR-1i-kfC"/>
