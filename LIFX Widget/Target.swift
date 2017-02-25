@@ -83,8 +83,19 @@ final class Target: NSObject, Model {
     }
 
     // MARK: Equatable
+    override func isEqual(_ object: Any?) -> Bool {
+        guard let other = object as? Target else {
+            return false
+        }
+        return self.equals(other: other)
+    }
+
     static func == (lhs: Target, rhs: Target) -> Bool {
-        return lhs.identifier == rhs.identifier
+        return lhs.equals(other: rhs)
+    }
+
+    private func equals(other: Target) -> Bool {
+        return self.identifier == other.identifier
     }
 
     func targets(model: LIFXModel) -> Bool {

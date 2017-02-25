@@ -28,6 +28,7 @@ class HomeViewController: UIViewController {
         if !presentTutorialViewControllerIfNeeded() {
             self.fetchLightsIfNeeded()
         }
+        PersistanceManager.setDefaultColorsIfNeeded()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
