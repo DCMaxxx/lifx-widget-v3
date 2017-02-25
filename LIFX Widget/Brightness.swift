@@ -10,7 +10,7 @@ import Foundation
 import LIFXAPIWrapper
 import SwiftyJSON
 
-final class Brightness: NSObject, Model {
+final class Brightness: NSObject, Model, Comparable {
 
     let value: Float
 
@@ -23,6 +23,10 @@ final class Brightness: NSObject, Model {
         default:
             return #imageLiteral(resourceName: "brightness_high")
         }
+    }
+
+    override var description: String {
+        return "\(Int(value * 100)) %"
     }
 
     // MARK: - Init
@@ -79,6 +83,28 @@ final class Brightness: NSObject, Model {
 
     private func equals(other: Brightness) -> Bool {
         return self.value == other.value
+    }
+
+    // MARK: Comparable
+    static func < (lhs: Brightness, rhs: Brightness) -> Bool {
+        return lhs.value < rhs.value
+    }
+
+    static func <= (lhs: Brightness, rhs: Brightness) -> Bool {
+        return lhs.value <= rhs.value
+    }
+
+    static func >= (lhs: Brightness, rhs: Brightness) -> Bool {
+        return lhs.value >= rhs.value
+    }
+
+    static func > (lhs: Brightness, rhs: Brightness) -> Bool {
+        return lhs.value > rhs.value
+    }
+
+    // MARK: - Exchanges with LIFX API
+    var updateOperation: LIFXTargetOperationUpdate {
+        return LIFXTargetOperationUpdate(brightness: CGFloat(value))
     }
 
 }
