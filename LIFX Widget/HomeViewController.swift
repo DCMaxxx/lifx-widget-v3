@@ -27,6 +27,7 @@ class HomeViewController: UIViewController {
             self.fetchLightsIfNeeded()
         }
         PersistanceManager.setDefaultColorsIfNeeded()
+        PersistanceManager.setDefaultBrightnessesIfNeeded()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
