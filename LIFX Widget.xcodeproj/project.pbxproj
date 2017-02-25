@@ -65,6 +65,7 @@
 		9CA5D08C1E5CE29400975C96 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D08B1E5CE29400975C96 /* ColorPickerViewController.swift */; };
 		9CA5D08E1E5CE37500975C96 /* ColorPickerColorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D08D1E5CE37500975C96 /* ColorPickerColorController.swift */; };
 		9CA5D0901E5CE38200975C96 /* ColorPickerWhiteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D08F1E5CE38200975C96 /* ColorPickerWhiteController.swift */; };
+		9CBC51E11E61B1D00040E4CC /* TargetsPickerPersistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51E01E61B1D00040E4CC /* TargetsPickerPersistanceViewController.swift */; };
 		9CCAA2421E5F311200AE10D0 /* Array+Replace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA2411E5F311200AE10D0 /* Array+Replace.swift */; };
 		9CCAA2441E5F4AC700AE10D0 /* WhiteGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA2431E5F4AC700AE10D0 /* WhiteGradientView.swift */; };
 		9CCAA2491E5F4BD700AE10D0 /* WhiteGradientIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA2481E5F4BD700AE10D0 /* WhiteGradientIndicatorView.swift */; };
@@ -190,6 +191,7 @@
 		9CA5D08B1E5CE29400975C96 /* ColorPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
 		9CA5D08D1E5CE37500975C96 /* ColorPickerColorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerColorController.swift; sourceTree = "<group>"; };
 		9CA5D08F1E5CE38200975C96 /* ColorPickerWhiteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerWhiteController.swift; sourceTree = "<group>"; };
+		9CBC51E01E61B1D00040E4CC /* TargetsPickerPersistanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetsPickerPersistanceViewController.swift; sourceTree = "<group>"; };
 		9CCAA2411E5F311200AE10D0 /* Array+Replace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Replace.swift"; sourceTree = "<group>"; };
 		9CCAA2431E5F4AC700AE10D0 /* WhiteGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteGradientView.swift; sourceTree = "<group>"; };
 		9CCAA2481E5F4BD700AE10D0 /* WhiteGradientIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteGradientIndicatorView.swift; sourceTree = "<group>"; };
@@ -372,7 +374,7 @@
 		9C5184AD1E56031D00FBF02A /* Targets picker */ = {
 			isa = PBXGroup;
 			children = (
-				9C5184B11E56050600FBF02A /* TargetsPickerViewController.swift */,
+				9CBC51DF1E61B1810040E4CC /* Controller */,
 				9C5184B31E5605D600FBF02A /* TargetPickerTableViewCell.swift */,
 				9C5184B51E56061000FBF02A /* TargetPickerTableViewCellSelectedView.swift */,
 			);
@@ -539,6 +541,15 @@
 				9CCAA2461E5F4B8C00AE10D0 /* Whites */,
 			);
 			name = Picker;
+			sourceTree = "<group>";
+		};
+		9CBC51DF1E61B1810040E4CC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9C5184B11E56050600FBF02A /* TargetsPickerViewController.swift */,
+				9CBC51E01E61B1D00040E4CC /* TargetsPickerPersistanceViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		9CCAA2401E5F30EA00AE10D0 /* Extensions */ = {
@@ -968,6 +979,7 @@
 				9C7D2D491E5651A4007D89E3 /* UIView+Animations.swift in Sources */,
 				9C5184891E54B92500FBF02A /* TutorialViewController.swift in Sources */,
 				9C5184B61E56061000FBF02A /* TargetPickerTableViewCellSelectedView.swift in Sources */,
+				9CBC51E11E61B1D00040E4CC /* TargetsPickerPersistanceViewController.swift in Sources */,
 				9C0585261E545E7900CF3AFA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

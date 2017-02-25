@@ -467,7 +467,7 @@ You can customize which lights, colours, and intensites are displayed by pressin
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="33" y="275"/>
+            <point key="canvasLocation" x="137" y="826"/>
         </scene>
         <!--Token Picker View Controller-->
         <scene sceneID="1dB-ga-wEh">
@@ -519,12 +519,12 @@ You can customize which lights, colours, and intensites are displayed by pressin
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q70-HD-4G6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="33" y="986"/>
+            <point key="canvasLocation" x="137" y="1515"/>
         </scene>
         <!--Targets-->
         <scene sceneID="77T-fW-Ibq">
             <objects>
-                <tableViewController title="Targets" id="em8-mT-qzQ" customClass="TargetsPickerViewController" customModule="LIFX_Widget" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Targets" id="em8-mT-qzQ" customClass="TargetsPickerPersistanceController" customModule="LIFX_Widget" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsMultipleSelection="YES" rowHeight="63" sectionHeaderHeight="22" sectionFooterHeight="22" id="8C2-gV-bBK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -535,7 +535,7 @@ You can customize which lights, colours, and intensites are displayed by pressin
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUf-GF-N6e">
                                     <rect key="frame" x="20" y="20" width="335" height="85"/>
-                                    <string key="text">This screen will let you pick wich targets should be displayed in the widget.
+                                    <string key="text">This screen will let you pick wich lights or group should be displayed in the widget.
 
 Simply tap a light to add - or remove - it.</string>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -704,7 +704,7 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G1Y-ur-T5S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="945" y="79"/>
+            <point key="canvasLocation" x="945" y="139"/>
         </scene>
         <!--Colour picker-->
         <scene sceneID="pqt-3D-Zqr">
@@ -805,7 +805,11 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="roC-9a-FTr"/>
-                                    <barButtonItem title="PICK A LIVE FEEDBACK LIGHT" id="Q0w-qe-pKZ"/>
+                                    <barButtonItem title="PICK A LIVE FEEDBACK LIGHT" id="Q0w-qe-pKZ">
+                                        <connections>
+                                            <segue destination="Q0e-De-B0c" kind="show" id="C3L-sa-QNv"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="1Hd-th-jz2"/>
                                 </items>
                             </toolbar>
@@ -841,7 +845,7 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MdV-jC-j7l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1671" y="79"/>
+            <point key="canvasLocation" x="1689" y="139"/>
         </scene>
         <!--Color Picker Color Controller-->
         <scene sceneID="mBG-Iz-w9p">
@@ -960,6 +964,116 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2472.8000000000002" y="371.96401799100454"/>
+        </scene>
+        <!--Targets-->
+        <scene sceneID="DvM-FM-lLv">
+            <objects>
+                <tableViewController title="Targets" id="Q0e-De-B0c" customClass="TargetsPickerViewController" customModule="LIFX_Widget" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsMultipleSelection="YES" rowHeight="63" sectionHeaderHeight="22" sectionFooterHeight="22" id="0zQ-wl-Mif">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="hpd-xH-giy">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="125"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQl-5I-I3w">
+                                    <rect key="frame" x="20" y="20" width="335" height="85"/>
+                                    <string key="text">This screen will let you pick a light to get live feedback when selecting a new color or intensity.
+
+Simply tap a light to get back to the color picker and finely pick your color.</string>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cL5-IH-YIW">
+                                    <rect key="frame" x="0.0" y="124" width="375" height="1"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="v4g-8f-59t"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="cL5-IH-YIW" secondAttribute="bottom" id="NBk-Ow-rvP"/>
+                                <constraint firstAttribute="trailing" secondItem="cL5-IH-YIW" secondAttribute="trailing" id="SMY-Xu-3nk"/>
+                                <constraint firstAttribute="bottom" secondItem="BQl-5I-I3w" secondAttribute="bottom" constant="20" id="W9r-Tn-okA"/>
+                                <constraint firstAttribute="trailing" secondItem="BQl-5I-I3w" secondAttribute="trailing" constant="20" id="Yts-Rw-tvC"/>
+                                <constraint firstItem="cL5-IH-YIW" firstAttribute="leading" secondItem="hpd-xH-giy" secondAttribute="leading" id="jcB-9L-eGi"/>
+                                <constraint firstItem="BQl-5I-I3w" firstAttribute="top" secondItem="hpd-xH-giy" secondAttribute="top" constant="20" id="oZS-Oy-pcB"/>
+                                <constraint firstItem="BQl-5I-I3w" firstAttribute="leading" secondItem="hpd-xH-giy" secondAttribute="leading" constant="20" id="qx7-6q-wp3"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="20" reuseIdentifier="TargetPickerTableViewCell" rowHeight="63" id="RrN-Sf-dBk" customClass="TargetPickerTableViewCell" customModule="LIFX_Widget" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="147" width="375" height="63"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RrN-Sf-dBk" id="3ED-po-1Xj">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="16f-kU-APW" customClass="TargetPickerTableViewCellSelectedView" customModule="LIFX_Widget" customModuleProvider="target">
+                                            <rect key="frame" x="324" y="16" width="31" height="31"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="16f-kU-APW" secondAttribute="height" id="2Md-bf-yM8"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yL8-gW-ikP">
+                                            <rect key="frame" x="20" y="12" width="284" height="39"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUl-jR-sKC">
+                                                    <rect key="frame" x="0.0" y="0.0" width="284" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcK-24-68D">
+                                                    <rect key="frame" x="0.0" y="23" width="284" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="zcK-24-68D" firstAttribute="top" secondItem="CUl-jR-sKC" secondAttribute="bottom" constant="2" id="Ac9-0h-hcT"/>
+                                                <constraint firstAttribute="bottom" secondItem="zcK-24-68D" secondAttribute="bottom" id="NCg-Dl-vL6"/>
+                                                <constraint firstItem="CUl-jR-sKC" firstAttribute="top" secondItem="yL8-gW-ikP" secondAttribute="top" id="NLl-GN-1c0"/>
+                                                <constraint firstAttribute="trailing" secondItem="CUl-jR-sKC" secondAttribute="trailing" id="RLk-hR-fvH"/>
+                                                <constraint firstAttribute="trailing" secondItem="zcK-24-68D" secondAttribute="trailing" id="YUX-gl-dJx"/>
+                                                <constraint firstItem="zcK-24-68D" firstAttribute="leading" secondItem="yL8-gW-ikP" secondAttribute="leading" id="c8y-hl-weK"/>
+                                                <constraint firstItem="CUl-jR-sKC" firstAttribute="leading" secondItem="yL8-gW-ikP" secondAttribute="leading" id="v1I-wF-Xab"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="centerY" secondItem="yL8-gW-ikP" secondAttribute="centerY" id="0aM-vH-XF1"/>
+                                        <constraint firstAttribute="bottom" secondItem="16f-kU-APW" secondAttribute="bottom" constant="16" id="88M-W9-UzZ"/>
+                                        <constraint firstItem="yL8-gW-ikP" firstAttribute="leading" secondItem="3ED-po-1Xj" secondAttribute="leading" constant="20" id="Cmq-u7-ghc"/>
+                                        <constraint firstItem="16f-kU-APW" firstAttribute="top" secondItem="3ED-po-1Xj" secondAttribute="top" constant="16" id="Ngl-26-mZH"/>
+                                        <constraint firstItem="16f-kU-APW" firstAttribute="leading" secondItem="yL8-gW-ikP" secondAttribute="trailing" constant="20" id="hXh-FW-eKS"/>
+                                        <constraint firstItem="16f-kU-APW" firstAttribute="trailing" secondItem="3ED-po-1Xj" secondAttribute="trailing" constant="-20" id="jtc-FL-vvs"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="CUl-jR-sKC" id="0iT-hO-Ptd"/>
+                                    <outlet property="selectedView" destination="16f-kU-APW" id="YT4-3k-q9V"/>
+                                    <outlet property="typeLabel" destination="zcK-24-68D" id="Wxh-CN-7Ml"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Q0e-De-B0c" id="MW7-qP-a9H"/>
+                            <outlet property="delegate" destination="Q0e-De-B0c" id="EDy-AW-6jj"/>
+                        </connections>
+                    </tableView>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EJ7-WZ-fXm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1689" y="-562"/>
         </scene>
     </scenes>
     <resources>
