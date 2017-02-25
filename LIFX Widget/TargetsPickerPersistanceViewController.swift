@@ -24,9 +24,9 @@ final class TargetsPickerPersistanceController: TargetsPickerViewController {
         orderedLIFXModels.enumerated().flatMap { idx, model in
             targets.contains(where: { $0.targets(model: model) }) ? idx : nil
         }.map {
-                IndexPath(row: $0, section: 0)
+            IndexPath(row: $0, section: 0)
         }.forEach {
-                tableView.selectRow(at: $0, animated: true, scrollPosition: .none)
+            tableView.selectRow(at: $0, animated: true, scrollPosition: .none)
         }
     }
 

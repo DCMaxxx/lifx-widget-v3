@@ -16,7 +16,10 @@ final class ColorPickerViewController: UIViewController {
 
     fileprivate var color: Color! // Always set in configure(with: onSelection:)
     fileprivate var onSelection: ColorSelectionClosure?
+
     fileprivate var feedbackTarget: LIFXTargetable?
+    fileprivate var updateFeedbackTarget: DispatchWorkItem?
+    fileprivate static let feedbackDelay: TimeInterval = 0.05
 
     @IBOutlet fileprivate var headerButtons: [UIBarButtonItem]!
     @IBOutlet fileprivate weak var contentScrollView: UIScrollView!
@@ -105,12 +108,21 @@ extension ColorPickerViewController {
     }
 
     private func notifyFeedbackTarget() {
-        guard let target = feedbackTarget else {
+        guard feedbackTarget != nil else {
             return
         }
 
-        _ = target
-        // TODO: Update the color of the target
+        updateFeedbackTarget?.cancel()
+        updateFeedbackTarget = DispatchWorkItem { [weak self] in
+            guard let target = self?.feedbackTarget, let operation = self?.color?.updateOperation else {
+                return
+            }
+
+            _ = API.shared.update(target: target, with: operation)
+        }
+        if let task = updateFeedbackTarget {
+            DispatchQueue.main.asyncAfter(deadline: .now() + ColorPickerViewController.feedbackDelay, execute: task)
+        }
     }
 
 }

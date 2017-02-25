@@ -140,4 +140,23 @@ final class Color: NSObject, Model {
         }
     }
 
+    // MARK: - Exchanges with LIFX API
+    var updateOperation: LIFXTargetOperationUpdate? {
+        switch kind {
+        case .color(let color):
+            guard let hsba = color.hsba else {
+                return nil
+            }
+            let update = LIFXTargetOperationUpdate(brightness: hsba.brightness)
+            update?.saturation = hsba.saturation
+            update?.hue = UInt(hsba.hue * 360)
+            return update
+
+        case .white(let kelvin, let brightness):
+            let update = LIFXTargetOperationUpdate(kelvin: UInt(kelvin))
+            update?.brightness = CGFloat(brightness)
+            return update
+        }
+    }
+
 }
