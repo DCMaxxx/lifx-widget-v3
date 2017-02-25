@@ -26,7 +26,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kmy-71-OlR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-721" y="-418"/>
+            <point key="canvasLocation" x="-1524" y="139"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -104,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="139"/>
+            <point key="canvasLocation" x="-479" y="137"/>
         </scene>
         <!--Tutorial View Controller-->
         <scene sceneID="4Ya-mb-Xse">
@@ -471,7 +471,7 @@ You can customize which lights, colours, and intensites are displayed by pressin
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="137" y="826"/>
+            <point key="canvasLocation" x="-479" y="1036"/>
         </scene>
         <!--Token Picker View Controller-->
         <scene sceneID="1dB-ga-wEh">
@@ -523,7 +523,7 @@ You can customize which lights, colours, and intensites are displayed by pressin
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q70-HD-4G6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="1515"/>
+            <point key="canvasLocation" x="-479" y="1825"/>
         </scene>
         <!--Targets-->
         <scene sceneID="77T-fW-Ibq">
@@ -633,7 +633,7 @@ Simply tap a light to add - or remove - it.</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FLU-lK-zXd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="945" y="-561"/>
+            <point key="canvasLocation" x="553" y="-792"/>
         </scene>
         <!--Colours-->
         <scene sceneID="jWi-4k-Nzf">
@@ -713,7 +713,7 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G1Y-ur-T5S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="945" y="139"/>
+            <point key="canvasLocation" x="554" y="139"/>
         </scene>
         <!--Colour picker-->
         <scene sceneID="pqt-3D-Zqr">
@@ -854,7 +854,7 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MdV-jC-j7l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1689" y="139"/>
+            <point key="canvasLocation" x="1596" y="139"/>
         </scene>
         <!--Color Picker Color Controller-->
         <scene sceneID="mBG-Iz-w9p">
@@ -873,7 +873,7 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DHm-Lw-1vQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2473" y="-178"/>
+            <point key="canvasLocation" x="2937" y="206"/>
         </scene>
         <!--Color Picker White Controller-->
         <scene sceneID="pSZ-xq-ynC">
@@ -972,7 +972,7 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2472.8000000000002" y="371.96401799100454"/>
+            <point key="canvasLocation" x="2273" y="207"/>
         </scene>
         <!--Targets-->
         <scene sceneID="DvM-FM-lLv">
@@ -1082,7 +1082,7 @@ Simply tap a light to get back to the picker and update the light's color.</stri
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EJ7-WZ-fXm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1689" y="-562"/>
+            <point key="canvasLocation" x="2556" y="1036"/>
         </scene>
         <!--Intensities-->
         <scene sceneID="zI4-cr-24h">
@@ -1188,7 +1188,7 @@ Press the '+' on the top right to add an intensity, swipe left a an intensity in
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a2o-6x-joo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="944.79999999999995" y="824.43778110944538"/>
+            <point key="canvasLocation" x="553" y="1036"/>
         </scene>
         <!--Intensity picker-->
         <scene sceneID="F3a-dv-K8y">
@@ -1293,7 +1293,7 @@ Press the '+' on the top right to add an intensity, swipe left a an intensity in
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iu5-d1-M9D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1689" y="824"/>
+            <point key="canvasLocation" x="1596" y="1036"/>
         </scene>
     </scenes>
     <resources>
