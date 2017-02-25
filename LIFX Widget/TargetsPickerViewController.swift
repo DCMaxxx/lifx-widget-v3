@@ -11,8 +11,14 @@ import LIFXAPIWrapper
 
 final class TargetsPickerViewController: StickyHeaderTableViewController {
 
-    fileprivate var lights: [LIFXLight] = []
     fileprivate var orderedLIFXModels: [LIFXModel] = [] // of LIFXLocation, LIFXGroup and LIFXLight
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        configureOrderedTargets(with: PersistanceManager.availableLights)
+        preselectIndexPaths()
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -25,13 +31,7 @@ final class TargetsPickerViewController: StickyHeaderTableViewController {
 // MARK: - Setting up the data
 extension TargetsPickerViewController {
 
-    func configure(with lights: [LIFXLight]) {
-        configureOrderedTargets(with: lights)
-        preselectIndexPaths()
-    }
-
-    private func configureOrderedTargets(with lights: [LIFXLight]) {
-        self.lights = lights
+    fileprivate func configureOrderedTargets(with lights: [LIFXLight]) {
         lights.forEach { light in
             guard let locationIdx = orderedLIFXModels.index(of: light.location) else {
                 // We don't have the location yet. Let's add location, then group, then target
@@ -53,7 +53,7 @@ extension TargetsPickerViewController {
         }
     }
 
-    private func preselectIndexPaths() {
+    fileprivate func preselectIndexPaths() {
         let targets = PersistanceManager.targets
 
         orderedLIFXModels.enumerated().flatMap { idx, model in

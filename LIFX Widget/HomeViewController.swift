@@ -14,8 +14,6 @@ import Result
 
 class HomeViewController: UIViewController {
 
-    fileprivate var lights: [LIFXLight] = []
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
@@ -35,8 +33,6 @@ class HomeViewController: UIViewController {
         switch segue.destination {
         case let destination as TutorialViewController:
             configure(tutorialController: destination)
-        case let destination as TargetsPickerViewController:
-            configure(targetsPicker: destination)
         default:
             break
         }
@@ -64,20 +60,11 @@ extension HomeViewController {
 
 }
 
-// MARK: - Prepare segues
-extension HomeViewController {
-
-    fileprivate func configure(targetsPicker controller: TargetsPickerViewController) {
-        controller.configure(with: lights)
-    }
-
-}
-
 // MARK: - List the user's lights
 extension HomeViewController {
 
     fileprivate func fetchLightsIfNeeded() {
-        guard lights.isEmpty else {
+        guard PersistanceManager.availableLights.isEmpty else {
             return
         }
 
@@ -90,7 +77,7 @@ extension HomeViewController {
     fileprivate func update(lights: [LIFXLight]) {
         SVProgressHUD.dismiss()
 
-        self.lights = lights
+        PersistanceManager.availableLights = lights
         PersistanceManager.updateTargets(with: lights)
     }
 
