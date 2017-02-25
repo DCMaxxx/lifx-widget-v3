@@ -42,4 +42,4 @@
 "color_picker.alert.no_targets.body" = "You must keep at least one color !";
 "color_picker.alert.no_targets.cancel" = "Cancel";
 
-"color_picker.button.title.picked_feedback_light" = "Updating {name}";
+"pickers.button.title.picked_feedback_light" = "Updating {name}";
