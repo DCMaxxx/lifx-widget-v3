@@ -55,26 +55,58 @@
                         <viewControllerLayoutGuide type="bottom" id="b2U-Zc-IW0"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fDb-Vz-Z3l">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="135"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Targets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fpa-q0-beb">
-                                <rect key="frame" x="131" y="45" width="58" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9HC-xF-gcs">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="135"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TargetTableViewCell" rowHeight="110" id="cAr-p0-HGN" customClass="TargetTableViewCell" customModule="LIFX_Widget_Today_Extension" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="110"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cAr-p0-HGN" id="foM-RB-rUO">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xo1-cS-ZiZ">
+                                                    <rect key="frame" x="15" y="15" width="88.5" height="79.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="32"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="xo1-cS-ZiZ" secondAttribute="bottom" constant="15" id="93i-fE-NbL"/>
+                                                <constraint firstItem="xo1-cS-ZiZ" firstAttribute="leading" secondItem="foM-RB-rUO" secondAttribute="leading" constant="15" id="R5l-Gj-lAL"/>
+                                                <constraint firstItem="xo1-cS-ZiZ" firstAttribute="top" secondItem="foM-RB-rUO" secondAttribute="top" constant="15" id="pgM-xp-whX"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="xo1-cS-ZiZ" id="j56-P2-117"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="0Ya-83-EXG" id="4GA-5W-oiV"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Fpa-q0-beb" firstAttribute="centerX" secondItem="fDb-Vz-Z3l" secondAttribute="centerX" id="Miu-Un-F4W"/>
-                            <constraint firstItem="Fpa-q0-beb" firstAttribute="centerY" secondItem="fDb-Vz-Z3l" secondAttribute="centerY" id="TG4-MV-E7c"/>
+                            <constraint firstAttribute="trailing" secondItem="9HC-xF-gcs" secondAttribute="trailing" id="5GL-1U-3Z3"/>
+                            <constraint firstItem="9HC-xF-gcs" firstAttribute="leading" secondItem="fDb-Vz-Z3l" secondAttribute="leading" id="FEX-uG-1UU"/>
+                            <constraint firstItem="9HC-xF-gcs" firstAttribute="top" secondItem="fDb-Vz-Z3l" secondAttribute="top" id="TaN-9B-qJi"/>
+                            <constraint firstAttribute="bottom" secondItem="9HC-xF-gcs" secondAttribute="bottom" id="kaS-R4-gPi"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="110"/>
+                    <size key="freeformSize" width="320" height="135"/>
+                    <connections>
+                        <outlet property="tableView" destination="9HC-xF-gcs" id="kAV-ve-5lP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7qi-MV-qM4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -46,12 +46,8 @@ extension WidgetViewController {
 
         displayTargetsController()
         API.shared.lights()
-            .onSuccess(callback: configureTargetsController(lights:))
+            .onSuccess(callback: displayTargetsController(lights:))
             .onFailure(callback: displayErrorController(error:))
-    }
-
-    private func configureTargetsController(lights: [LIFXLight]) {
-        // TODO: Send the targets to the widget
     }
 
     private func displayErrorController(error: NSError) {
@@ -78,7 +74,7 @@ extension WidgetViewController {
         }
     }
 
-    fileprivate func displayTargetsController() {
+    fileprivate func displayTargetsController(lights: [LIFXLight] = []) {
         let targetsController: TargetsViewController = .from(storyboard: extensionStoryboard)
         insertChild(controller: targetsController)
     }
