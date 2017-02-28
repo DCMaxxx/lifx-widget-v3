@@ -26,7 +26,7 @@ struct TargetRepresentation {
 
         self.target = target
         self.isOn = targetedLights.reduce(true) { $0 && $1.isConnected && $1.isOn }
-        self.currentColor = .clear // TODO: Set the real color
+        self.currentColor = colors.reduce(UIColor.clear) { $0.blend(with: $1.displayColor) }
     }
 
     private static func filter(lights: [LIFXLight], for identifier: String) -> [LIFXLight] {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LIFXAPIWrapper
 
 extension UIColor {
 
@@ -63,6 +64,34 @@ extension UIColor {
                        saturation:  CGFloat(arc4random_uniform(100)) / 100,
                        brightness:  CGFloat(arc4random_uniform(100)) / 100,
                        alpha:       1)
+    }
+
+    var isLight: Bool {
+        var red: CGFloat = 0
+        var green: CGFloat = 0
+        var blue: CGFloat = 0
+        var alpha: CGFloat = 0
+
+        if !getRed(&red, green: &green, blue: &blue, alpha: &alpha) {
+            return false
+        }
+        let brightness = ((red * 299) + (green * 587) + (blue * 114)) / 1000
+        return brightness >= 0.5
+    }
+
+    func blend(with color: UIColor) -> UIColor {
+        if self == .clear {
+            return color
+        }
+
+        guard let hsba = hsba, let otherHsba = color.hsba else {
+            return self
+        }
+
+        return UIColor(hue:         (hsba.hue + otherHsba.hue) / 2,
+                       saturation:  (hsba.saturation + otherHsba.saturation) / 2,
+                       brightness:  (hsba.brightness + otherHsba.brightness) / 2,
+                       alpha:       (hsba.alpha + otherHsba.alpha) / 2)
     }
 
 }
