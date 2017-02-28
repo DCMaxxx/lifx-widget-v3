@@ -27,7 +27,10 @@ final class ErrorViewController: UIViewController {
     @IBOutlet fileprivate weak var titleLabel: UILabel!
 
     @IBAction private func tappedOpenCompanionButton(_ sender: UIButton) {
-        // TODO: Open the companion app
+        guard let companionURL = URL(string: "lifx-widget://"), let context = extensionContext else {
+            return
+        }
+        context.open(companionURL, completionHandler: nil)
     }
 
 }

@@ -35,6 +35,8 @@ class WidgetViewController: UIViewController {
 extension WidgetViewController {
 
     fileprivate func setupBaseController() {
+        API.shared.reconfigureIfNeeded() // the token might have been updated in the companion app
+
         guard API.shared.isConfigured else {
             let context: ErrorViewController.Context = .noToken
             displayErrorController(with: context)
