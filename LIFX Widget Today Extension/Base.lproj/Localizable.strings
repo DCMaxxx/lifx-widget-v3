@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  LIFX Widget
+
+  Created by Maxime de Chalendar on 28/02/2017.
+  Copyright © 2017 DCMaxxx. All rights reserved.
+*/
+
+"error.description.no_token" = "Let's perform a few setup steps in the companion app to get started !";
+"error.description.invalid_token" = "There seems to be an error authenticating you. Let's try again ?";
+"error.button.title.open_companion" = "Open the companion app";

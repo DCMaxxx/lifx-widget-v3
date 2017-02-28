@@ -8,6 +8,7 @@
 
 import UIKit
 import NotificationCenter
+import LIFXAPIWrapper
 
 class WidgetViewController: UIViewController {
 
@@ -15,27 +16,78 @@ class WidgetViewController: UIViewController {
 
     @IBOutlet fileprivate weak var containerView: UIView!
 
+    fileprivate var extensionStoryboard: UIStoryboard {
+        // force_unwrapping: We know that this controller comes from the extension's storyboard
+        // swiftlint:disable:next force_unwrapping
+        return storyboard!
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupMaximumHeight()
-        displayTargetsController()
+        setupBaseController()
     }
 
-    @IBAction func tappedSwitchButton(_ sender: UITapGestureRecognizer) {
-        displaysError = !displaysError
+}
 
-        if displaysError {
-            displayErrorController()
-        } else {
-            displayTargetsController()
+// MARK: - Setting up
+extension WidgetViewController {
+
+    fileprivate func setupBaseController() {
+        guard API.shared.isConfigured else {
+            let context: ErrorViewController.Context = .noToken
+            displayErrorController(with: context)
+            return
         }
+
+        displayTargetsController()
+        API.shared.lights()
+            .onSuccess(callback: configureTargetsController(lights:))
+            .onFailure(callback: displayErrorController(error:))
+    }
+
+    private func configureTargetsController(lights: [LIFXLight]) {
+        // TODO: Send the targets to the widget
+    }
+
+    private func displayErrorController(error: NSError) {
+        let context: ErrorViewController.Context
+
+        switch LIFXAPIErrorCode(rawValue: UInt(error.code)) {
+        case .badToken?:
+            context = .invalidToken
+        default:
+            context = .other(desc: error.localizedDescription)
+            break
+        }
+
+        displayErrorController(with: context)
+    }
+
+    fileprivate func displayErrorController(with context: ErrorViewController.Context) {
+        if let errorController = childViewControllers.last as? ErrorViewController {
+            errorController.configure(with: context)
+        } else {
+            let errorController: ErrorViewController = .from(storyboard: extensionStoryboard)
+            insertChild(controller: errorController)
+            errorController.configure(with: context)
+        }
+    }
+
+    fileprivate func displayTargetsController() {
+        let targetsController: TargetsViewController = .from(storyboard: extensionStoryboard)
+        insertChild(controller: targetsController)
     }
 
 }
 
 // MARK: - Size handling
 extension WidgetViewController: NCWidgetProviding {
+
+    fileprivate var childControllerPreferredContentSize: CGSize {
+        return childViewControllers.last?.preferredContentSize ?? preferredContentSize
+    }
 
     fileprivate func setupMaximumHeight() {
         if #available(iOSApplicationExtension 10, *) {
@@ -99,27 +151,7 @@ extension WidgetViewController: NCWidgetProviding {
 // MARK: - Child controller handling
 extension WidgetViewController {
 
-    fileprivate func displayErrorController() {
-        let errorController: ErrorViewController = .from(storyboard: extensionStoryboard)
-        insertChild(controller: errorController)
-    }
-
-    fileprivate func displayTargetsController() {
-        let targetsController: TargetsViewController = .from(storyboard: extensionStoryboard)
-        insertChild(controller: targetsController)
-    }
-
-    fileprivate var childControllerPreferredContentSize: CGSize {
-        return childViewControllers.last?.preferredContentSize ?? preferredContentSize
-    }
-
-    private var extensionStoryboard: UIStoryboard {
-        // force_unwrapping: We know that this controller comes from the extension's storyboard
-        // swiftlint:disable:next force_unwrapping
-        return storyboard!
-    }
-
-    private func resetChild() {
+    fileprivate func resetChild() {
         guard let child = childViewControllers.last else {
             return
         }
@@ -128,7 +160,7 @@ extension WidgetViewController {
         child.removeFromParentViewController()
     }
 
-    private func insertChild(controller: UIViewController) {
+    fileprivate func insertChild(controller: UIViewController) {
         UIView.transition(with: containerView, duration: 0.3, options: .transitionCrossDissolve, animations: {
             self.resetChild()
             self.addChildViewController(controller)

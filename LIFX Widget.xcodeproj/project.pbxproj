@@ -54,6 +54,9 @@
 		9C7102781E548F1F0058E8C4 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7102761E548F1F0058E8C4 /* String+Localized.swift */; };
 		9C7102791E548F1F0058E8C4 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7102761E548F1F0058E8C4 /* String+Localized.swift */; };
 		9C7D2D491E5651A4007D89E3 /* UIView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7D2D481E5651A4007D89E3 /* UIView+Animations.swift */; };
+		9C88D2731E65AE7C009B0D9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C88D2721E65AE7C009B0D9B /* Assets.xcassets */; };
+		9C88D2761E65B101009B0D9B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C88D2741E65B101009B0D9B /* Localizable.strings */; };
+		9C88D2781E65BB8B009B0D9B /* UIKit+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51F71E62210F0040E4CC /* UIKit+Localizable.swift */; };
 		9C96AC1C1E65739C00B588CD /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96AC1B1E65739C00B588CD /* ErrorViewController.swift */; };
 		9C96AC1E1E6573F400B588CD /* TargetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96AC1D1E6573F400B588CD /* TargetsViewController.swift */; };
 		9C96AC211E65755000B588CD /* UIViewController+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96AC201E65755000B588CD /* UIViewController+Storyboard.swift */; };
@@ -201,6 +204,8 @@
 		9C7102741E548EC10058E8C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9C7102761E548F1F0058E8C4 /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Localized.swift"; path = "Common/String+Localized.swift"; sourceTree = SOURCE_ROOT; };
 		9C7D2D481E5651A4007D89E3 /* UIView+Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Animations.swift"; sourceTree = "<group>"; };
+		9C88D2721E65AE7C009B0D9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9C88D2751E65B101009B0D9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9C96AC1B1E65739C00B588CD /* ErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
 		9C96AC1D1E6573F400B588CD /* TargetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetsViewController.swift; sourceTree = "<group>"; };
 		9C96AC201E65755000B588CD /* UIViewController+Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Storyboard.swift"; path = "LIFX Widget Today Extension/UIViewController+Storyboard.swift"; sourceTree = SOURCE_ROOT; };
@@ -511,6 +516,8 @@
 			isa = PBXGroup;
 			children = (
 				9C05856A1E5460E500CF3AFA /* Info.plist */,
+				9C88D2721E65AE7C009B0D9B /* Assets.xcassets */,
+				9C88D2741E65B101009B0D9B /* Localizable.strings */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -874,6 +881,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C88D2731E65AE7C009B0D9B /* Assets.xcassets in Resources */,
+				9C88D2761E65B101009B0D9B /* Localizable.strings in Resources */,
 				9C0585691E5460E500CF3AFA /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1127,6 +1136,7 @@
 				9C5184A21E55E3BF00FBF02A /* Target.swift in Sources */,
 				9C5184A11E55E3BF00FBF02A /* JSONable.swift in Sources */,
 				9C7102781E548F1F0058E8C4 /* String+Localized.swift in Sources */,
+				9C88D2781E65BB8B009B0D9B /* UIKit+Localizable.swift in Sources */,
 				9C5184821E54AD5300FBF02A /* Defaults.swift in Sources */,
 				9C0585661E5460E500CF3AFA /* WidgetViewController.swift in Sources */,
 				9CA5D0811E58B78400975C96 /* Color.swift in Sources */,
@@ -1193,6 +1203,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				9C7102741E548EC10058E8C4 /* Base */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		9C88D2741E65B101009B0D9B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C88D2751E65B101009B0D9B /* Base */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

@@ -10,10 +10,33 @@ import UIKit
 
 final class ErrorViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    enum Context {
+        case noToken
+        case invalidToken
+        case other(desc: String)
 
-        preferredContentSize = CGSize(width: 320, height: 50)
+        var description: String {
+            switch self {
+            case .noToken:          return "error.description.no_token".localized()
+            case .invalidToken:     return "error.description.invalid_token".localized()
+            case .other(let desc):  return desc
+            }
+        }
+    }
+
+    @IBOutlet fileprivate weak var titleLabel: UILabel!
+
+    @IBAction private func tappedOpenCompanionButton(_ sender: UIButton) {
+        // TODO: Open the companion app
+    }
+
+}
+
+// MARK: - Public configuration methods
+extension ErrorViewController {
+
+    func configure(with context: Context) {
+        titleLabel.text = context.description
     }
 
 }
