@@ -17,6 +17,12 @@ protocol JSONable {
 
 }
 
-protocol Model: JSONable, NSCoding, Equatable {
+protocol SharedArchivable: class {
+
+    static var archivedClassName: String { get }
+
+}
+
+protocol Model: JSONable, SharedArchivable, NSCoding, Equatable {
 
 }

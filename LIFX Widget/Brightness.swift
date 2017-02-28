@@ -49,6 +49,11 @@ final class Brightness: NSObject, Model, Comparable {
         ]
     }
 
+    // MARK: - SharedArchivable
+    static var archivedClassName: String {
+        return "com.maxime-dechalendar.Brightness"
+    }
+
     // MARK: - NSCoding
     required convenience init?(coder aDecoder: NSCoder) {
         guard let data = aDecoder.decodeObject(forKey: "rawData") as? Data else {

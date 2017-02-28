@@ -25,6 +25,7 @@ class WidgetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        PersistanceManager.performInitialConfiguration()
         setupMaximumHeight()
         setupBaseController()
     }

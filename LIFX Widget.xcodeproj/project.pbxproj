@@ -57,10 +57,11 @@
 		9C88D2731E65AE7C009B0D9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C88D2721E65AE7C009B0D9B /* Assets.xcassets */; };
 		9C88D2761E65B101009B0D9B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C88D2741E65B101009B0D9B /* Localizable.strings */; };
 		9C88D2781E65BB8B009B0D9B /* UIKit+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51F71E62210F0040E4CC /* UIKit+Localizable.swift */; };
+		9C88D2791E65C788009B0D9B /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184A91E55EB5F00FBF02A /* PersistanceManager.swift */; };
+		9C88D27C1E65CB07009B0D9B /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184A91E55EB5F00FBF02A /* PersistanceManager.swift */; };
 		9C96AC1C1E65739C00B588CD /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96AC1B1E65739C00B588CD /* ErrorViewController.swift */; };
 		9C96AC1E1E6573F400B588CD /* TargetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96AC1D1E6573F400B588CD /* TargetsViewController.swift */; };
 		9C96AC211E65755000B588CD /* UIViewController+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96AC201E65755000B588CD /* UIViewController+Storyboard.swift */; };
-		9C96AC221E6575AC00B588CD /* UIViewController+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96AC201E65755000B588CD /* UIViewController+Storyboard.swift */; };
 		9CA5D07E1E58B76B00975C96 /* ColorsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D07D1E58B76B00975C96 /* ColorsListViewController.swift */; };
 		9CA5D0801E58B78400975C96 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D07F1E58B78400975C96 /* Color.swift */; };
 		9CA5D0811E58B78400975C96 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D07F1E58B78400975C96 /* Color.swift */; };
@@ -364,6 +365,7 @@
 			children = (
 				9C5184851E54B15300FBF02A /* LIFX Widget Today Extension.entitlements */,
 				9C7102691E5464350058E8C4 /* Controllers */,
+				9C88D27D1E65CB2B009B0D9B /* Extensions */,
 				9C7102681E5464300058E8C4 /* Storyboards */,
 				9C7102671E54642B0058E8C4 /* Resources */,
 			);
@@ -555,6 +557,7 @@
 		9C7D2D471E565198007D89E3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				9CCAA2411E5F311200AE10D0 /* Array+Misc.swift */,
 				9C7D2D481E5651A4007D89E3 /* UIView+Animations.swift */,
 				9CBC51F71E62210F0040E4CC /* UIKit+Localizable.swift */,
 				9CBC51F91E622C0A0040E4CC /* UIKit+Uppercased.swift */,
@@ -584,6 +587,14 @@
 				9C96AC1D1E6573F400B588CD /* TargetsViewController.swift */,
 			);
 			name = Targets;
+			sourceTree = "<group>";
+		};
+		9C88D27D1E65CB2B009B0D9B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9C96AC201E65755000B588CD /* UIViewController+Storyboard.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		9CA5D07C1E58B71F00975C96 /* Colors picker */ = {
@@ -665,9 +676,7 @@
 				9C7102761E548F1F0058E8C4 /* String+Localized.swift */,
 				9C5184B71E5612A900FBF02A /* UITableViewCell+ReuseIdentifier.swift */,
 				9CA5D0831E5B6EE500975C96 /* UIColor+LIFX.swift */,
-				9CCAA2411E5F311200AE10D0 /* Array+Misc.swift */,
 				9CCAA24A1E602C1E00AE10D0 /* Comparable+Range.swift */,
-				9C96AC201E65755000B588CD /* UIViewController+Storyboard.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -1102,7 +1111,6 @@
 				9C0585261E545E7900CF3AFA /* AppDelegate.swift in Sources */,
 				9CBC52001E6231960040E4CC /* TutorialHTMLLabel.swift in Sources */,
 				9CBC51F81E62210F0040E4CC /* UIKit+Localizable.swift in Sources */,
-				9C96AC221E6575AC00B588CD /* UIViewController+Storyboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1113,6 +1121,7 @@
 				9CA5D0861E5B6EE500975C96 /* UIColor+LIFX.swift in Sources */,
 				9CBC51E81E61CD390040E4CC /* Brightness.swift in Sources */,
 				9CCAA24C1E602C6600AE10D0 /* Comparable+Range.swift in Sources */,
+				9C88D27C1E65CB07009B0D9B /* PersistanceManager.swift in Sources */,
 				9C05854B1E545E7900CF3AFA /* ExtensionDelegate.swift in Sources */,
 				9C7102721E5489F60058E8C4 /* API.swift in Sources */,
 				9C5184831E54AD5300FBF02A /* Defaults.swift in Sources */,
@@ -1143,6 +1152,7 @@
 				9C5184B91E5612A900FBF02A /* UITableViewCell+ReuseIdentifier.swift in Sources */,
 				9C7102711E5489F60058E8C4 /* API.swift in Sources */,
 				9C96AC211E65755000B588CD /* UIViewController+Storyboard.swift in Sources */,
+				9C88D2791E65C788009B0D9B /* PersistanceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

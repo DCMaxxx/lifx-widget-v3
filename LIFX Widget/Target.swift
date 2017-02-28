@@ -62,6 +62,11 @@ final class Target: NSObject, Model {
         ]
     }
 
+    // MARK: - SharedArchivable
+    static var archivedClassName: String {
+        return "com.maxime-dechalendar.Target"
+    }
+
     // MARK: - NSCoding
     required convenience init?(coder aDecoder: NSCoder) {
         guard let data = aDecoder.decodeObject(forKey: "rawData") as? Data else {

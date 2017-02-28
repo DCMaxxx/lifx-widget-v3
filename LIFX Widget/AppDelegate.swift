@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func applicationDidFinishLaunching(_ application: UIApplication) {
+        PersistanceManager.performInitialConfiguration()
         theme(application: application)
     }
 
