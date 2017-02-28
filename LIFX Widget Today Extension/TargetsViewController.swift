@@ -10,4 +10,10 @@ import UIKit
 
 final class TargetsViewController: UIViewController {
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        preferredContentSize = CGSize(width: 320, height: 500)
+    }
+
 }
