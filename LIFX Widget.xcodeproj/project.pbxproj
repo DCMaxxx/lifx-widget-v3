@@ -26,6 +26,7 @@
 		9C0585661E5460E500CF3AFA /* WidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0585651E5460E500CF3AFA /* WidgetViewController.swift */; };
 		9C0585691E5460E500CF3AFA /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C0585671E5460E500CF3AFA /* MainInterface.storyboard */; };
 		9C05856D1E5460E500CF3AFA /* LIFX Widget Today Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9C0585601E5460E500CF3AFA /* LIFX Widget Today Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9C443AEB1E65D288003C15E5 /* TargetRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C443AEA1E65D288003C15E5 /* TargetRepresentation.swift */; };
 		9C5184811E54AD5300FBF02A /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184801E54AD5300FBF02A /* Defaults.swift */; };
 		9C5184821E54AD5300FBF02A /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184801E54AD5300FBF02A /* Defaults.swift */; };
 		9C5184831E54AD5300FBF02A /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184801E54AD5300FBF02A /* Defaults.swift */; };
@@ -58,7 +59,7 @@
 		9C88D2761E65B101009B0D9B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C88D2741E65B101009B0D9B /* Localizable.strings */; };
 		9C88D2781E65BB8B009B0D9B /* UIKit+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51F71E62210F0040E4CC /* UIKit+Localizable.swift */; };
 		9C88D2791E65C788009B0D9B /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184A91E55EB5F00FBF02A /* PersistanceManager.swift */; };
-		9C88D27B1E65C7B4009B0D9B /* TargetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C88D27A1E65C7B4009B0D9B /* TargetTableViewCell.swift */; };
+		9C88D27B1E65C7B4009B0D9B /* TargetRepresentationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C88D27A1E65C7B4009B0D9B /* TargetRepresentationTableViewCell.swift */; };
 		9C88D27C1E65CB07009B0D9B /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184A91E55EB5F00FBF02A /* PersistanceManager.swift */; };
 		9C96AC1C1E65739C00B588CD /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96AC1B1E65739C00B588CD /* ErrorViewController.swift */; };
 		9C96AC1E1E6573F400B588CD /* TargetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96AC1D1E6573F400B588CD /* TargetsViewController.swift */; };
@@ -187,6 +188,7 @@
 		9C0585651E5460E500CF3AFA /* WidgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetViewController.swift; sourceTree = "<group>"; };
 		9C0585681E5460E500CF3AFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		9C05856A1E5460E500CF3AFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C443AEA1E65D288003C15E5 /* TargetRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetRepresentation.swift; sourceTree = "<group>"; };
 		9C5184801E54AD5300FBF02A /* Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Defaults.swift; path = Common/Defaults.swift; sourceTree = SOURCE_ROOT; };
 		9C5184841E54B13B00FBF02A /* LIFX Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "LIFX Widget.entitlements"; sourceTree = "<group>"; };
 		9C5184851E54B15300FBF02A /* LIFX Widget Today Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "LIFX Widget Today Extension.entitlements"; sourceTree = "<group>"; };
@@ -208,7 +210,7 @@
 		9C7D2D481E5651A4007D89E3 /* UIView+Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Animations.swift"; sourceTree = "<group>"; };
 		9C88D2721E65AE7C009B0D9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C88D2751E65B101009B0D9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		9C88D27A1E65C7B4009B0D9B /* TargetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetTableViewCell.swift; sourceTree = "<group>"; };
+		9C88D27A1E65C7B4009B0D9B /* TargetRepresentationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetRepresentationTableViewCell.swift; sourceTree = "<group>"; };
 		9C96AC1B1E65739C00B588CD /* ErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
 		9C96AC1D1E6573F400B588CD /* TargetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetsViewController.swift; sourceTree = "<group>"; };
 		9C96AC201E65755000B588CD /* UIViewController+Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Storyboard.swift"; path = "LIFX Widget Today Extension/UIViewController+Storyboard.swift"; sourceTree = SOURCE_ROOT; };
@@ -367,11 +369,20 @@
 			children = (
 				9C5184851E54B15300FBF02A /* LIFX Widget Today Extension.entitlements */,
 				9C7102691E5464350058E8C4 /* Controllers */,
+				9C443AE91E65D27E003C15E5 /* Models */,
 				9C88D27D1E65CB2B009B0D9B /* Extensions */,
 				9C7102681E5464300058E8C4 /* Storyboards */,
 				9C7102671E54642B0058E8C4 /* Resources */,
 			);
 			path = "LIFX Widget Today Extension";
+			sourceTree = "<group>";
+		};
+		9C443AE91E65D27E003C15E5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9C443AEA1E65D288003C15E5 /* TargetRepresentation.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		9C5184861E54B8ED00FBF02A /* Home */ = {
@@ -587,7 +598,7 @@
 			isa = PBXGroup;
 			children = (
 				9C96AC1D1E6573F400B588CD /* TargetsViewController.swift */,
-				9C88D27A1E65C7B4009B0D9B /* TargetTableViewCell.swift */,
+				9C88D27A1E65C7B4009B0D9B /* TargetRepresentationTableViewCell.swift */,
 			);
 			name = Targets;
 			sourceTree = "<group>";
@@ -1144,9 +1155,10 @@
 				9C96AC1C1E65739C00B588CD /* ErrorViewController.swift in Sources */,
 				9CBC51E71E61CD390040E4CC /* Brightness.swift in Sources */,
 				9CCAA24D1E602C6700AE10D0 /* Comparable+Range.swift in Sources */,
-				9C88D27B1E65C7B4009B0D9B /* TargetTableViewCell.swift in Sources */,
+				9C88D27B1E65C7B4009B0D9B /* TargetRepresentationTableViewCell.swift in Sources */,
 				9C96AC1E1E6573F400B588CD /* TargetsViewController.swift in Sources */,
 				9C5184A21E55E3BF00FBF02A /* Target.swift in Sources */,
+				9C443AEB1E65D288003C15E5 /* TargetRepresentation.swift in Sources */,
 				9C5184A11E55E3BF00FBF02A /* JSONable.swift in Sources */,
 				9C7102781E548F1F0058E8C4 /* String+Localized.swift in Sources */,
 				9C88D2781E65BB8B009B0D9B /* UIKit+Localizable.swift in Sources */,

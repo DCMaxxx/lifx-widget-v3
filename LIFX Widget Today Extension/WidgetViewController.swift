@@ -75,8 +75,13 @@ extension WidgetViewController {
     }
 
     fileprivate func displayTargetsController(lights: [LIFXLight] = []) {
-        let targetsController: TargetsViewController = .from(storyboard: extensionStoryboard)
-        insertChild(controller: targetsController)
+        if let targetsController = childViewControllers.last as? TargetsViewController {
+            targetsController.configure(with: lights)
+        } else {
+            let targetsController: TargetsViewController = .from(storyboard: extensionStoryboard)
+            insertChild(controller: targetsController)
+            targetsController.configure(with: lights)
+        }
     }
 
 }

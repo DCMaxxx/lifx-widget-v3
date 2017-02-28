@@ -11,16 +11,29 @@ import LIFXAPIWrapper
 
 final class TargetsViewController: UIViewController {
 
-    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet fileprivate weak var tableView: UITableView!
 
-    fileprivate var targets: [Target] {
-        return PersistanceManager.targets
-    }
+    fileprivate var targetRepresentations: [TargetRepresentation] = []
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        targetRepresentations = PersistanceManager.targets.map(TargetRepresentation.init)
         preferredContentSize = tableView.contentSize
+    }
+
+}
+
+extension TargetsViewController {
+
+    func configure(with lights: [LIFXLight]) {
+        targetRepresentations = PersistanceManager.targets.map {
+            TargetRepresentation(target: $0, in: lights)
+        }
+        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.preferredContentSize = self.tableView.contentSize
+        }
     }
 
 }
@@ -28,19 +41,19 @@ final class TargetsViewController: UIViewController {
 extension TargetsViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return targets.count
+        return targetRepresentations.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // swiftlint:disable:next line_length force_cast
-        let cell = tableView.dequeueReusableCell(withIdentifier: TargetTableViewCell.identifier, for: indexPath) as! TargetTableViewCell
-        let target = getTarget(at: indexPath)
-        cell.configure(with: target)
+        let cell = tableView.dequeueReusableCell(withIdentifier: TargetRepresentationTableViewCell.identifier, for: indexPath) as! TargetRepresentationTableViewCell
+        let targetRepresentation = getTargetRepresentation(at: indexPath)
+        cell.configure(with: targetRepresentation)
         return cell
     }
 
-    private func getTarget(at indexPath: IndexPath) -> Target {
-        return targets[indexPath.row]
+    private func getTargetRepresentation(at indexPath: IndexPath) -> TargetRepresentation {
+        return targetRepresentations[indexPath.row]
     }
 
 }
