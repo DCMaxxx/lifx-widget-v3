@@ -25,7 +25,7 @@ struct TargetRepresentation {
         let targetedLights = TargetRepresentation.filter(lights: lights, for: target.identifier)
 
         self.target = target
-        self.isOn = targetedLights.reduce(true) { $0 && $1.isConnected && $1.isOn }
+        self.isOn = targetedLights.reduce(false) { $0 || ($1.isConnected && $1.isOn) }
         self.currentColor = colors.reduce(UIColor.clear) { $0.blend(with: $1.displayColor) }
     }
 
