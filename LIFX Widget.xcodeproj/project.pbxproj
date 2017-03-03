@@ -79,6 +79,7 @@
 		9CA5D08C1E5CE29400975C96 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D08B1E5CE29400975C96 /* ColorPickerViewController.swift */; };
 		9CA5D08E1E5CE37500975C96 /* ColorPickerColorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D08D1E5CE37500975C96 /* ColorPickerColorController.swift */; };
 		9CA5D0901E5CE38200975C96 /* ColorPickerWhiteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D08F1E5CE38200975C96 /* ColorPickerWhiteController.swift */; };
+		9CA946001E69CAD80092CCC8 /* BrightnessesCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA945FF1E69CAD80092CCC8 /* BrightnessesCollectionViewLayout.swift */; };
 		9CBC51E11E61B1D00040E4CC /* TargetsPickerPersistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51E01E61B1D00040E4CC /* TargetsPickerPersistanceViewController.swift */; };
 		9CBC51E31E61B32F0040E4CC /* TargetsPickerFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51E21E61B32F0040E4CC /* TargetsPickerFeedbackViewController.swift */; };
 		9CBC51E61E61CD390040E4CC /* Brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51E51E61CD390040E4CC /* Brightness.swift */; };
@@ -99,6 +100,7 @@
 		9CCAA24B1E602C1E00AE10D0 /* Comparable+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA24A1E602C1E00AE10D0 /* Comparable+Range.swift */; };
 		9CCAA24C1E602C6600AE10D0 /* Comparable+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA24A1E602C1E00AE10D0 /* Comparable+Range.swift */; };
 		9CCAA24D1E602C6700AE10D0 /* Comparable+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA24A1E602C1E00AE10D0 /* Comparable+Range.swift */; };
+		9CE2745C1E69B6B700A3C104 /* BrigthnessCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE2745B1E69B6B700A3C104 /* BrigthnessCollectionViewCell.swift */; };
 		D48F821AEB90669BC62BE834 /* Pods_LIFX_Widget_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6C7F0FC16A47CC7DC8C9559 /* Pods_LIFX_Widget_WatchKit_Extension.framework */; };
 /* End PBXBuildFile section */
 
@@ -227,6 +229,7 @@
 		9CA5D08B1E5CE29400975C96 /* ColorPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
 		9CA5D08D1E5CE37500975C96 /* ColorPickerColorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerColorController.swift; sourceTree = "<group>"; };
 		9CA5D08F1E5CE38200975C96 /* ColorPickerWhiteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerWhiteController.swift; sourceTree = "<group>"; };
+		9CA945FF1E69CAD80092CCC8 /* BrightnessesCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrightnessesCollectionViewLayout.swift; sourceTree = "<group>"; };
 		9CBC51E01E61B1D00040E4CC /* TargetsPickerPersistanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetsPickerPersistanceViewController.swift; sourceTree = "<group>"; };
 		9CBC51E21E61B32F0040E4CC /* TargetsPickerFeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetsPickerFeedbackViewController.swift; sourceTree = "<group>"; };
 		9CBC51E51E61CD390040E4CC /* Brightness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brightness.swift; sourceTree = "<group>"; };
@@ -243,6 +246,7 @@
 		9CCAA2431E5F4AC700AE10D0 /* WhiteGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteGradientView.swift; sourceTree = "<group>"; };
 		9CCAA2481E5F4BD700AE10D0 /* WhiteGradientIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteGradientIndicatorView.swift; sourceTree = "<group>"; };
 		9CCAA24A1E602C1E00AE10D0 /* Comparable+Range.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comparable+Range.swift"; sourceTree = "<group>"; };
+		9CE2745B1E69B6B700A3C104 /* BrigthnessCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrigthnessCollectionViewCell.swift; sourceTree = "<group>"; };
 		C6C7F0FC16A47CC7DC8C9559 /* Pods_LIFX_Widget_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LIFX_Widget_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7AD68985F779096452056C0 /* Pods_LIFX_Widget_Today_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LIFX_Widget_Today_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4E30C8B8AFA86C211E0342 /* Pods_LIFX_Widget_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LIFX_Widget_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -623,6 +627,8 @@
 			children = (
 				9C96AC1D1E6573F400B588CD /* TargetsViewController.swift */,
 				9C88D27A1E65C7B4009B0D9B /* TargetRepresentationTableViewCell.swift */,
+				9CE2745B1E69B6B700A3C104 /* BrigthnessCollectionViewCell.swift */,
+				9CA945FF1E69CAD80092CCC8 /* BrightnessesCollectionViewLayout.swift */,
 			);
 			name = Targets;
 			sourceTree = "<group>";
@@ -1187,6 +1193,8 @@
 				9C96AC1E1E6573F400B588CD /* TargetsViewController.swift in Sources */,
 				9C5184A21E55E3BF00FBF02A /* Target.swift in Sources */,
 				9C443AEB1E65D288003C15E5 /* TargetRepresentation.swift in Sources */,
+				9CE2745C1E69B6B700A3C104 /* BrigthnessCollectionViewCell.swift in Sources */,
+				9CA946001E69CAD80092CCC8 /* BrightnessesCollectionViewLayout.swift in Sources */,
 				9C5184A11E55E3BF00FBF02A /* JSONable.swift in Sources */,
 				9C7102781E548F1F0058E8C4 /* String+Localized.swift in Sources */,
 				9C88D2781E65BB8B009B0D9B /* UIKit+Localizable.swift in Sources */,
