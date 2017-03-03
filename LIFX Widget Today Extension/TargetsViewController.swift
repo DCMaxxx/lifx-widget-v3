@@ -48,12 +48,20 @@ extension TargetsViewController: UITableViewDataSource {
         // swiftlint:disable:next line_length force_cast
         let cell = tableView.dequeueReusableCell(withIdentifier: TargetRepresentationTableViewCell.identifier, for: indexPath) as! TargetRepresentationTableViewCell
         let targetRepresentation = getTargetRepresentation(at: indexPath)
-        cell.configure(with: targetRepresentation)
+        cell.configure(with: targetRepresentation, delegate: self)
         return cell
     }
 
     private func getTargetRepresentation(at indexPath: IndexPath) -> TargetRepresentation {
         return targetRepresentations[indexPath.row]
+    }
+
+}
+
+extension TargetsViewController: TargetRepresentationTableViewCellDelegate {
+
+    func userDidTapOnToggleButton(in cell: TargetRepresentationTableViewCell) {
+        // TODO: Toggle the light
     }
 
 }

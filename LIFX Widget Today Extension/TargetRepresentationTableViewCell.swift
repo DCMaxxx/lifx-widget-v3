@@ -8,13 +8,46 @@
 
 import UIKit
 
+protocol TargetRepresentationTableViewCellDelegate: class {
+
+    func userDidTapOnToggleButton(in cell: TargetRepresentationTableViewCell)
+
+}
+
 final class TargetRepresentationTableViewCell: UITableViewCell {
 
-    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet fileprivate weak var titleLabel: UILabel!
+    @IBOutlet fileprivate weak var isOnView: UIView!
 
-    func configure(with targetRepresentation: TargetRepresentation) {
-        titleLabel.text = targetRepresentation.target.name
+    fileprivate weak var delegate: TargetRepresentationTableViewCellDelegate?
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+
+        let gestureRecognizer = UITapGestureRecognizer()
+        gestureRecognizer.addTarget(self, action: #selector(tappedOnToggleView(sender:)))
+        isOnView.addGestureRecognizer(gestureRecognizer)
+    }
+
+    func tappedOnToggleView(sender: UITapGestureRecognizer) {
+        delegate?.userDidTapOnToggleButton(in: self)
+    }
+
+}
+
+// MARK: - Configuration methods
+extension TargetRepresentationTableViewCell {
+
+    func configure(with targetRepresentation: TargetRepresentation,
+                   delegate: TargetRepresentationTableViewCellDelegate?) {
+        self.delegate = delegate
+
         backgroundColor = targetRepresentation.currentColor
+        titleLabel.text = targetRepresentation.target.name
+
+        let foregroundColor: UIColor = (targetRepresentation.currentColor.isLight ? .black : .white)
+        titleLabel.textColor = foregroundColor
+        isOnView.backgroundColor = foregroundColor.withAlphaComponent(targetRepresentation.isOn ? 0.2 : 0)
     }
 
 }
