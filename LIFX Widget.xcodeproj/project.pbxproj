@@ -28,6 +28,8 @@
 		9C05856D1E5460E500CF3AFA /* LIFX Widget Today Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9C0585601E5460E500CF3AFA /* LIFX Widget Today Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9C2CCC231E6888B900CEAF2D /* CommonAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C2CCC221E6888B900CEAF2D /* CommonAssets.xcassets */; };
 		9C2CCC241E6888B900CEAF2D /* CommonAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C2CCC221E6888B900CEAF2D /* CommonAssets.xcassets */; };
+		9C2CCC271E69622300CEAF2D /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2CCC261E69622300CEAF2D /* CircleView.swift */; };
+		9C2CCC281E69622300CEAF2D /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2CCC261E69622300CEAF2D /* CircleView.swift */; };
 		9C443AEB1E65D288003C15E5 /* TargetRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C443AEA1E65D288003C15E5 /* TargetRepresentation.swift */; };
 		9C5184811E54AD5300FBF02A /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184801E54AD5300FBF02A /* Defaults.swift */; };
 		9C5184821E54AD5300FBF02A /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184801E54AD5300FBF02A /* Defaults.swift */; };
@@ -190,8 +192,9 @@
 		9C0585651E5460E500CF3AFA /* WidgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetViewController.swift; sourceTree = "<group>"; };
 		9C0585681E5460E500CF3AFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		9C05856A1E5460E500CF3AFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9C443AEA1E65D288003C15E5 /* TargetRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetRepresentation.swift; sourceTree = "<group>"; };
 		9C2CCC221E6888B900CEAF2D /* CommonAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CommonAssets.xcassets; sourceTree = "<group>"; };
+		9C2CCC261E69622300CEAF2D /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		9C443AEA1E65D288003C15E5 /* TargetRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TargetRepresentation.swift; path = "LIFX Widget Today Extension/TargetRepresentation.swift"; sourceTree = SOURCE_ROOT; };
 		9C5184801E54AD5300FBF02A /* Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Defaults.swift; path = Common/Defaults.swift; sourceTree = SOURCE_ROOT; };
 		9C5184841E54B13B00FBF02A /* LIFX Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "LIFX Widget.entitlements"; sourceTree = "<group>"; };
 		9C5184851E54B15300FBF02A /* LIFX Widget Today Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "LIFX Widget Today Extension.entitlements"; sourceTree = "<group>"; };
@@ -374,10 +377,26 @@
 				9C7102691E5464350058E8C4 /* Controllers */,
 				9C443AE91E65D27E003C15E5 /* Models */,
 				9C88D27D1E65CB2B009B0D9B /* Extensions */,
+				9C2CCC291E69622700CEAF2D /* Views */,
 				9C7102681E5464300058E8C4 /* Storyboards */,
 				9C7102671E54642B0058E8C4 /* Resources */,
 			);
 			path = "LIFX Widget Today Extension";
+			sourceTree = "<group>";
+		};
+		9C2CCC251E695C1700CEAF2D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		9C2CCC291E69622700CEAF2D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9C2CCC261E69622300CEAF2D /* CircleView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		9C443AE91E65D27E003C15E5 /* Models */ = {
@@ -561,6 +580,7 @@
 		9C71026E1E5489E40058E8C4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				9C2CCC251E695C1700CEAF2D /* Views */,
 				9C71026F1E5489F60058E8C4 /* API.swift */,
 				9C5184801E54AD5300FBF02A /* Defaults.swift */,
 				9CCAA2401E5F30EA00AE10D0 /* Extensions */,
@@ -1102,6 +1122,7 @@
 				9CBC51EE1E61D4630040E4CC /* BrightnessTableViewCell.swift in Sources */,
 				9C51848E1E54BE9800FBF02A /* TutorialAnimatedTransitioning.swift in Sources */,
 				9C5184B01E56033900FBF02A /* StickyHeaderTableViewController.swift in Sources */,
+				9C2CCC271E69622300CEAF2D /* CircleView.swift in Sources */,
 				9CBC51FA1E622C0A0040E4CC /* UIKit+Uppercased.swift in Sources */,
 				9CBC51F61E621A0B0040E4CC /* TargetsReorderTableViewCell.swift in Sources */,
 				9CCAA2491E5F4BD700AE10D0 /* WhiteGradientIndicatorView.swift in Sources */,
@@ -1159,6 +1180,7 @@
 			files = (
 				9CA5D0851E5B6EE500975C96 /* UIColor+LIFX.swift in Sources */,
 				9C96AC1C1E65739C00B588CD /* ErrorViewController.swift in Sources */,
+				9C2CCC281E69622300CEAF2D /* CircleView.swift in Sources */,
 				9CBC51E71E61CD390040E4CC /* Brightness.swift in Sources */,
 				9CCAA24D1E602C6700AE10D0 /* Comparable+Range.swift in Sources */,
 				9C88D27B1E65C7B4009B0D9B /* TargetRepresentationTableViewCell.swift in Sources */,
