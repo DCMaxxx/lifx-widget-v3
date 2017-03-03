@@ -26,6 +26,8 @@
 		9C0585661E5460E500CF3AFA /* WidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0585651E5460E500CF3AFA /* WidgetViewController.swift */; };
 		9C0585691E5460E500CF3AFA /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C0585671E5460E500CF3AFA /* MainInterface.storyboard */; };
 		9C05856D1E5460E500CF3AFA /* LIFX Widget Today Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9C0585601E5460E500CF3AFA /* LIFX Widget Today Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9C2CCC231E6888B900CEAF2D /* CommonAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C2CCC221E6888B900CEAF2D /* CommonAssets.xcassets */; };
+		9C2CCC241E6888B900CEAF2D /* CommonAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C2CCC221E6888B900CEAF2D /* CommonAssets.xcassets */; };
 		9C443AEB1E65D288003C15E5 /* TargetRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C443AEA1E65D288003C15E5 /* TargetRepresentation.swift */; };
 		9C5184811E54AD5300FBF02A /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184801E54AD5300FBF02A /* Defaults.swift */; };
 		9C5184821E54AD5300FBF02A /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184801E54AD5300FBF02A /* Defaults.swift */; };
@@ -189,6 +191,7 @@
 		9C0585681E5460E500CF3AFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		9C05856A1E5460E500CF3AFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C443AEA1E65D288003C15E5 /* TargetRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetRepresentation.swift; sourceTree = "<group>"; };
+		9C2CCC221E6888B900CEAF2D /* CommonAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CommonAssets.xcassets; sourceTree = "<group>"; };
 		9C5184801E54AD5300FBF02A /* Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Defaults.swift; path = Common/Defaults.swift; sourceTree = SOURCE_ROOT; };
 		9C5184841E54B13B00FBF02A /* LIFX Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "LIFX Widget.entitlements"; sourceTree = "<group>"; };
 		9C5184851E54B15300FBF02A /* LIFX Widget Today Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "LIFX Widget Today Extension.entitlements"; sourceTree = "<group>"; };
@@ -562,6 +565,7 @@
 				9C5184801E54AD5300FBF02A /* Defaults.swift */,
 				9CCAA2401E5F30EA00AE10D0 /* Extensions */,
 				9C51849D1E55E27C00FBF02A /* Models */,
+				9C2CCC221E6888B900CEAF2D /* CommonAssets.xcassets */,
 			);
 			name = Common;
 			path = "LIFX Widget";
@@ -877,6 +881,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C0585301E545E7900CF3AFA /* LaunchScreen.storyboard in Resources */,
+				9C2CCC231E6888B900CEAF2D /* CommonAssets.xcassets in Resources */,
 				9C7102751E548EC10058E8C4 /* Localizable.strings in Resources */,
 				9C05852D1E545E7900CF3AFA /* Assets.xcassets in Resources */,
 				9C05852B1E545E7900CF3AFA /* Main.storyboard in Resources */,
@@ -905,6 +910,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C88D2731E65AE7C009B0D9B /* Assets.xcassets in Resources */,
+				9C2CCC241E6888B900CEAF2D /* CommonAssets.xcassets in Resources */,
 				9C88D2761E65B101009B0D9B /* Localizable.strings in Resources */,
 				9C0585691E5460E500CF3AFA /* MainInterface.storyboard in Resources */,
 			);
