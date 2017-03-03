@@ -21,9 +21,7 @@ final class API {
     fileprivate let internAPI: LIFXAPIWrapper = .shared()
 
     private init() {
-        if let token = SharedDefaults[.token] {
-            configure(token: token)
-        }
+        reconfigureIfNeeded()
     }
 
 }
@@ -44,6 +42,12 @@ extension API {
 
     var isConfigured: Bool {
         return SharedDefaults[.token] != nil
+    }
+
+    func reconfigureIfNeeded() {
+        if let token = SharedDefaults[.token] {
+            internAPI.setOAuthToken(token)
+        }
     }
 
     func configure(token: String) {

@@ -26,6 +26,17 @@
 	<string>LaunchScreen</string>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.maxime-dechalendar.LiFXWidget</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>lifx-widget</string>
+			</array>
+		</dict>
+	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

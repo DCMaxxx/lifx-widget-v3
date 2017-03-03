@@ -38,6 +38,19 @@ final class Color: NSObject, Model {
         self.kind = kind
     }
 
+    init(light: LIFXLight) {
+        if light.color.saturation == 0 {
+            self.kind = .white(kelvin: Int(light.color.kelvin),
+                               brightness: Float(light.brightness))
+        } else {
+            let color = UIColor(hue: CGFloat(light.color.hue) / 360,
+                                saturation: light.color.saturation,
+                                brightness: light.brightness,
+                                alpha: 1)
+            self.kind = .color(color: color)
+        }
+    }
+
     // MARK: - JSONable
     convenience init?(json: JSON) {
         guard let kind = json["kind"].string else {
@@ -95,6 +108,11 @@ final class Color: NSObject, Model {
                 "brightness": brightness
             ]
         }
+    }
+
+    // MARK: - SharedArchivable
+    static var archivedClassName: String {
+        return "com.maxime-dechalendar.Color"
     }
 
     // MARK: - NSCoding

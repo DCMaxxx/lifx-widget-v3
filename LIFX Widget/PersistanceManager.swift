@@ -37,6 +37,23 @@ final class PersistanceManager {
 
 }
 
+// MARK: - Global configuration
+extension PersistanceManager {
+
+    static func performInitialConfiguration() {
+        let archivedClasses: [SharedArchivable.Type] = [
+            Target.self,
+            Color.self,
+            Brightness.self
+        ]
+        archivedClasses.forEach {
+            NSKeyedUnarchiver.setClass($0, forClassName: $0.archivedClassName)
+            NSKeyedArchiver.setClassName($0.archivedClassName, for: $0)
+        }
+    }
+
+}
+
 // MARK: - Targets
 extension PersistanceManager {
 
