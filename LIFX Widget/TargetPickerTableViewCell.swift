@@ -12,7 +12,7 @@ import LIFXAPIWrapper
 // object_literal : It makes more sense here to use UIColor's inits
 // swiftlint:disable object_literal
 
-final class TargetPickerTableViewCell: UITableViewCell {
+final class TargetPickerTableViewCell: UITableViewCell, Identifiable {
 
     @IBOutlet fileprivate weak var nameLabel: UILabel!
     @IBOutlet fileprivate weak var typeLabel: UILabel!

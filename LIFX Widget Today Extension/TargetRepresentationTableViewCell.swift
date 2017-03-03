@@ -14,7 +14,7 @@ protocol TargetRepresentationTableViewCellDelegate: class {
 
 }
 
-final class TargetRepresentationTableViewCell: UITableViewCell {
+final class TargetRepresentationTableViewCell: UITableViewCell, Identifiable {
 
     @IBOutlet fileprivate weak var titleLabel: UILabel!
     @IBOutlet fileprivate weak var isOnView: UIView!

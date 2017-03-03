@@ -8,7 +8,13 @@
 
 import UIKit
 
-extension UITableViewCell {
+protocol Identifiable: class {
+
+    static var identifier: String { get }
+
+}
+
+extension Identifiable {
 
     static var identifier: String {
         // force_unwrapping: We know that components(separatedBy:) will at least have one element

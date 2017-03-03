@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ColorTableViewCell: UITableViewCell {
+final class ColorTableViewCell: UITableViewCell, Identifiable {
 
     func configure(with color: Color) {
         backgroundColor = color.displayColor
