@@ -65,7 +65,13 @@ extension TargetRepresentationTableViewCell {
         titleLabel.textColor = foregroundColor
         isOnView.backgroundColor = foregroundColor.withAlphaComponent(targetRepresentation.isOn ? 0.2 : 0)
         brightnessesCollectionView.tintColor = foregroundColor
-        brightnessesCollectionView.reloadData()
+        reloadVisibleBrightnessCells(with: foregroundColor)
+    }
+
+    fileprivate func reloadVisibleBrightnessCells(with tint: UIColor) {
+        brightnessesCollectionView.visibleCells.forEach {
+            $0.tintColor = tint
+        }
     }
 
 }
@@ -81,7 +87,7 @@ extension TargetRepresentationTableViewCell: UICollectionViewDataSource, UIColle
         // swiftlint:disable:next line_length force_cast
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BrightnessCollectionViewCell.identifier, for: indexPath) as! BrightnessCollectionViewCell
         let brightness = getBrightness(at: indexPath)
-        cell.configure(with: brightness, tintColor: collectionView.tintColor)
+        cell.configure(with: brightness, tint: collectionView.tintColor)
         return cell
     }
 

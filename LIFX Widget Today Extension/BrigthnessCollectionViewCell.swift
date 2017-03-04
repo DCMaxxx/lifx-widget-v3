@@ -12,9 +12,15 @@ final class BrightnessCollectionViewCell: UICollectionViewCell, Identifiable {
 
     @IBOutlet private weak var imageView: UIImageView!
 
-    func configure(with brightness: Brightness, tintColor: UIColor) {
-        imageView.image = brightness.icon
+    override func tintColorDidChange() {
+        super.tintColorDidChange()
+
         imageView.tintColor = tintColor
+    }
+
+    func configure(with brightness: Brightness, tint: UIColor) {
+        tintColor = tint
+        imageView.image = brightness.icon
     }
 
 }
