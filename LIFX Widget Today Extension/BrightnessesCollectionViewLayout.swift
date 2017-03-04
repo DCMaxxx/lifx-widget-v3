@@ -17,24 +17,9 @@ class BrightnessesCollectionViewLayout: UICollectionViewFlowLayout {
 
     var isCondensed: Bool = true {
         didSet {
-            if isCondensed {
-                collectionView?.performBatchUpdates(nil, completion: nil)
-            } else {
-                /*
-                 We want elements to unstack from the left to the right.
-                 If the collection view clips to bounds, then the elements aren't fully displayed during the animation.
-                 To fix this, we disable clipToBounds before performing the layout update
-                 and re-enable it after.
-                 We have to delay the performBatchUpdate call, else it doesn't work properly
-                 (the collectionView still clips its subviews).
-                 */
-                collectionView?.clipsToBounds = false
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                    self.collectionView?.performBatchUpdates(nil) { _ in
-                        self.collectionView?.clipsToBounds = true
-                    }
-                }
-            }
+            UIView.animate(withDuration: 0.3, springDamping: 0.6, animations: {
+                self.collectionView?.performBatchUpdates(nil, completion: nil)
+            })
         }
     }
 
@@ -52,20 +37,12 @@ class BrightnessesCollectionViewLayout: UICollectionViewFlowLayout {
         }
 
         attributes.forEach {
+            if $0 != lastAttribute {
+                $0.alpha = 0
+            }
             $0.frame = lastAttribute.frame
         }
         return attributes
     }
-
-//                /*
-//                 We have to adjust the transform3D because iOS sometimes goes YOLO and
-//                 resets the zIndex propety when performing layout animations. (Since 2012).
-//                 The drawback is that this is only a visual effect, and the cell on top might
-//                 not be the one that receives the touch.
-//                 However, in our case, this isn't an issue since, when condensed, the cells
-//                 aren't selectable.
-// Source : http://stackoverflow.com/questions/12659301/uicollectionview-setlayoutanimated-not-preserving-zindex
-//                 */
-//                attribute.transform3D = CATransform3DMakeTranslation(0, 0, CGFloat(numberOfElementsToStack - index))
 
 }

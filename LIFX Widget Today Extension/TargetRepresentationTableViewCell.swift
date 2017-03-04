@@ -45,7 +45,7 @@ final class TargetRepresentationTableViewCell: UITableViewCell, Identifiable {
 
         // TODO: This is for debug purpose only
         if let layout = brightnessesCollectionView.collectionViewLayout as? BrightnessesCollectionViewLayout {
-            layout.isCondensed = selected
+            layout.isCondensed = !selected
         }
     }
 
