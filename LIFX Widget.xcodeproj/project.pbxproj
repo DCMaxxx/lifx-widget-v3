@@ -80,6 +80,7 @@
 		9CA5D08E1E5CE37500975C96 /* ColorPickerColorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D08D1E5CE37500975C96 /* ColorPickerColorController.swift */; };
 		9CA5D0901E5CE38200975C96 /* ColorPickerWhiteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D08F1E5CE38200975C96 /* ColorPickerWhiteController.swift */; };
 		9CA946001E69CAD80092CCC8 /* BrightnessesCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA945FF1E69CAD80092CCC8 /* BrightnessesCollectionViewLayout.swift */; };
+		9CAD906B1E6AE63B0071480C /* UIView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7D2D481E5651A4007D89E3 /* UIView+Animations.swift */; };
 		9CBC51E11E61B1D00040E4CC /* TargetsPickerPersistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51E01E61B1D00040E4CC /* TargetsPickerPersistanceViewController.swift */; };
 		9CBC51E31E61B32F0040E4CC /* TargetsPickerFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51E21E61B32F0040E4CC /* TargetsPickerFeedbackViewController.swift */; };
 		9CBC51E61E61CD390040E4CC /* Brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51E51E61CD390040E4CC /* Brightness.swift */; };
@@ -1205,6 +1206,7 @@
 				9C7102711E5489F60058E8C4 /* API.swift in Sources */,
 				9C96AC211E65755000B588CD /* UIViewController+Storyboard.swift in Sources */,
 				9C88D2791E65C788009B0D9B /* PersistanceManager.swift in Sources */,
+				9CAD906B1E6AE63B0071480C /* UIView+Animations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
