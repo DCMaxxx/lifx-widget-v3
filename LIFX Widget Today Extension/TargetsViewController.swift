@@ -60,8 +60,12 @@ extension TargetsViewController: UITableViewDataSource {
 
 extension TargetsViewController: TargetRepresentationTableViewCellDelegate {
 
-    func userDidTapOnToggleButton(in cell: TargetRepresentationTableViewCell) {
+    func userDidTapOnToggle(in cell: TargetRepresentationTableViewCell) {
         // TODO: Toggle the light
+    }
+
+    func userDidSelect(brightness: Brightness, in cell: TargetRepresentationTableViewCell) {
+        // TODO: Toggle update the brightness
     }
 
 }
