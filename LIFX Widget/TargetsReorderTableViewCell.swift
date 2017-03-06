@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class TargetsReorderTableViewCell: UITableViewCell {
+final class TargetsReorderTableViewCell: UITableViewCell, Identifiable {
 
     func configure(with target: Target) {
         textLabel?.text = target.name

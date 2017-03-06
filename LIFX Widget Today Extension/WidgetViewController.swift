@@ -72,6 +72,7 @@ extension WidgetViewController {
             insertChild(controller: errorController)
             errorController.configure(with: context)
         }
+        setupPreferredContentSize()
     }
 
     fileprivate func displayTargetsController(lights: [LIFXLight] = []) {
@@ -82,6 +83,7 @@ extension WidgetViewController {
             insertChild(controller: targetsController)
             targetsController.configure(with: lights)
         }
+        setupPreferredContentSize()
     }
 
 }

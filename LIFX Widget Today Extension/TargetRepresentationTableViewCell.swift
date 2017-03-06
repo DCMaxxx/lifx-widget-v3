@@ -10,27 +10,37 @@ import UIKit
 
 protocol TargetRepresentationTableViewCellDelegate: class {
 
-    func userDidTapOnToggleButton(in cell: TargetRepresentationTableViewCell)
+    func userDidTapOnToggle(in cell: TargetRepresentationTableViewCell)
+    func userDidSelect(brightness: Brightness, in cell: TargetRepresentationTableViewCell)
 
 }
 
-final class TargetRepresentationTableViewCell: UITableViewCell {
+final class TargetRepresentationTableViewCell: UITableViewCell, Identifiable {
 
     @IBOutlet fileprivate weak var titleLabel: UILabel!
-    @IBOutlet fileprivate weak var isOnView: UIView!
+
+    @IBOutlet fileprivate weak var brightnessesCollectionView: UICollectionView!
+    fileprivate var lastSelectedBrightnessIndexPath: IndexPath?
+    fileprivate var currentTargetIsOn = false
 
     fileprivate weak var delegate: TargetRepresentationTableViewCellDelegate?
+    fileprivate var brightnesses: [Brightness] {
+        return PersistanceManager.brightnesses
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        let gestureRecognizer = UITapGestureRecognizer()
-        gestureRecognizer.addTarget(self, action: #selector(tappedOnToggleView(sender:)))
-        isOnView.addGestureRecognizer(gestureRecognizer)
+        brightnessesCollectionView.dataSource = self
+        brightnessesCollectionView.delegate = self
     }
 
-    func tappedOnToggleView(sender: UITapGestureRecognizer) {
-        delegate?.userDidTapOnToggleButton(in: self)
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(true, animated: animated)
+
+        if let layout = brightnessesCollectionView.collectionViewLayout as? BrightnessesCollectionViewLayout {
+            layout.isCondensed = !selected
+        }
     }
 
 }
@@ -41,13 +51,102 @@ extension TargetRepresentationTableViewCell {
     func configure(with targetRepresentation: TargetRepresentation,
                    delegate: TargetRepresentationTableViewCellDelegate?) {
         self.delegate = delegate
+        self.currentTargetIsOn = targetRepresentation.isOn
 
         backgroundColor = targetRepresentation.currentColor
         titleLabel.text = targetRepresentation.target.name
 
-        let foregroundColor: UIColor = (targetRepresentation.currentColor.isLight ? .black : .white)
+        let foregroundColor: UIColor = (targetRepresentation.currentColor.isLight ? #colorLiteral(red: 0.2173160017, green: 0.2381722331, blue: 0.2790536284, alpha: 1) : #colorLiteral(red: 0.9019607843, green: 0.9019607843, blue: 0.9019607843, alpha: 1))
         titleLabel.textColor = foregroundColor
-        isOnView.backgroundColor = foregroundColor.withAlphaComponent(targetRepresentation.isOn ? 0.2 : 0)
+        brightnessesCollectionView.tintColor = foregroundColor
+
+        selectClosestBrightnessCell(with: targetRepresentation.currentBrightness)
+        reloadVisibleBrightnessCells(with: foregroundColor)
+    }
+
+    fileprivate func selectClosestBrightnessCell(with brightness: Brightness) {
+        let closestBrightness = brightnesses.enumerated().min { (lhs, rhs) -> Bool in
+            return abs(lhs.element.value - brightness.value) < abs(rhs.element.value - brightness.value)
+        }
+        guard let closest = closestBrightness else {
+            return
+        }
+
+        let indexPath = IndexPath(item: closest.offset, section: 0)
+        DispatchQueue.main.async {
+            self.brightnessesCollectionView.selectItem(at: indexPath, animated: false, scrollPosition: [])
+            self.brightnessesCollectionView.performBatchUpdates(nil, completion: nil)
+            self.lastSelectedBrightnessIndexPath = indexPath
+            self.reloadVisiblePowerStatus()
+        }
+    }
+
+    fileprivate func reloadVisibleBrightnessCells(with tint: UIColor) {
+        brightnessesCollectionView.visibleCells.forEach {
+            $0.tintColor = tint
+        }
+    }
+
+    fileprivate func reloadVisiblePowerStatus() {
+        brightnessesCollectionView.visibleCells.forEach {
+            ($0 as? BrightnessCollectionViewCell)?.reload(with: currentTargetIsOn)
+        }
+    }
+
+}
+
+extension TargetRepresentationTableViewCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return brightnesses.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        // swiftlint:disable:next line_length force_cast
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BrightnessCollectionViewCell.identifier, for: indexPath) as! BrightnessCollectionViewCell
+        let brightness = getBrightness(at: indexPath)
+        cell.configure(with: brightness, tint: collectionView.tintColor, isOn: currentTargetIsOn)
+        return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let numberOfItems = self.collectionView(collectionView, numberOfItemsInSection: indexPath.section)
+        let width = collectionView.bounds.width
+        let itemWidth = width / CGFloat(numberOfItems)
+        return CGSize(width: itemWidth, height: collectionView.bounds.height)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if lastSelectedBrightnessIndexPath == indexPath {
+            toggleTargetAndDeselectBrightness(at: indexPath)
+        } else {
+            selectBrightness(at: indexPath)
+        }
+    }
+
+    private func toggleTargetAndDeselectBrightness(at indexPath: IndexPath) {
+        lastSelectedBrightnessIndexPath = nil
+        brightnessesCollectionView.deselectItem(at: indexPath, animated: true)
+
+        delegate?.userDidTapOnToggle(in: self)
+        currentTargetIsOn = false
+        reloadVisiblePowerStatus()
+    }
+
+    private func selectBrightness(at indexPath: IndexPath) {
+        lastSelectedBrightnessIndexPath = indexPath
+
+        let brightness = getBrightness(at: indexPath)
+        delegate?.userDidSelect(brightness: brightness, in: self)
+        currentTargetIsOn = true
+        reloadVisiblePowerStatus()
+    }
+
+    private func getBrightness(at indexPath: IndexPath) -> Brightness {
+        return brightnesses[indexPath.row]
     }
 
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class BrightnessTableViewCell: UITableViewCell {
+final class BrightnessTableViewCell: UITableViewCell, Identifiable {
 
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var iconView: UIImageView!
