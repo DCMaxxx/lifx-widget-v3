@@ -36,8 +36,9 @@ class BrightnessesCollectionViewLayout: UICollectionViewFlowLayout {
             return attributes
         }
 
+        let selectedIndexPath = collectionView?.indexPathsForSelectedItems?.first
         attributes.forEach {
-            if $0 != lastAttribute {
+            if let selected = selectedIndexPath, selected != $0.indexPath {
                 $0.alpha = 0
             }
             $0.frame = lastAttribute.frame

@@ -14,13 +14,13 @@ struct TargetRepresentation {
     let target: Target
     var isOn: Bool
     var currentColor: UIColor
-    var currentBrightnessImage: UIImage
+    var currentBrightness: Brightness
 
     init(target: Target) {
         self.target = target
         self.isOn = false
         self.currentColor = .clear
-        self.currentBrightnessImage = #imageLiteral(resourceName: "brightness_medium")
+        self.currentBrightness = Brightness(value: 0.5)
     }
 
     init(target: Target, in lights: [LIFXLight]) {
@@ -35,7 +35,7 @@ struct TargetRepresentation {
 
         let totalBrightness = availableLights.map { $0.brightness }.reduce(0, +)
         let averageBrightness = totalBrightness / max(1, CGFloat(targetedLights.count))
-        self.currentBrightnessImage = Brightness(value: Float(averageBrightness)).icon
+        self.currentBrightness = Brightness(value: Float(averageBrightness))
     }
 
     private static func filter(lights: [LIFXLight], for identifier: String) -> [LIFXLight] {

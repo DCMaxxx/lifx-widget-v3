@@ -53,11 +53,28 @@ extension TargetRepresentationTableViewCell {
 
         backgroundColor = targetRepresentation.currentColor
         titleLabel.text = targetRepresentation.target.name
+        selectClosestBrightnessCell(with: targetRepresentation.currentBrightness)
 
         let foregroundColor: UIColor = (targetRepresentation.currentColor.isLight ? #colorLiteral(red: 0.2173160017, green: 0.2381722331, blue: 0.2790536284, alpha: 1) : #colorLiteral(red: 0.9019607843, green: 0.9019607843, blue: 0.9019607843, alpha: 1))
         titleLabel.textColor = foregroundColor
         brightnessesCollectionView.tintColor = foregroundColor
         reloadVisibleBrightnessCells(with: foregroundColor)
+    }
+
+    fileprivate func selectClosestBrightnessCell(with brightness: Brightness) {
+        let closestBrightness = brightnesses.enumerated().min { (lhs, rhs) -> Bool in
+            return abs(lhs.element.value - brightness.value) < abs(rhs.element.value - brightness.value)
+        }
+        guard let closest = closestBrightness else {
+            return
+        }
+
+        let indexPath = IndexPath(item: closest.offset, section: 0)
+        DispatchQueue.main.async {
+            self.brightnessesCollectionView.selectItem(at: indexPath, animated: false, scrollPosition: [])
+            self.brightnessesCollectionView.performBatchUpdates(nil, completion: nil)
+            self.lastSelectedBrightnessIndexPath = indexPath
+        }
     }
 
     fileprivate func reloadVisibleBrightnessCells(with tint: UIColor) {
