@@ -21,6 +21,7 @@ final class TargetRepresentationTableViewCell: UITableViewCell, Identifiable {
 
     @IBOutlet fileprivate weak var brightnessesCollectionView: UICollectionView!
     fileprivate var lastSelectedBrightnessIndexPath: IndexPath?
+    fileprivate var currentTargetIsOn = false
 
     fileprivate weak var delegate: TargetRepresentationTableViewCellDelegate?
     fileprivate var brightnesses: [Brightness] {
@@ -50,14 +51,16 @@ extension TargetRepresentationTableViewCell {
     func configure(with targetRepresentation: TargetRepresentation,
                    delegate: TargetRepresentationTableViewCellDelegate?) {
         self.delegate = delegate
+        self.currentTargetIsOn = targetRepresentation.isOn
 
         backgroundColor = targetRepresentation.currentColor
         titleLabel.text = targetRepresentation.target.name
-        selectClosestBrightnessCell(with: targetRepresentation.currentBrightness)
 
         let foregroundColor: UIColor = (targetRepresentation.currentColor.isLight ? #colorLiteral(red: 0.2173160017, green: 0.2381722331, blue: 0.2790536284, alpha: 1) : #colorLiteral(red: 0.9019607843, green: 0.9019607843, blue: 0.9019607843, alpha: 1))
         titleLabel.textColor = foregroundColor
         brightnessesCollectionView.tintColor = foregroundColor
+
+        selectClosestBrightnessCell(with: targetRepresentation.currentBrightness)
         reloadVisibleBrightnessCells(with: foregroundColor)
     }
 
@@ -74,12 +77,19 @@ extension TargetRepresentationTableViewCell {
             self.brightnessesCollectionView.selectItem(at: indexPath, animated: false, scrollPosition: [])
             self.brightnessesCollectionView.performBatchUpdates(nil, completion: nil)
             self.lastSelectedBrightnessIndexPath = indexPath
+            self.reloadVisiblePowerStatus()
         }
     }
 
     fileprivate func reloadVisibleBrightnessCells(with tint: UIColor) {
         brightnessesCollectionView.visibleCells.forEach {
             $0.tintColor = tint
+        }
+    }
+
+    fileprivate func reloadVisiblePowerStatus() {
+        brightnessesCollectionView.visibleCells.forEach {
+            ($0 as? BrightnessCollectionViewCell)?.reload(with: currentTargetIsOn)
         }
     }
 
@@ -96,7 +106,7 @@ extension TargetRepresentationTableViewCell: UICollectionViewDataSource, UIColle
         // swiftlint:disable:next line_length force_cast
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BrightnessCollectionViewCell.identifier, for: indexPath) as! BrightnessCollectionViewCell
         let brightness = getBrightness(at: indexPath)
-        cell.configure(with: brightness, tint: collectionView.tintColor)
+        cell.configure(with: brightness, tint: collectionView.tintColor, isOn: currentTargetIsOn)
         return cell
     }
 
@@ -122,6 +132,8 @@ extension TargetRepresentationTableViewCell: UICollectionViewDataSource, UIColle
         brightnessesCollectionView.deselectItem(at: indexPath, animated: true)
 
         delegate?.userDidTapOnToggle(in: self)
+        currentTargetIsOn = false
+        reloadVisiblePowerStatus()
     }
 
     private func selectBrightness(at indexPath: IndexPath) {
@@ -129,6 +141,8 @@ extension TargetRepresentationTableViewCell: UICollectionViewDataSource, UIColle
 
         let brightness = getBrightness(at: indexPath)
         delegate?.userDidSelect(brightness: brightness, in: self)
+        currentTargetIsOn = true
+        reloadVisiblePowerStatus()
     }
 
     private func getBrightness(at indexPath: IndexPath) -> Brightness {
