@@ -89,7 +89,7 @@ extension TargetRepresentationTableViewCell {
 
     fileprivate func reloadVisiblePowerStatus() {
         brightnessesCollectionView.visibleCells.forEach {
-            ($0 as? BrightnessCollectionViewCell)?.reload(with: currentTargetIsOn)
+            ($0 as? BrightnessCollectionViewCell)?.reload(isOn: currentTargetIsOn)
         }
     }
 
