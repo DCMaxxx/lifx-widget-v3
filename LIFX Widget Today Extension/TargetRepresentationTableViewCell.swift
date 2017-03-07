@@ -10,7 +10,8 @@ import UIKit
 
 protocol TargetRepresentationTableViewCellDelegate: class {
 
-    func userDidTapOnToggle(in cell: TargetRepresentationTableViewCell)
+    func userDidPowerOn(in cell: TargetRepresentationTableViewCell)
+    func userDidPowerOff(in cell: TargetRepresentationTableViewCell)
     func userDidSelect(brightness: Brightness, in cell: TargetRepresentationTableViewCell)
     func userDidSelect(color: Color, in cell: TargetRepresentationTableViewCell)
 
@@ -103,8 +104,12 @@ extension TargetRepresentationTableViewCell: BrightnessesPickerDelegate {
         delegate?.userDidSelect(brightness: brightness, in: self)
     }
 
-    func brightnessPickerDidDeselect() {
-        delegate?.userDidTapOnToggle(in: self)
+    func brightnessPickerDidSelectPowerOff() {
+        delegate?.userDidPowerOff(in: self)
+    }
+
+    func brightnessPickerDidSelectPowerOn() {
+        delegate?.userDidPowerOn(in: self)
     }
 
 }

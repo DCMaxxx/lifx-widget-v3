@@ -79,19 +79,28 @@ extension TargetsViewController: UITableViewDelegate {
 
 extension TargetsViewController: TargetRepresentationTableViewCellDelegate {
 
-    func userDidTapOnToggle(in cell: TargetRepresentationTableViewCell) {
+    func userDidPowerOn(in cell: TargetRepresentationTableViewCell) {
         deselectSelectedRow()
-        // TODO: Toggle the light
+        // TODO: Power on the light
+        print("power on")
+    }
+
+    func userDidPowerOff(in cell: TargetRepresentationTableViewCell) {
+        deselectSelectedRow()
+        // TODO: Power off the light
+        print("power off")
     }
 
     func userDidSelect(brightness: Brightness, in cell: TargetRepresentationTableViewCell) {
         deselectSelectedRow()
         // TODO: Update the brightness of the light
+        print("brightness: \(brightness.value)")
     }
 
     func userDidSelect(color: Color, in cell: TargetRepresentationTableViewCell) {
         deselectSelectedRow()
         // TODO: Update the color of the light
+        print("color: \(color.kind)")
     }
 
 }

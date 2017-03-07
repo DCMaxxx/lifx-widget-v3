@@ -11,7 +11,8 @@ import UIKit
 protocol BrightnessesPickerDelegate: class {
 
     func brightnessPickerDidSelect(brightness: Brightness)
-    func brightnessPickerDidDeselect()
+    func brightnessPickerDidSelectPowerOff()
+    func brightnessPickerDidSelectPowerOn()
 
 }
 
@@ -93,18 +94,32 @@ extension BrightnessesPickerDataSource: UICollectionViewDelegateFlowLayout {
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if lastSelectedBrightnessIndexPath == indexPath {
-            toggleTargetAndDeselectBrightness(at: indexPath, in: collectionView)
+        if lastSelectedBrightnessIndexPath == indexPath && !currentTargetIsOn {
+            // If we have a selection, but the target is off, it means we have pre-selected based
+            // and the current intensity and we just want to turn on the light
+            selectBrightnessFromPreselected(at: indexPath, in: collectionView)
+        }
+        else if lastSelectedBrightnessIndexPath == indexPath {
+            // We have a selection, the current target is on, and we're selecting the
+            // same cell. Let's turn it off
+            deselectBrightness(at: indexPath, in: collectionView)
         } else {
+            // We're just selecting something else, we just need to apply it
             selectBrightness(at: indexPath, in: collectionView)
         }
     }
 
-    private func toggleTargetAndDeselectBrightness(at indexPath: IndexPath, in collectionView: UICollectionView) {
+    private func selectBrightnessFromPreselected(at indexPath: IndexPath, in collectionView: UICollectionView) {
+        delegate?.brightnessPickerDidSelectPowerOn()
+        currentTargetIsOn = true
+        reloadVisiblePowerStatus(in: collectionView)
+    }
+
+    private func deselectBrightness(at indexPath: IndexPath, in collectionView: UICollectionView) {
         lastSelectedBrightnessIndexPath = nil
         collectionView.deselectItem(at: indexPath, animated: true)
 
-        delegate?.brightnessPickerDidDeselect()
+        delegate?.brightnessPickerDidSelectPowerOff()
         currentTargetIsOn = false
         reloadVisiblePowerStatus(in: collectionView)
     }
