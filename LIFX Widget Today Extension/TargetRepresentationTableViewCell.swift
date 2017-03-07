@@ -59,7 +59,13 @@ final class TargetRepresentationTableViewCell: UITableViewCell, Identifiable {
         bottomSpacing.constant = bottom
         colorsCollectionViewHeight.constant = height
         colorsCollectionView.collectionViewLayout.invalidateLayout()
+
+        // For some reason, I need to layout twice here to get the
+        // collection view to be displayed the first time...
         layoutIfNeeded(animationDuration: 0.5, springDamping: 0.6)
+        layoutIfNeeded(animationDuration: 0.5, springDamping: 0.6) { _ in
+            self.colorsCollectionView.reloadData()
+        }
     }
 
     private func displayBrightnessesCollectionView(visible: Bool) {
