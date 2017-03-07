@@ -112,6 +112,7 @@ extension TargetRepresentationTableViewCell: BrightnessesPickerDelegate {
 extension TargetRepresentationTableViewCell: ColorsPickerDelegate {
 
     func colorsPickerDidSelect(color: Color) {
+        // TODO: Mark the target as on, update the background color, update the selected brightness
         delegate?.userDidSelect(color: color, in: self)
     }
 
