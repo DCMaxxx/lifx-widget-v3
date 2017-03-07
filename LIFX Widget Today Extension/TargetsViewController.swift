@@ -62,10 +62,17 @@ extension TargetsViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         if indexPath == tableView.indexPathForSelectedRow {
-            tableView.deselectRow(at: indexPath, animated: true)
+            deselectSelectedRow()
             return nil
         }
         return indexPath
+    }
+
+    fileprivate func deselectSelectedRow() {
+        guard let indexPath = tableView.indexPathForSelectedRow else {
+            return
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
 }
@@ -73,16 +80,18 @@ extension TargetsViewController: UITableViewDelegate {
 extension TargetsViewController: TargetRepresentationTableViewCellDelegate {
 
     func userDidTapOnToggle(in cell: TargetRepresentationTableViewCell) {
+        deselectSelectedRow()
         // TODO: Toggle the light
     }
 
     func userDidSelect(brightness: Brightness, in cell: TargetRepresentationTableViewCell) {
+        deselectSelectedRow()
         // TODO: Update the brightness of the light
     }
 
     func userDidSelect(color: Color, in cell: TargetRepresentationTableViewCell) {
+        deselectSelectedRow()
         // TODO: Update the color of the light
-        print("hey, update my color baby")
     }
 
 }
