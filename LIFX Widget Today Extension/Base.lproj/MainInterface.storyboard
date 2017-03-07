@@ -81,7 +81,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Kpc-4q-HbC">
+                                                        <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Kpc-4q-HbC" customClass="BrightnessCollectionView" customModule="LIFX_Widget_Today_Extension" customModuleProvider="target">
                                                             <rect key="frame" x="160" y="0.0" width="130" height="50.5"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="lcD-jA-y1M" customClass="BrightnessesCollectionViewLayout" customModule="LIFX_Widget_Today_Extension" customModuleProvider="target">
