@@ -58,6 +58,18 @@ extension TargetsViewController: UITableViewDataSource {
 
 }
 
+extension TargetsViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if indexPath == tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: indexPath, animated: true)
+            return nil
+        }
+        return indexPath
+    }
+
+}
+
 extension TargetsViewController: TargetRepresentationTableViewCellDelegate {
 
     func userDidTapOnToggle(in cell: TargetRepresentationTableViewCell) {
