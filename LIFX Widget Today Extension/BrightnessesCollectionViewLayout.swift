@@ -17,7 +17,7 @@ class BrightnessesCollectionViewLayout: UICollectionViewFlowLayout {
 
     var isCondensed: Bool = true {
         didSet {
-            UIView.animate(withDuration: 0.3, springDamping: 0.6, animations: {
+            UIView.animate(withDuration: 0.5, springDamping: 0.6, animations: {
                 self.collectionView?.performBatchUpdates(nil, completion: nil)
             })
         }
