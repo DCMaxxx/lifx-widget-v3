@@ -65,7 +65,12 @@ extension TargetsViewController: TargetRepresentationTableViewCellDelegate {
     }
 
     func userDidSelect(brightness: Brightness, in cell: TargetRepresentationTableViewCell) {
-        // TODO: Toggle update the brightness
+        // TODO: Update the brightness of the light
+    }
+
+    func userDidSelect(color: Color, in cell: TargetRepresentationTableViewCell) {
+        // TODO: Update the color of the light
+        print("hey, update my color baby")
     }
 
 }

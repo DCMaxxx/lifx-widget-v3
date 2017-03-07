@@ -96,6 +96,8 @@
 		9CBC51FA1E622C0A0040E4CC /* UIKit+Uppercased.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51F91E622C0A0040E4CC /* UIKit+Uppercased.swift */; };
 		9CBC51FE1E622F680040E4CC /* TutorialSpacedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51FD1E622F680040E4CC /* TutorialSpacedLabel.swift */; };
 		9CBC52001E6231960040E4CC /* TutorialHTMLLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51FF1E6231960040E4CC /* TutorialHTMLLabel.swift */; };
+		9CC3E1031E6EC60F00D96201 /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC3E1021E6EC60F00D96201 /* ColorCollectionViewCell.swift */; };
+		9CC3E1051E6EC6B800D96201 /* ColorsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC3E1041E6EC6B800D96201 /* ColorsDataSource.swift */; };
 		9CCAA2421E5F311200AE10D0 /* Array+Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA2411E5F311200AE10D0 /* Array+Misc.swift */; };
 		9CCAA2441E5F4AC700AE10D0 /* WhiteGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA2431E5F4AC700AE10D0 /* WhiteGradientView.swift */; };
 		9CCAA2491E5F4BD700AE10D0 /* WhiteGradientIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA2481E5F4BD700AE10D0 /* WhiteGradientIndicatorView.swift */; };
@@ -245,6 +247,8 @@
 		9CBC51F91E622C0A0040E4CC /* UIKit+Uppercased.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+Uppercased.swift"; sourceTree = "<group>"; };
 		9CBC51FD1E622F680040E4CC /* TutorialSpacedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialSpacedLabel.swift; sourceTree = "<group>"; };
 		9CBC51FF1E6231960040E4CC /* TutorialHTMLLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialHTMLLabel.swift; sourceTree = "<group>"; };
+		9CC3E1021E6EC60F00D96201 /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
+		9CC3E1041E6EC6B800D96201 /* ColorsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsDataSource.swift; sourceTree = "<group>"; };
 		9CCAA2411E5F311200AE10D0 /* Array+Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Misc.swift"; sourceTree = "<group>"; };
 		9CCAA2431E5F4AC700AE10D0 /* WhiteGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteGradientView.swift; sourceTree = "<group>"; };
 		9CCAA2481E5F4BD700AE10D0 /* WhiteGradientIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteGradientIndicatorView.swift; sourceTree = "<group>"; };
@@ -630,9 +634,8 @@
 			children = (
 				9C96AC1D1E6573F400B588CD /* TargetsViewController.swift */,
 				9C88D27A1E65C7B4009B0D9B /* TargetRepresentationTableViewCell.swift */,
-				9CE2745B1E69B6B700A3C104 /* BrigthnessCollectionViewCell.swift */,
-				9C96AE861E6E013E00DA9BAC /* BrightnessesDataSource.swift */,
-				9CA945FF1E69CAD80092CCC8 /* BrightnessesCollectionViewLayout.swift */,
+				9CC3E1001E6EC56F00D96201 /* Brightnesses */,
+				9CC3E1011E6EC57700D96201 /* Colors */,
 			);
 			name = Targets;
 			sourceTree = "<group>";
@@ -716,6 +719,25 @@
 				9CBC51F51E621A0B0040E4CC /* TargetsReorderTableViewCell.swift */,
 			);
 			name = Reorder;
+			sourceTree = "<group>";
+		};
+		9CC3E1001E6EC56F00D96201 /* Brightnesses */ = {
+			isa = PBXGroup;
+			children = (
+				9C96AE861E6E013E00DA9BAC /* BrightnessesDataSource.swift */,
+				9CE2745B1E69B6B700A3C104 /* BrigthnessCollectionViewCell.swift */,
+				9CA945FF1E69CAD80092CCC8 /* BrightnessesCollectionViewLayout.swift */,
+			);
+			name = Brightnesses;
+			sourceTree = "<group>";
+		};
+		9CC3E1011E6EC57700D96201 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				9CC3E1041E6EC6B800D96201 /* ColorsDataSource.swift */,
+				9CC3E1021E6EC60F00D96201 /* ColorCollectionViewCell.swift */,
+			);
+			name = Colors;
 			sourceTree = "<group>";
 		};
 		9CCAA2401E5F30EA00AE10D0 /* Extensions */ = {
@@ -1194,6 +1216,7 @@
 				9CBC51E71E61CD390040E4CC /* Brightness.swift in Sources */,
 				9CCAA24D1E602C6700AE10D0 /* Comparable+Range.swift in Sources */,
 				9C88D27B1E65C7B4009B0D9B /* TargetRepresentationTableViewCell.swift in Sources */,
+				9CC3E1031E6EC60F00D96201 /* ColorCollectionViewCell.swift in Sources */,
 				9C96AC1E1E6573F400B588CD /* TargetsViewController.swift in Sources */,
 				9C5184A21E55E3BF00FBF02A /* Target.swift in Sources */,
 				9C443AEB1E65D288003C15E5 /* TargetRepresentation.swift in Sources */,
@@ -1205,6 +1228,7 @@
 				9C5184821E54AD5300FBF02A /* Defaults.swift in Sources */,
 				9C0585661E5460E500CF3AFA /* WidgetViewController.swift in Sources */,
 				9CA5D0811E58B78400975C96 /* Color.swift in Sources */,
+				9CC3E1051E6EC6B800D96201 /* ColorsDataSource.swift in Sources */,
 				9C5184B91E5612A900FBF02A /* NSObject+Identifiable.swift in Sources */,
 				9C7102711E5489F60058E8C4 /* API.swift in Sources */,
 				9C96AC211E65755000B588CD /* UIViewController+Storyboard.swift in Sources */,

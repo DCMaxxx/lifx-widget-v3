@@ -12,6 +12,7 @@ protocol TargetRepresentationTableViewCellDelegate: class {
 
     func userDidTapOnToggle(in cell: TargetRepresentationTableViewCell)
     func userDidSelect(brightness: Brightness, in cell: TargetRepresentationTableViewCell)
+    func userDidSelect(color: Color, in cell: TargetRepresentationTableViewCell)
 
 }
 
@@ -26,6 +27,7 @@ final class TargetRepresentationTableViewCell: UITableViewCell, Identifiable {
     @IBOutlet fileprivate weak var topSpacing: NSLayoutConstraint!
     @IBOutlet fileprivate weak var bottomSpacing: NSLayoutConstraint!
     @IBOutlet fileprivate weak var colorsCollectionViewHeight: NSLayoutConstraint!
+    fileprivate var colorsDataSource: ColorsPickerDataSource!
 
     fileprivate weak var delegate: TargetRepresentationTableViewCellDelegate?
 
@@ -36,6 +38,11 @@ final class TargetRepresentationTableViewCell: UITableViewCell, Identifiable {
         brightnessesDataSource = BrightnessesPickerDataSource(brightnesses: brightnesses, delegate: self)
         brightnessesCollectionView.dataSource = brightnessesDataSource
         brightnessesCollectionView.delegate = brightnessesDataSource
+
+        let colors = PersistanceManager.colors
+        colorsDataSource = ColorsPickerDataSource(colors: colors, delegate: self)
+        colorsCollectionView.dataSource = colorsDataSource
+        colorsCollectionView.delegate = colorsDataSource
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -50,7 +57,8 @@ final class TargetRepresentationTableViewCell: UITableViewCell, Identifiable {
         topSpacing.constant = top
         bottomSpacing.constant = bottom
         colorsCollectionViewHeight.constant = height
-        layoutIfNeeded(animationDuration: 0.3, springDamping: 0.6)
+        colorsCollectionView.collectionViewLayout.invalidateLayout()
+        layoutIfNeeded(animationDuration: 0.5, springDamping: 0.6)
     }
 
     private func displayBrightnessesCollectionView(visible: Bool) {
@@ -79,9 +87,6 @@ extension TargetRepresentationTableViewCell {
         titleLabel.textColor = foregroundColor
         brightnessesCollectionView.tintColor = foregroundColor
         reloadVisibleBrightnessCells(with: foregroundColor)
-
-        colorsCollectionView.tintColor = .blue
-        colorsCollectionView.backgroundColor = .blue
     }
 
     fileprivate func reloadVisibleBrightnessCells(with tint: UIColor) {
@@ -100,6 +105,14 @@ extension TargetRepresentationTableViewCell: BrightnessesPickerDelegate {
 
     func brightnessPickerDidDeselect() {
         delegate?.userDidTapOnToggle(in: self)
+    }
+
+}
+
+extension TargetRepresentationTableViewCell: ColorsPickerDelegate {
+
+    func colorsPickerDidSelect(color: Color) {
+        delegate?.userDidSelect(color: color, in: self)
     }
 
 }

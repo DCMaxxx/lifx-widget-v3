@@ -141,24 +141,25 @@
                                                 </view>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="w6p-g9-8aN">
                                                     <rect key="frame" x="0.0" y="90.5" width="320" height="20"/>
-                                                    <color key="backgroundColor" red="1" green="0.0" blue="0.027805624139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="ZMF-VN-Fi7"/>
                                                     </constraints>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hha-9c-ge0">
-                                                        <size key="itemSize" width="50" height="50"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="hha-9c-ge0">
+                                                        <size key="itemSize" width="20" height="20"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="NUM-gs-S9s">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ColorCollectionViewCell" id="NUM-gs-S9s" customClass="ColorCollectionViewCell" customModule="LIFX_Widget_Today_Extension" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                             </view>
+                                                            <color key="backgroundColor" red="1" green="0.0" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
@@ -185,6 +186,7 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="0Ya-83-EXG" id="4GA-5W-oiV"/>
+                                    <outlet property="delegate" destination="0Ya-83-EXG" id="Gk0-9P-KSY"/>
                                 </connections>
                             </tableView>
                         </subviews>
