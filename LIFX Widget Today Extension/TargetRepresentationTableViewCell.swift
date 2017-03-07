@@ -76,22 +76,22 @@ extension TargetRepresentationTableViewCell {
                    delegate: TargetRepresentationTableViewCellDelegate?) {
         self.delegate = delegate
 
-        backgroundColor = targetRepresentation.currentColor
+        contentView.backgroundColor = targetRepresentation.currentColor
         titleLabel.text = targetRepresentation.target.name
 
         brightnessesDataSource.reload(isOn: targetRepresentation.isOn)
         brightnessesDataSource.selectClosestBrightnessCell(with: targetRepresentation.currentBrightness,
                                                            in: brightnessesCollectionView)
 
-        let foregroundColor: UIColor = (targetRepresentation.currentColor.isLight ? #colorLiteral(red: 0.2173160017, green: 0.2381722331, blue: 0.2790536284, alpha: 1) : #colorLiteral(red: 0.9019607843, green: 0.9019607843, blue: 0.9019607843, alpha: 1))
-        titleLabel.textColor = foregroundColor
-        brightnessesCollectionView.tintColor = foregroundColor
-        reloadVisibleBrightnessCells(with: foregroundColor)
+        reloadTintColor(isBackgroundlight: targetRepresentation.currentColor.isLight)
     }
 
-    fileprivate func reloadVisibleBrightnessCells(with tint: UIColor) {
+    fileprivate func reloadTintColor(isBackgroundlight light: Bool) {
+        let foregroundColor: UIColor = (light ? #colorLiteral(red: 0.2173160017, green: 0.2381722331, blue: 0.2790536284, alpha: 1) : #colorLiteral(red: 0.9019607843, green: 0.9019607843, blue: 0.9019607843, alpha: 1))
+        titleLabel.textColor = foregroundColor
+        brightnessesCollectionView.tintColor = foregroundColor
         brightnessesCollectionView.visibleCells.forEach {
-            $0.tintColor = tint
+            $0.tintColor = foregroundColor
         }
     }
 
@@ -112,7 +112,21 @@ extension TargetRepresentationTableViewCell: BrightnessesPickerDelegate {
 extension TargetRepresentationTableViewCell: ColorsPickerDelegate {
 
     func colorsPickerDidSelect(color: Color) {
-        // TODO: Mark the target as on, update the background color, update the selected brightness
+        contentView.backgroundColor = color.displayColor
+        reloadTintColor(isBackgroundlight: color.displayColor.isLight)
+
+        let brightnessValue: Float
+        switch color.kind {
+        case .color(let color):
+            brightnessValue = Float(color.hsba?.brightness ?? 0)
+        case .white(_, let brightness):
+            brightnessValue = brightness
+        }
+
+        let brightness = Brightness(value: brightnessValue)
+        brightnessesDataSource.selectClosestBrightnessCell(with: brightness, in: brightnessesCollectionView)
+        brightnessesDataSource.reload(isOn: true)
+
         delegate?.userDidSelect(color: color, in: self)
     }
 

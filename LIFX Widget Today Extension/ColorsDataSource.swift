@@ -55,7 +55,6 @@ extension ColorsPickerDataSource: UICollectionViewDelegateFlowLayout {
         let numberOfItems = self.collectionView(collectionView, numberOfItemsInSection: indexPath.section)
         let width = collectionView.bounds.width
         let itemWidth = width / CGFloat(numberOfItems)
-        print("size: \(itemWidth) * \(collectionView.bounds.height)")
         return CGSize(width: itemWidth, height: collectionView.bounds.height)
     }
 
