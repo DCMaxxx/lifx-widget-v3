@@ -10,8 +10,10 @@ import UIKit
 
 protocol TargetRepresentationTableViewCellDelegate: class {
 
-    func userDidTapOnToggle(in cell: TargetRepresentationTableViewCell)
+    func userDidPowerOn(in cell: TargetRepresentationTableViewCell)
+    func userDidPowerOff(in cell: TargetRepresentationTableViewCell)
     func userDidSelect(brightness: Brightness, in cell: TargetRepresentationTableViewCell)
+    func userDidSelect(color: Color, in cell: TargetRepresentationTableViewCell)
 
 }
 
@@ -20,26 +22,55 @@ final class TargetRepresentationTableViewCell: UITableViewCell, Identifiable {
     @IBOutlet fileprivate weak var titleLabel: UILabel!
 
     @IBOutlet fileprivate weak var brightnessesCollectionView: UICollectionView!
-    fileprivate var lastSelectedBrightnessIndexPath: IndexPath?
-    fileprivate var currentTargetIsOn = false
+    fileprivate var brightnessesDataSource: BrightnessesPickerDataSource!
+
+    @IBOutlet fileprivate weak var colorsCollectionView: UICollectionView!
+    @IBOutlet fileprivate weak var topSpacing: NSLayoutConstraint!
+    @IBOutlet fileprivate weak var bottomSpacing: NSLayoutConstraint!
+    @IBOutlet fileprivate weak var colorsCollectionViewHeight: NSLayoutConstraint!
+    fileprivate var colorsDataSource: ColorsPickerDataSource!
 
     fileprivate weak var delegate: TargetRepresentationTableViewCellDelegate?
-    fileprivate var brightnesses: [Brightness] {
-        return PersistanceManager.brightnesses
-    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        brightnessesCollectionView.dataSource = self
-        brightnessesCollectionView.delegate = self
+        let brightnesses = PersistanceManager.brightnesses
+        brightnessesDataSource = BrightnessesPickerDataSource(brightnesses: brightnesses, delegate: self)
+        brightnessesCollectionView.dataSource = brightnessesDataSource
+        brightnessesCollectionView.delegate = brightnessesDataSource
+
+        let colors = PersistanceManager.colors
+        colorsDataSource = ColorsPickerDataSource(colors: colors, delegate: self)
+        colorsCollectionView.dataSource = colorsDataSource
+        colorsCollectionView.delegate = colorsDataSource
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(true, animated: animated)
 
+        displayColorsCollectionView(visible: selected)
+        displayBrightnessesCollectionView(visible: selected)
+    }
+
+    private func displayColorsCollectionView(visible: Bool) {
+        let (top, bottom, height): (CGFloat, CGFloat, CGFloat) = (visible ? (4, 4, 36) : (20, 20, 0))
+        topSpacing.constant = top
+        bottomSpacing.constant = bottom
+        colorsCollectionViewHeight.constant = height
+        colorsCollectionView.collectionViewLayout.invalidateLayout()
+
+        // For some reason, I need to layout twice here to get the
+        // collection view to be displayed the first time...
+        layoutIfNeeded(animationDuration: 0.5, springDamping: 0.6)
+        layoutIfNeeded(animationDuration: 0.5, springDamping: 0.6) { _ in
+            self.colorsCollectionView.reloadData()
+        }
+    }
+
+    private func displayBrightnessesCollectionView(visible: Bool) {
         if let layout = brightnessesCollectionView.collectionViewLayout as? BrightnessesCollectionViewLayout {
-            layout.isCondensed = !selected
+            layout.isCondensed = !visible
         }
     }
 
@@ -48,105 +79,66 @@ final class TargetRepresentationTableViewCell: UITableViewCell, Identifiable {
 // MARK: - Configuration methods
 extension TargetRepresentationTableViewCell {
 
-    func configure(with targetRepresentation: TargetRepresentation,
+    func configure(with status: TargetStatus,
                    delegate: TargetRepresentationTableViewCellDelegate?) {
         self.delegate = delegate
-        self.currentTargetIsOn = targetRepresentation.isOn
 
-        backgroundColor = targetRepresentation.currentColor
-        titleLabel.text = targetRepresentation.target.name
+        contentView.backgroundColor = status.currentColor
+        titleLabel.text = status.target.name
 
-        let foregroundColor: UIColor = (targetRepresentation.currentColor.isLight ? #colorLiteral(red: 0.2173160017, green: 0.2381722331, blue: 0.2790536284, alpha: 1) : #colorLiteral(red: 0.9019607843, green: 0.9019607843, blue: 0.9019607843, alpha: 1))
+        brightnessesDataSource.reload(isOn: status.isOn)
+        brightnessesDataSource.selectClosestBrightnessCell(with: status.currentBrightness,
+                                                           in: brightnessesCollectionView)
+
+        reloadTintColor(isBackgroundlight: status.currentColor.isLight)
+    }
+
+    fileprivate func reloadTintColor(isBackgroundlight light: Bool) {
+        let foregroundColor: UIColor = (light ? #colorLiteral(red: 0.2173160017, green: 0.2381722331, blue: 0.2790536284, alpha: 1) : #colorLiteral(red: 0.9019607843, green: 0.9019607843, blue: 0.9019607843, alpha: 1))
         titleLabel.textColor = foregroundColor
         brightnessesCollectionView.tintColor = foregroundColor
-
-        selectClosestBrightnessCell(with: targetRepresentation.currentBrightness)
-        reloadVisibleBrightnessCells(with: foregroundColor)
-    }
-
-    fileprivate func selectClosestBrightnessCell(with brightness: Brightness) {
-        let closestBrightness = brightnesses.enumerated().min { (lhs, rhs) -> Bool in
-            return abs(lhs.element.value - brightness.value) < abs(rhs.element.value - brightness.value)
-        }
-        guard let closest = closestBrightness else {
-            return
-        }
-
-        let indexPath = IndexPath(item: closest.offset, section: 0)
-        DispatchQueue.main.async {
-            self.brightnessesCollectionView.selectItem(at: indexPath, animated: false, scrollPosition: [])
-            self.brightnessesCollectionView.performBatchUpdates(nil, completion: nil)
-            self.lastSelectedBrightnessIndexPath = indexPath
-            self.reloadVisiblePowerStatus()
-        }
-    }
-
-    fileprivate func reloadVisibleBrightnessCells(with tint: UIColor) {
         brightnessesCollectionView.visibleCells.forEach {
-            $0.tintColor = tint
-        }
-    }
-
-    fileprivate func reloadVisiblePowerStatus() {
-        brightnessesCollectionView.visibleCells.forEach {
-            ($0 as? BrightnessCollectionViewCell)?.reload(isOn: currentTargetIsOn)
+            $0.tintColor = foregroundColor
         }
     }
 
 }
 
-extension TargetRepresentationTableViewCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension TargetRepresentationTableViewCell: BrightnessesPickerDelegate {
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return brightnesses.count
-    }
-
-    func collectionView(_ collectionView: UICollectionView,
-                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // swiftlint:disable:next line_length force_cast
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BrightnessCollectionViewCell.identifier, for: indexPath) as! BrightnessCollectionViewCell
-        let brightness = getBrightness(at: indexPath)
-        cell.configure(with: brightness, tint: collectionView.tintColor, isOn: currentTargetIsOn)
-        return cell
-    }
-
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let numberOfItems = self.collectionView(collectionView, numberOfItemsInSection: indexPath.section)
-        let width = collectionView.bounds.width
-        let itemWidth = width / CGFloat(numberOfItems)
-        return CGSize(width: itemWidth, height: collectionView.bounds.height)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if lastSelectedBrightnessIndexPath == indexPath {
-            toggleTargetAndDeselectBrightness(at: indexPath)
-        } else {
-            selectBrightness(at: indexPath)
-        }
-    }
-
-    private func toggleTargetAndDeselectBrightness(at indexPath: IndexPath) {
-        lastSelectedBrightnessIndexPath = nil
-        brightnessesCollectionView.deselectItem(at: indexPath, animated: true)
-
-        delegate?.userDidTapOnToggle(in: self)
-        currentTargetIsOn = false
-        reloadVisiblePowerStatus()
-    }
-
-    private func selectBrightness(at indexPath: IndexPath) {
-        lastSelectedBrightnessIndexPath = indexPath
-
-        let brightness = getBrightness(at: indexPath)
+    func brightnessPickerDidSelect(brightness: Brightness) {
         delegate?.userDidSelect(brightness: brightness, in: self)
-        currentTargetIsOn = true
-        reloadVisiblePowerStatus()
     }
 
-    private func getBrightness(at indexPath: IndexPath) -> Brightness {
-        return brightnesses[indexPath.row]
+    func brightnessPickerDidSelectPowerOff() {
+        delegate?.userDidPowerOff(in: self)
+    }
+
+    func brightnessPickerDidSelectPowerOn() {
+        delegate?.userDidPowerOn(in: self)
+    }
+
+}
+
+extension TargetRepresentationTableViewCell: ColorsPickerDelegate {
+
+    func colorsPickerDidSelect(color: Color) {
+        contentView.backgroundColor = color.displayColor
+        reloadTintColor(isBackgroundlight: color.displayColor.isLight)
+
+        let brightnessValue: Float
+        switch color.kind {
+        case .color(let color):
+            brightnessValue = Float(color.hsba?.brightness ?? 0)
+        case .white(_, let brightness):
+            brightnessValue = brightness
+        }
+
+        let brightness = Brightness(value: brightnessValue)
+        brightnessesDataSource.selectClosestBrightnessCell(with: brightness, in: brightnessesCollectionView)
+        brightnessesDataSource.reload(isOn: true)
+
+        delegate?.userDidSelect(color: color, in: self)
     }
 
 }

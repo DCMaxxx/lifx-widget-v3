@@ -26,7 +26,7 @@ final class BrightnessCollectionViewCell: UICollectionViewCell, Identifiable {
     }
 
     func reload(isOn: Bool) {
-        let newColor: UIColor? = (isSelected && isOn ? #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 0.3) : nil)
+        let newColor: UIColor? = (isSelected && isOn ? tintColor.withAlphaComponent(0.2) : nil)
         let newScale: CGFloat = (isSelected && isOn ? 1.0 : 0.8)
 
         UIView.animate(withDuration: 0.3, springDamping: 0.6, animations: {
