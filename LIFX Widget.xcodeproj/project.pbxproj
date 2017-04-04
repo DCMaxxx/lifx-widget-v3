@@ -100,6 +100,15 @@
 		9CBC52001E6231960040E4CC /* TutorialHTMLLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51FF1E6231960040E4CC /* TutorialHTMLLabel.swift */; };
 		9CC3E1031E6EC60F00D96201 /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC3E1021E6EC60F00D96201 /* ColorCollectionViewCell.swift */; };
 		9CC3E1051E6EC6B800D96201 /* ColorsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC3E1041E6EC6B800D96201 /* ColorsDataSource.swift */; };
+		9CC6D2381E9428360060CE85 /* TargetStatusesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6D2371E9428360060CE85 /* TargetStatusesTests.swift */; };
+		9CC6D23F1E9428480060CE85 /* TargetStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C443AEA1E65D288003C15E5 /* TargetStatus.swift */; };
+		9CC6D2401E94284B0060CE85 /* TargetsStatuses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0797271E7890B800D3A814 /* TargetsStatuses.swift */; };
+		9CC6D2411E9429100060CE85 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184991E55DCF400FBF02A /* Target.swift */; };
+		9CC6D2421E9429150060CE85 /* JSONable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C51849E1E55E28400FBF02A /* JSONable.swift */; };
+		9CC6D2431E9429240060CE85 /* Brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51E51E61CD390040E4CC /* Brightness.swift */; };
+		9CC6D2441E9429390060CE85 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D07F1E58B78400975C96 /* Color.swift */; };
+		9CC6D2451E9429500060CE85 /* UIColor+LIFX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D0831E5B6EE500975C96 /* UIColor+LIFX.swift */; };
+		9CC6D2461E94295F0060CE85 /* Comparable+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA24A1E602C1E00AE10D0 /* Comparable+Range.swift */; };
 		9CCAA2421E5F311200AE10D0 /* Array+Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA2411E5F311200AE10D0 /* Array+Misc.swift */; };
 		9CCAA2441E5F4AC700AE10D0 /* WhiteGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA2431E5F4AC700AE10D0 /* WhiteGradientView.swift */; };
 		9CCAA2491E5F4BD700AE10D0 /* WhiteGradientIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA2481E5F4BD700AE10D0 /* WhiteGradientIndicatorView.swift */; };
@@ -108,6 +117,7 @@
 		9CCAA24D1E602C6700AE10D0 /* Comparable+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA24A1E602C1E00AE10D0 /* Comparable+Range.swift */; };
 		9CE2745C1E69B6B700A3C104 /* BrigthnessCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE2745B1E69B6B700A3C104 /* BrigthnessCollectionViewCell.swift */; };
 		D48F821AEB90669BC62BE834 /* Pods_LIFX_Widget_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6C7F0FC16A47CC7DC8C9559 /* Pods_LIFX_Widget_WatchKit_Extension.framework */; };
+		D6D04FCBF7E3FC5CB96BBC44 /* Pods_LIFX_Widget_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A19239F432D1BAD2CBF5C2C /* Pods_LIFX_Widget_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +141,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 9C05855F1E5460E500CF3AFA;
 			remoteInfo = "LIFX Widget Today Extension";
+		};
+		9CC6D23A1E9428360060CE85 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C05851A1E545E7900CF3AFA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C0585211E545E7900CF3AFA;
+			remoteInfo = "LIFX Widget";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -172,13 +189,16 @@
 
 /* Begin PBXFileReference section */
 		058D4FB44BB348822E700F24 /* Pods-LIFX Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LIFX Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LIFX Widget/Pods-LIFX Widget.debug.xcconfig"; sourceTree = "<group>"; };
+		0F2B7F7498628AFDFE8F5806 /* Pods-LIFX Widget Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LIFX Widget Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LIFX Widget Tests/Pods-LIFX Widget Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		235E60BFD2B96E08E5C5834E /* Pods-LIFX Widget Today Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LIFX Widget Today Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-LIFX Widget Today Extension/Pods-LIFX Widget Today Extension.release.xcconfig"; sourceTree = "<group>"; };
 		47F02010C0E91A9EB00AA391 /* Pods-LIFX Widget WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LIFX Widget WatchKit App.release.xcconfig"; path = "Pods/Target Support Files/Pods-LIFX Widget WatchKit App/Pods-LIFX Widget WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
 		4DF83DF2F0A329487829793C /* Pods-LIFX Widget WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LIFX Widget WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LIFX Widget WatchKit Extension/Pods-LIFX Widget WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		5098055A89269472C5F1F221 /* Pods_LIFX_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LIFX_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B35D188BD5DD413FA6CDD8C /* Pods-LIFX Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LIFX Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-LIFX Widget/Pods-LIFX Widget.release.xcconfig"; sourceTree = "<group>"; };
 		71B4DA4E02667009ADA6CF61 /* Pods-LIFX Widget WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LIFX Widget WatchKit App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LIFX Widget WatchKit App/Pods-LIFX Widget WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
+		848C92B036D8B06CADEADB58 /* Pods-LIFX Widget Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LIFX Widget Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LIFX Widget Tests/Pods-LIFX Widget Tests.release.xcconfig"; sourceTree = "<group>"; };
 		99E300BA004279B8AF499332 /* Pods-LIFX Widget Today Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LIFX Widget Today Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LIFX Widget Today Extension/Pods-LIFX Widget Today Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		9A19239F432D1BAD2CBF5C2C /* Pods_LIFX_Widget_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LIFX_Widget_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C0585221E545E7900CF3AFA /* LIFX Widget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LIFX Widget.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C0585251E545E7900CF3AFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C0585271E545E7900CF3AFA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -253,6 +273,9 @@
 		9CBC51FF1E6231960040E4CC /* TutorialHTMLLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialHTMLLabel.swift; sourceTree = "<group>"; };
 		9CC3E1021E6EC60F00D96201 /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
 		9CC3E1041E6EC6B800D96201 /* ColorsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsDataSource.swift; sourceTree = "<group>"; };
+		9CC6D2351E9428360060CE85 /* LIFX Widget Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LIFX Widget Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CC6D2371E9428360060CE85 /* TargetStatusesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetStatusesTests.swift; sourceTree = "<group>"; };
+		9CC6D2391E9428360060CE85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CCAA2411E5F311200AE10D0 /* Array+Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Misc.swift"; sourceTree = "<group>"; };
 		9CCAA2431E5F4AC700AE10D0 /* WhiteGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteGradientView.swift; sourceTree = "<group>"; };
 		9CCAA2481E5F4BD700AE10D0 /* WhiteGradientIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteGradientIndicatorView.swift; sourceTree = "<group>"; };
@@ -290,6 +313,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9CC6D2321E9428360060CE85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6D04FCBF7E3FC5CB96BBC44 /* Pods_LIFX_Widget_Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C4922CAB5C1A9B21B0DC6437 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -312,6 +343,8 @@
 				47F02010C0E91A9EB00AA391 /* Pods-LIFX Widget WatchKit App.release.xcconfig */,
 				4DF83DF2F0A329487829793C /* Pods-LIFX Widget WatchKit Extension.debug.xcconfig */,
 				EEC77FF9B503EB33A34653C2 /* Pods-LIFX Widget WatchKit Extension.release.xcconfig */,
+				0F2B7F7498628AFDFE8F5806 /* Pods-LIFX Widget Tests.debug.xcconfig */,
+				848C92B036D8B06CADEADB58 /* Pods-LIFX Widget Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -323,6 +356,7 @@
 				9C0585381E545E7900CF3AFA /* LIFX Widget WatchKit App */,
 				9C0585471E545E7900CF3AFA /* LIFX Widget WatchKit Extension */,
 				9C0585641E5460E500CF3AFA /* LIFX Widget Today Extension */,
+				9CC6D2361E9428360060CE85 /* LIFX Widget Tests */,
 				9C71026E1E5489E40058E8C4 /* Common */,
 				9C0585611E5460E500CF3AFA /* Frameworks */,
 				9C0585231E545E7900CF3AFA /* Products */,
@@ -337,6 +371,7 @@
 				9C0585341E545E7900CF3AFA /* LIFX Widget WatchKit App.app */,
 				9C0585431E545E7900CF3AFA /* LIFX Widget WatchKit Extension.appex */,
 				9C0585601E5460E500CF3AFA /* LIFX Widget Today Extension.appex */,
+				9CC6D2351E9428360060CE85 /* LIFX Widget Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -381,6 +416,7 @@
 				D7AD68985F779096452056C0 /* Pods_LIFX_Widget_Today_Extension.framework */,
 				EC4E30C8B8AFA86C211E0342 /* Pods_LIFX_Widget_WatchKit_App.framework */,
 				C6C7F0FC16A47CC7DC8C9559 /* Pods_LIFX_Widget_WatchKit_Extension.framework */,
+				9A19239F432D1BAD2CBF5C2C /* Pods_LIFX_Widget_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -746,6 +782,15 @@
 			name = Colors;
 			sourceTree = "<group>";
 		};
+		9CC6D2361E9428360060CE85 /* LIFX Widget Tests */ = {
+			isa = PBXGroup;
+			children = (
+				9CC6D2371E9428360060CE85 /* TargetStatusesTests.swift */,
+				9CC6D2391E9428360060CE85 /* Info.plist */,
+			);
+			path = "LIFX Widget Tests";
+			sourceTree = "<group>";
+		};
 		9CCAA2401E5F30EA00AE10D0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -870,13 +915,34 @@
 			productReference = 9C0585601E5460E500CF3AFA /* LIFX Widget Today Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		9CC6D2341E9428360060CE85 /* LIFX Widget Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9CC6D23C1E9428360060CE85 /* Build configuration list for PBXNativeTarget "LIFX Widget Tests" */;
+			buildPhases = (
+				FD4D7471C70FE3B89E32FFAC /* [CP] Check Pods Manifest.lock */,
+				9CC6D2311E9428360060CE85 /* Sources */,
+				9CC6D2321E9428360060CE85 /* Frameworks */,
+				9CC6D2331E9428360060CE85 /* Resources */,
+				BD11AD292C607F7C718CF834 /* [CP] Embed Pods Frameworks */,
+				2F4E0D45A2CE0F51F7D32D35 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9CC6D23B1E9428360060CE85 /* PBXTargetDependency */,
+			);
+			name = "LIFX Widget Tests";
+			productName = "LIFX Widget Tests";
+			productReference = 9CC6D2351E9428360060CE85 /* LIFX Widget Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		9C05851A1E545E7900CF3AFA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0820;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = DCMaxxx;
 				TargetAttributes = {
@@ -910,6 +976,12 @@
 							};
 						};
 					};
+					9CC6D2341E9428360060CE85 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 8DGT2SD8VC;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9C0585211E545E7900CF3AFA;
+					};
 				};
 			};
 			buildConfigurationList = 9C05851D1E545E7900CF3AFA /* Build configuration list for PBXProject "LIFX Widget" */;
@@ -929,6 +1001,7 @@
 				9C05855F1E5460E500CF3AFA /* LIFX Widget Today Extension */,
 				9C0585331E545E7900CF3AFA /* LIFX Widget WatchKit App */,
 				9C0585421E545E7900CF3AFA /* LIFX Widget WatchKit Extension */,
+				9CC6D2341E9428360060CE85 /* LIFX Widget Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -971,6 +1044,13 @@
 				9C2CCC241E6888B900CEAF2D /* CommonAssets.xcassets in Resources */,
 				9C88D2761E65B101009B0D9B /* Localizable.strings in Resources */,
 				9C0585691E5460E500CF3AFA /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CC6D2331E9428360060CE85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1020,6 +1100,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LIFX Widget WatchKit Extension/Pods-LIFX Widget WatchKit Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2F4E0D45A2CE0F51F7D32D35 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LIFX Widget Tests/Pods-LIFX Widget Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3DE7104F8BDEC5185DF01C06 /* [CP] Check Pods Manifest.lock */ = {
@@ -1111,6 +1206,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LIFX Widget/Pods-LIFX Widget-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		BD11AD292C607F7C718CF834 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LIFX Widget Tests/Pods-LIFX Widget Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D49AE47B7BE0B0BBC856868F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1127,6 +1237,21 @@
 			showEnvVarsInLog = 0;
 		};
 		EB69063C42732552D086683A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FD4D7471C70FE3B89E32FFAC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1246,6 +1371,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9CC6D2311E9428360060CE85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CC6D2451E9429500060CE85 /* UIColor+LIFX.swift in Sources */,
+				9CC6D2421E9429150060CE85 /* JSONable.swift in Sources */,
+				9CC6D2401E94284B0060CE85 /* TargetsStatuses.swift in Sources */,
+				9CC6D2441E9429390060CE85 /* Color.swift in Sources */,
+				9CC6D23F1E9428480060CE85 /* TargetStatus.swift in Sources */,
+				9CC6D2461E94295F0060CE85 /* Comparable+Range.swift in Sources */,
+				9CC6D2411E9429100060CE85 /* Target.swift in Sources */,
+				9CC6D2431E9429240060CE85 /* Brightness.swift in Sources */,
+				9CC6D2381E9428360060CE85 /* TargetStatusesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1263,6 +1404,11 @@
 			isa = PBXTargetDependency;
 			target = 9C05855F1E5460E500CF3AFA /* LIFX Widget Today Extension */;
 			targetProxy = 9C05856B1E5460E500CF3AFA /* PBXContainerItemProxy */;
+		};
+		9CC6D23B1E9428360060CE85 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C0585211E545E7900CF3AFA /* LIFX Widget */;
+			targetProxy = 9CC6D23A1E9428360060CE85 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1549,6 +1695,40 @@
 			};
 			name = Release;
 		};
+		9CC6D23D1E9428360060CE85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F2B7F7498628AFDFE8F5806 /* Pods-LIFX Widget Tests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = 8DGT2SD8VC;
+				INFOPLIST_FILE = "LIFX Widget Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maxime-dechalendar.LIFX-Widget-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LIFX Widget.app/LIFX Widget";
+			};
+			name = Debug;
+		};
+		9CC6D23E1E9428360060CE85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 848C92B036D8B06CADEADB58 /* Pods-LIFX Widget Tests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = 8DGT2SD8VC;
+				INFOPLIST_FILE = "LIFX Widget Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maxime-dechalendar.LIFX-Widget-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LIFX Widget.app/LIFX Widget";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1593,6 +1773,15 @@
 			buildConfigurations = (
 				9C05856E1E5460E500CF3AFA /* Debug */,
 				9C05856F1E5460E500CF3AFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9CC6D23C1E9428360060CE85 /* Build configuration list for PBXNativeTarget "LIFX Widget Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CC6D23D1E9428360060CE85 /* Debug */,
+				9CC6D23E1E9428360060CE85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
