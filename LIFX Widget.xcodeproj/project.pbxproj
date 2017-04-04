@@ -109,6 +109,8 @@
 		9CC6D2441E9429390060CE85 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D07F1E58B78400975C96 /* Color.swift */; };
 		9CC6D2451E9429500060CE85 /* UIColor+LIFX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D0831E5B6EE500975C96 /* UIColor+LIFX.swift */; };
 		9CC6D2461E94295F0060CE85 /* Comparable+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA24A1E602C1E00AE10D0 /* Comparable+Range.swift */; };
+		9CC6D2481E942B0F0060CE85 /* SampleLights.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CC6D2471E942B0F0060CE85 /* SampleLights.json */; };
+		9CC6D24C1E9435640060CE85 /* SampleTargets.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CC6D24B1E9435640060CE85 /* SampleTargets.json */; };
 		9CCAA2421E5F311200AE10D0 /* Array+Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA2411E5F311200AE10D0 /* Array+Misc.swift */; };
 		9CCAA2441E5F4AC700AE10D0 /* WhiteGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA2431E5F4AC700AE10D0 /* WhiteGradientView.swift */; };
 		9CCAA2491E5F4BD700AE10D0 /* WhiteGradientIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA2481E5F4BD700AE10D0 /* WhiteGradientIndicatorView.swift */; };
@@ -276,6 +278,8 @@
 		9CC6D2351E9428360060CE85 /* LIFX Widget Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LIFX Widget Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CC6D2371E9428360060CE85 /* TargetStatusesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetStatusesTests.swift; sourceTree = "<group>"; };
 		9CC6D2391E9428360060CE85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CC6D2471E942B0F0060CE85 /* SampleLights.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SampleLights.json; sourceTree = "<group>"; };
+		9CC6D24B1E9435640060CE85 /* SampleTargets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SampleTargets.json; sourceTree = "<group>"; };
 		9CCAA2411E5F311200AE10D0 /* Array+Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Misc.swift"; sourceTree = "<group>"; };
 		9CCAA2431E5F4AC700AE10D0 /* WhiteGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteGradientView.swift; sourceTree = "<group>"; };
 		9CCAA2481E5F4BD700AE10D0 /* WhiteGradientIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteGradientIndicatorView.swift; sourceTree = "<group>"; };
@@ -786,9 +790,27 @@
 			isa = PBXGroup;
 			children = (
 				9CC6D2371E9428360060CE85 /* TargetStatusesTests.swift */,
-				9CC6D2391E9428360060CE85 /* Info.plist */,
+				9CC6D24D1E94356A0060CE85 /* Samples */,
+				9CC6D24E1E9435730060CE85 /* Resources */,
 			);
 			path = "LIFX Widget Tests";
+			sourceTree = "<group>";
+		};
+		9CC6D24D1E94356A0060CE85 /* Samples */ = {
+			isa = PBXGroup;
+			children = (
+				9CC6D2471E942B0F0060CE85 /* SampleLights.json */,
+				9CC6D24B1E9435640060CE85 /* SampleTargets.json */,
+			);
+			name = Samples;
+			sourceTree = "<group>";
+		};
+		9CC6D24E1E9435730060CE85 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9CC6D2391E9428360060CE85 /* Info.plist */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		9CCAA2401E5F30EA00AE10D0 /* Extensions */ = {
@@ -1051,6 +1073,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CC6D24C1E9435640060CE85 /* SampleTargets.json in Resources */,
+				9CC6D2481E942B0F0060CE85 /* SampleLights.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
