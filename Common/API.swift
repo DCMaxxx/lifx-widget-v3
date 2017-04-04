@@ -69,7 +69,7 @@ extension API {
             internAPI.getAllLights(completion: { lights in
                 complete(.success(lights as! [LIFXLight]))
             }, onFailure: { error in
-                complete(.failure(error as! NSError))
+                complete(.failure(error! as NSError))
             })
         }
     }
@@ -79,7 +79,7 @@ extension API {
             internAPI.apply(operation, toTarget: target, onCompletion: { results in
                 complete(.success(results as! [LIFXTargetOperationResult]))
             }, onFailure: { error in
-                complete(.failure(error as! NSError))
+                complete(.failure(error! as NSError))
             })
         }
     }
