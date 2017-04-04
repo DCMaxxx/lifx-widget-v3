@@ -36,7 +36,9 @@ final class BrightnessesPickerDataSource: NSObject {
 
     func selectClosestBrightnessCell(with brightness: Brightness, in collectionView: UICollectionView) {
         let closestBrightness = brightnesses.enumerated().min { (lhs, rhs) -> Bool in
-            return abs(lhs.element.value - brightness.value) < abs(rhs.element.value - brightness.value)
+            let lhsValue = lhs.element.value - brightness.value
+            let rhsValue = rhs.element.value - brightness.value
+            return abs(lhsValue) < abs(rhsValue)
         }
         guard let closest = closestBrightness else {
             return
