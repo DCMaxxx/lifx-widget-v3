@@ -79,18 +79,18 @@ final class TargetRepresentationTableViewCell: UITableViewCell, Identifiable {
 // MARK: - Configuration methods
 extension TargetRepresentationTableViewCell {
 
-    func configure(with targetRepresentation: TargetRepresentation,
+    func configure(with status: TargetStatus,
                    delegate: TargetRepresentationTableViewCellDelegate?) {
         self.delegate = delegate
 
-        contentView.backgroundColor = targetRepresentation.currentColor
-        titleLabel.text = targetRepresentation.target.name
+        contentView.backgroundColor = status.currentColor
+        titleLabel.text = status.target.name
 
-        brightnessesDataSource.reload(isOn: targetRepresentation.isOn)
-        brightnessesDataSource.selectClosestBrightnessCell(with: targetRepresentation.currentBrightness,
+        brightnessesDataSource.reload(isOn: status.isOn)
+        brightnessesDataSource.selectClosestBrightnessCell(with: status.currentBrightness,
                                                            in: brightnessesCollectionView)
 
-        reloadTintColor(isBackgroundlight: targetRepresentation.currentColor.isLight)
+        reloadTintColor(isBackgroundlight: status.currentColor.isLight)
     }
 
     fileprivate func reloadTintColor(isBackgroundlight light: Bool) {
