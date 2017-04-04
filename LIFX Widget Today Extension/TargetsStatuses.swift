@@ -35,14 +35,6 @@ struct TargetsStatuses {
         }
     }
 
-    func powerOff(at index: Int) -> [Int] {
-        // TODO: We should power off, and return the affected statuses
-        return []
-    }
-
-    private static func buildTargetRepresentation() {
-    }
-
     private static func filter(lights: [LIFXLight], for identifier: String) -> [LIFXLight] {
         for light in lights where light.identifier == identifier {
             return [light]

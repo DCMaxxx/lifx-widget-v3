@@ -83,13 +83,7 @@ extension TargetsViewController: TargetRepresentationTableViewCellDelegate {
 
     func userDidPowerOff(in cell: TargetRepresentationTableViewCell) {
         deselectSelectedRow()
-        guard let indexPath = tableView.indexPath(for: cell) else {
-            return
-        }
-        let updatedIndexPaths = targetsStatuses.powerOff(at: indexPath.row).map {
-            IndexPath(row: $0, section: 0)
-        }
-        tableView.reloadRows(at: updatedIndexPaths, with: .automatic)
+        // TODO: Power off the light
     }
 
     func userDidSelect(brightness: Brightness, in cell: TargetRepresentationTableViewCell) {
