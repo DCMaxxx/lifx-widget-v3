@@ -77,39 +77,36 @@ extension TargetsViewController: UITableViewDelegate {
 extension TargetsViewController: TargetRepresentationTableViewCellDelegate {
 
     func userDidPowerOn(in cell: TargetRepresentationTableViewCell) {
-        deselectSelectedRow()
-        guard let status = getStatus(for: cell) else {
-            return
+        update(cell: cell) {
+            return self.targetsStatuses.powerOn(target: $0.target)
         }
-        targetsStatuses.powerOn(target: status.target)
-        tableView.reloadData()
     }
 
     func userDidPowerOff(in cell: TargetRepresentationTableViewCell) {
-        deselectSelectedRow()
-        guard let status = getStatus(for: cell) else {
-            return
+        update(cell: cell) {
+            return self.targetsStatuses.powerOff(target: $0.target)
         }
-        targetsStatuses.powerOff(target: status.target)
-        tableView.reloadData()
     }
 
     func userDidSelect(brightness: Brightness, in cell: TargetRepresentationTableViewCell) {
-        deselectSelectedRow()
-        guard let status = getStatus(for: cell) else {
-            return
+        update(cell: cell) {
+            return self.targetsStatuses.update(target: $0.target, withBrightness: brightness)
         }
-        targetsStatuses.update(target: status.target, withBrightness: brightness)
-        tableView.reloadData()
     }
 
     func userDidSelect(color: Color, in cell: TargetRepresentationTableViewCell) {
+        update(cell: cell) {
+            return self.targetsStatuses.update(target: $0.target, withColor: color)
+        }
+    }
+
+    private func update(cell: TargetRepresentationTableViewCell, action: (TargetStatus) -> [Int]) {
         deselectSelectedRow()
         guard let status = getStatus(for: cell) else {
             return
         }
-        targetsStatuses.update(target: status.target, withColor: color)
-        tableView.reloadData()
+        let indexPaths = action(status).map { IndexPath(row: $0, section: 0) }
+        tableView.reloadRows(at: indexPaths, with: .automatic)
     }
 
     private func getStatus(for cell: UITableViewCell) -> TargetStatus? {

@@ -27,31 +27,31 @@ class TargetsStatuses {
 // MARK: - Public mutation methods
 extension TargetsStatuses {
 
-    func powerOff(target: Target) {
+    func powerOff(target: Target) -> [Int] {
         let connectedLights = filterConnectedLights(for: target)
         connectedLights.forEach {
             $0.isOn = false
         }
-        updateStatuses(of: connectedLights)
+        return updateStatuses(of: connectedLights)
     }
 
-    func powerOn(target: Target) {
+    func powerOn(target: Target) -> [Int] {
         let connectedLights = filterConnectedLights(for: target)
         connectedLights.forEach {
             $0.isOn = true
         }
-        updateStatuses(of: connectedLights)
+        return updateStatuses(of: connectedLights)
     }
 
-    func update(target: Target, withBrightness brightness: Brightness) {
+    func update(target: Target, withBrightness brightness: Brightness) -> [Int] {
         let connectedLights = filterConnectedLights(for: target)
         connectedLights.forEach {
             $0.brightness = CGFloat(brightness.value)
         }
-        updateStatuses(of: connectedLights)
+        return updateStatuses(of: connectedLights)
     }
 
-    func update(target: Target, withColor color: Color) {
+    func update(target: Target, withColor color: Color) -> [Int] {
         let lifxColor = LIFXColor()
         let brightness: CGFloat
         switch color.kind {
@@ -61,7 +61,7 @@ extension TargetsStatuses {
             break
         case .color(let color):
             guard let hsba = color.hsba else {
-                return
+                return []
             }
             lifxColor.saturation = hsba.saturation
             lifxColor.hue = UInt(hsba.hue * 360)
@@ -73,7 +73,7 @@ extension TargetsStatuses {
             $0.color = lifxColor
             $0.brightness = brightness
         }
-        updateStatuses(of: connectedLights)
+        return updateStatuses(of: connectedLights)
     }
 
 }
@@ -81,16 +81,19 @@ extension TargetsStatuses {
 // MARK: - Private utility methods
 extension TargetsStatuses {
 
-    fileprivate func updateStatuses(of lights: [LIFXLight]) {
-        for status in statuses {
+    fileprivate func updateStatuses(of lights: [LIFXLight]) -> [Int] {
+        var updatedIndexes = [Int]()
+        for (idx, status) in statuses.enumerated() {
             let affectedLightsForThisStatus = filterConnectedLights(for: status.target)
             for reallyAffectedLight in lights {
                 if affectedLightsForThisStatus.contains(reallyAffectedLight) {
                     let a = affectedLightsForThisStatus
                     status.update(from: a)
+                    updatedIndexes.append(idx)
                 }
             }
         }
+        return updatedIndexes
     }
 
     fileprivate func filterConnectedLights(for target: Target) -> [LIFXLight] {
