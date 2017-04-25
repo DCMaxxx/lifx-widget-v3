@@ -78,24 +78,31 @@ extension TargetsViewController: TargetRepresentationTableViewCellDelegate {
 
     func userDidPowerOn(in cell: TargetRepresentationTableViewCell) {
         update(cell: cell) {
+            _ = API.shared.power(target: $0.target, on: true)
             return self.targetsStatuses.powerOn(target: $0.target)
         }
     }
 
     func userDidPowerOff(in cell: TargetRepresentationTableViewCell) {
         update(cell: cell) {
+            _ = API.shared.power(target: $0.target, on: false)
             return self.targetsStatuses.powerOff(target: $0.target)
         }
     }
 
     func userDidSelect(brightness: Brightness, in cell: TargetRepresentationTableViewCell) {
         update(cell: cell) {
+            _ = API.shared.update(target: $0.target, with: brightness.updateOperation)
             return self.targetsStatuses.update(target: $0.target, withBrightness: brightness)
         }
     }
 
     func userDidSelect(color: Color, in cell: TargetRepresentationTableViewCell) {
         update(cell: cell) {
+            guard let operation = color.updateOperation else {
+                return []
+            }
+            _ = API.shared.update(target: $0.target, with: operation)
             return self.targetsStatuses.update(target: $0.target, withColor: color)
         }
     }

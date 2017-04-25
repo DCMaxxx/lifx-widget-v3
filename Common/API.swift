@@ -84,6 +84,16 @@ extension API {
         }
     }
 
+    func power(target: LIFXTargetable, on: Bool) -> Future<[LIFXTargetOperationResult], NSError> {
+        return Future { complete in
+            internAPI.changeLightPowerStatus(on, ofTarget: target, onCompletion: { results in
+                complete(.success(results as! [LIFXTargetOperationResult]))
+            }, onFailure: { error in
+                complete(.failure(error! as NSError))
+            })
+        }
+    }
+
 }
 
 // MARK: - SwiftyUserDefaults extensions
