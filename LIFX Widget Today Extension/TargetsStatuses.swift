@@ -9,33 +9,95 @@
 import UIKit
 import LIFXAPIWrapper
 
-struct TargetsStatuses {
+class TargetsStatuses {
 
     let statuses: [TargetStatus]
     let lights: [LIFXLight]
 
     init(targets: [Target], lights: [LIFXLight]) {
         self.lights = lights
-
         self.statuses = targets.map { target in
             let targetedLights = TargetsStatuses.filter(lights: lights, for: target.identifier)
-            let availableLights = targetedLights/*.filter { $0.isConnected && $0.isOn }*/
-
-            let isOn = targetedLights.reduce(false) { $0 || ($1.isConnected && $1.isOn) }
-
-            let colors = availableLights.map(Color.init)
-            let currentColor = colors.reduce(UIColor.clear) { $0.blend(with: $1.displayColor) }
-
-            let totalBrightness = availableLights.map { $0.brightness }.reduce(0, +)
-            let averageBrightness = totalBrightness / max(1, CGFloat(targetedLights.count))
-            let currentBrightness = Brightness(value: Float(averageBrightness))
-
-            return TargetStatus(target: target, isOn: isOn,
-                                currentColor: currentColor, currentBrightness: currentBrightness)
+            return TargetStatus(target: target, lights: targetedLights)
         }
     }
 
-    private static func filter(lights: [LIFXLight], for identifier: String) -> [LIFXLight] {
+}
+
+// MARK: - Public mutation methods
+extension TargetsStatuses {
+
+    func powerOff(target: Target) {
+        let connectedLights = filterConnectedLights(for: target)
+        connectedLights.forEach {
+            $0.isOn = false
+        }
+        updateStatuses(of: connectedLights)
+    }
+
+    func powerOn(target: Target) {
+        let connectedLights = filterConnectedLights(for: target)
+        connectedLights.forEach {
+            $0.isOn = true
+        }
+        updateStatuses(of: connectedLights)
+    }
+
+    func update(target: Target, withBrightness brightness: Brightness) {
+        let connectedLights = filterConnectedLights(for: target)
+        connectedLights.forEach {
+            $0.brightness = CGFloat(brightness.value)
+        }
+        updateStatuses(of: connectedLights)
+    }
+
+    func update(target: Target, withColor color: Color) {
+        let lifxColor = LIFXColor()
+        let brightness: CGFloat
+        switch color.kind {
+        case .white(let kelvin, let whiteBrightness):
+            lifxColor.kelvin = UInt(kelvin)
+            brightness = CGFloat(whiteBrightness)
+            break
+        case .color(let color):
+            guard let hsba = color.hsba else {
+                return
+            }
+            lifxColor.saturation = hsba.saturation
+            lifxColor.hue = UInt(hsba.hue * 360)
+            brightness = hsba.brightness
+        }
+
+        let connectedLights = filterConnectedLights(for: target)
+        connectedLights.forEach {
+            $0.color = lifxColor
+            $0.brightness = brightness
+        }
+        updateStatuses(of: connectedLights)
+    }
+
+}
+
+// MARK: - Private utility methods
+extension TargetsStatuses {
+
+    fileprivate func updateStatuses(of lights: [LIFXLight]) {
+        for status in statuses {
+            let affectedLightsForThisStatus = filterConnectedLights(for: status.target)
+            for reallyAffectedLight in lights {
+                if affectedLightsForThisStatus.contains(reallyAffectedLight) {
+                    let a = affectedLightsForThisStatus
+                    status.update(from: a)
+                }
+            }
+        }
+    }
+
+    fileprivate func filterConnectedLights(for target: Target) -> [LIFXLight] {
+        return TargetsStatuses.filter(lights: lights, for: target.identifier)//.filter { $0.isConnected }
+    }
+
+    fileprivate static func filter(lights: [LIFXLight], for identifier: String) -> [LIFXLight] {
         for light in lights where light.identifier == identifier {
             return [light]
         }

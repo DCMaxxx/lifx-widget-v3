@@ -49,7 +49,7 @@ extension TargetsViewController: UITableViewDataSource {
         return cell
     }
 
-    private func getStatus(at indexPath: IndexPath) -> TargetStatus {
+    fileprivate func getStatus(at indexPath: IndexPath) -> TargetStatus {
         return targetsStatuses.statuses[indexPath.row]
     }
 
@@ -78,22 +78,42 @@ extension TargetsViewController: TargetRepresentationTableViewCellDelegate {
 
     func userDidPowerOn(in cell: TargetRepresentationTableViewCell) {
         deselectSelectedRow()
-        // TODO: Power on the light
+        guard let status = getStatus(for: cell) else {
+            return
+        }
+        targetsStatuses.powerOn(target: status.target)
+        tableView.reloadData()
     }
 
     func userDidPowerOff(in cell: TargetRepresentationTableViewCell) {
         deselectSelectedRow()
-        // TODO: Power off the light
+        guard let status = getStatus(for: cell) else {
+            return
+        }
+        targetsStatuses.powerOff(target: status.target)
+        tableView.reloadData()
     }
 
     func userDidSelect(brightness: Brightness, in cell: TargetRepresentationTableViewCell) {
         deselectSelectedRow()
-        // TODO: Update the brightness of the light
+        guard let status = getStatus(for: cell) else {
+            return
+        }
+        targetsStatuses.update(target: status.target, withBrightness: brightness)
+        tableView.reloadData()
     }
 
     func userDidSelect(color: Color, in cell: TargetRepresentationTableViewCell) {
         deselectSelectedRow()
-        // TODO: Update the color of the light
+        guard let status = getStatus(for: cell) else {
+            return
+        }
+        targetsStatuses.update(target: status.target, withColor: color)
+        tableView.reloadData()
+    }
+
+    private func getStatus(for cell: UITableViewCell) -> TargetStatus? {
+        return tableView.indexPath(for: cell).map { getStatus(at: $0) }
     }
 
 }

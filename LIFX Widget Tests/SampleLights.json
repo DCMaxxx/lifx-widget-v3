@@ -3,7 +3,7 @@
       "id":"4",
       "uuid":"uuid-0",
       "label":"Chambre droite",
-      "connected":false,
+      "connected":true,
       "power":"on",
       "color":{
          "hue":0,
@@ -39,7 +39,7 @@
       "id":"7",
       "uuid":"uuid-1",
       "label":"Cuisine",
-      "connected":false,
+      "connected":true,
       "power":"on",
       "color":{
          "hue":0,
@@ -75,7 +75,7 @@
       "id":"10",
       "uuid":"uuid-2",
       "label":"Salle à manger",
-      "connected":false,
+      "connected":true,
       "power":"on",
       "color":{
          "hue":0,

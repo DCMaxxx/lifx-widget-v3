@@ -100,8 +100,7 @@ extension BrightnessesPickerDataSource: UICollectionViewDelegateFlowLayout {
             // If we have a selection, but the target is off, it means we have pre-selected based
             // and the current intensity and we just want to turn on the light
             selectBrightnessFromPreselected(at: indexPath, in: collectionView)
-        }
-        else if lastSelectedBrightnessIndexPath == indexPath {
+        } else if lastSelectedBrightnessIndexPath == indexPath {
             // We have a selection, the current target is on, and we're selecting the
             // same cell. Let's turn it off
             deselectBrightness(at: indexPath, in: collectionView)

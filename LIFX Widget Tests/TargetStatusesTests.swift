@@ -13,15 +13,38 @@ import SwiftyJSON
 class TargetStatusesTests: XCTestCase {
 
     // MARK: - Properties
-    fileprivate var statuses: TargetsStatuses! // set in setUp()
+    // set in setUp()
+    fileprivate var targets: [Target]!
+    fileprivate var statuses: TargetsStatuses!
 
 }
 
 // MARK: - Tests
 extension TargetStatusesTests {
 
-    func testSomething() {
-        print("Yes, it passes")
+    func testPowerOffShouldAffectConnectedChildren() {
+//        let appart = targets[0]
+//
+//        let affectedIds = statuses.powerOff(target: appart)
+//        let expectedAffectedIds = [
+//            0, // Appart
+//            1, // Salon max
+//            2, // Cuisine
+//            // Chambre gauche isn't affected because it's not connected
+//        ]
+//        XCTAssertEqual(affectedIds, expectedAffectedIds, "powerOff should return the ids of the statuses that has changed")
+//
+//        affectedIds
+//            .map { statuses.statuses[$0] }
+//            .forEach { status in
+//                XCTAssertFalse(status.isOn, "powerOff should set the `isOn` property to false")
+//        }
+//
+//        XCTAssertFalse(statuses.statuses[3].isOn, "powerOff should not have changed the `isOn` property a not-connected light")
+    }
+
+    func testPowerOffShouldAffectParents() {
+//        let
     }
 
 }
@@ -32,7 +55,8 @@ extension TargetStatusesTests {
     override func setUp() {
         super.setUp()
 
-        statuses = TargetsStatuses(targets: sampleTargets(), lights: sampleLights())
+        targets = sampleTargets()
+        statuses = TargetsStatuses(targets: targets, lights: sampleLights())
     }
 
     override func tearDown() {
