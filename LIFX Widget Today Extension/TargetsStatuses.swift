@@ -82,18 +82,15 @@ extension TargetsStatuses {
 extension TargetsStatuses {
 
     fileprivate func updateStatuses(of lights: [LIFXLight]) -> [Int] {
-        var updatedIndexes = [Int]()
-        for (idx, status) in statuses.enumerated() {
-            let affectedLightsForThisStatus = filterConnectedLights(for: status.target)
-            for reallyAffectedLight in lights {
-                if affectedLightsForThisStatus.contains(reallyAffectedLight) {
-                    let a = affectedLightsForThisStatus
-                    status.update(from: a)
-                    updatedIndexes.append(idx)
-                }
-            }
+        return statuses.enumerated()
+        .map { idx, status in
+            (idx, status, filterConnectedLights(for: status.target))
+        }.filter { _, _, affectedLights in
+            affectedLights.contains(where: { light in lights.contains(light) })
+        }.map { idx, status, affectedLights in
+            status.update(from: affectedLights)
+            return idx
         }
-        return updatedIndexes
     }
 
     fileprivate func filterConnectedLights(for target: Target) -> [LIFXLight] {
