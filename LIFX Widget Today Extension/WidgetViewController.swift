@@ -105,6 +105,10 @@ extension WidgetViewController {
 // MARK: - Size handling
 extension WidgetViewController: NCWidgetProviding {
 
+    func widgetMarginInsets(forProposedMarginInsets defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
+        return .zero
+    }
+
     fileprivate var childControllerPreferredContentSize: CGSize {
         return childViewControllers.last?.preferredContentSize ?? preferredContentSize
     }

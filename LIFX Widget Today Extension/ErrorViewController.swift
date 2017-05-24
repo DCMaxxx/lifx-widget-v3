@@ -33,6 +33,12 @@ final class ErrorViewController: UIViewController {
         context.open(companionURL, completionHandler: nil)
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        themeForOlderiOSIfNeeded()
+    }
+
 }
 
 // MARK: - Public configuration methods
@@ -40,6 +46,19 @@ extension ErrorViewController {
 
     func configure(with context: Context) {
         titleLabel.text = context.description
+    }
+
+}
+
+// MARK: - iOS 9 theme support
+extension ErrorViewController {
+
+    func themeForOlderiOSIfNeeded() {
+        if #available(iOS 10, *) {
+            return // Already themed in the storyboard
+        }
+
+        titleLabel.textColor = .white
     }
 
 }
