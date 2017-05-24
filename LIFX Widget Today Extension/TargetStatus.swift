@@ -12,6 +12,7 @@ import LIFXAPIWrapper
 class TargetStatus {
 
     let target: Target
+    private(set) var isConnected: Bool
     private(set) var isOn: Bool
     private(set) var currentColor: UIColor
     private(set) var currentBrightness: Brightness
@@ -21,6 +22,7 @@ class TargetStatus {
 
         // We must init all stored properties before calling our instance setup method
         // These AREN't the real init values.
+        self.isConnected = false
         self.isOn = false
         self.currentColor = .white
         self.currentBrightness = Brightness(value: 0)
@@ -28,6 +30,7 @@ class TargetStatus {
     }
 
     func update(from lights: [LIFXLight]) {
+        isConnected = (lights.first(where: { $0.isConnected }) != nil)
         isOn = (lights.first(where: { $0.isConnected && $0.isOn }) != nil)
 
         let colors = lights.map(Color.init)

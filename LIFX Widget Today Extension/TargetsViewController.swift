@@ -62,6 +62,13 @@ extension TargetsViewController: UITableViewDelegate {
             deselectSelectedRow()
             return nil
         }
+
+        if !getStatus(at: indexPath).isConnected {
+            let cell = tableView.cellForRow(at: indexPath) as? TargetRepresentationTableViewCell
+            _ = cell?.animateForUnavailableTargetIfNeeded()
+            return nil
+        }
+
         return indexPath
     }
 

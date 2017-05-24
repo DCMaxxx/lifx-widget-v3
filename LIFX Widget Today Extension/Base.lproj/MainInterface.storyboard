@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -179,6 +179,7 @@
                                             <outlet property="brightnessesCollectionView" destination="Kpc-4q-HbC" id="cPd-LX-s5O"/>
                                             <outlet property="colorsCollectionView" destination="w6p-g9-8aN" id="SAy-U5-Kne"/>
                                             <outlet property="colorsCollectionViewHeight" destination="ZMF-VN-Fi7" id="BBi-Lu-6BH"/>
+                                            <outlet property="targetContentView" destination="nmZ-92-xd6" id="DH2-IF-3eZ"/>
                                             <outlet property="titleLabel" destination="xo1-cS-ZiZ" id="j56-P2-117"/>
                                             <outlet property="topSpacing" destination="XGU-lC-Iuq" id="brJ-gt-Qyj"/>
                                         </connections>
