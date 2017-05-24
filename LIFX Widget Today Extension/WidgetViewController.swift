@@ -15,6 +15,7 @@ class WidgetViewController: UIViewController {
     private var displaysError = false
 
     @IBOutlet fileprivate weak var containerView: UIView!
+    @IBOutlet fileprivate weak var loaderIndicator: UIActivityIndicatorView!
 
     fileprivate var extensionStoryboard: UIStoryboard {
         // force_unwrapping: We know that this controller comes from the extension's storyboard
@@ -45,6 +46,7 @@ extension WidgetViewController {
         }
 
         displayTargetsController()
+        setLoaderVisibility(visible: true)
         API.shared.lights()
             .onSuccess(callback: displayTargetsController(lights:))
             .onFailure(callback: displayErrorController(error:))
@@ -65,6 +67,7 @@ extension WidgetViewController {
     }
 
     fileprivate func displayErrorController(with context: ErrorViewController.Context) {
+        setLoaderVisibility(visible: false)
         if let errorController = childViewControllers.last as? ErrorViewController {
             errorController.configure(with: context)
         } else {
@@ -76,6 +79,7 @@ extension WidgetViewController {
     }
 
     fileprivate func displayTargetsController(lights: [LIFXLight] = []) {
+        setLoaderVisibility(visible: false)
         if let targetsController = childViewControllers.last as? TargetsViewController {
             targetsController.configure(with: lights)
         } else {
@@ -84,6 +88,16 @@ extension WidgetViewController {
             targetsController.configure(with: lights)
         }
         setupPreferredContentSize()
+    }
+
+    fileprivate func setLoaderVisibility(visible: Bool) {
+        if visible {
+            loaderIndicator.startAnimating()
+            childViewControllers.last?.view.isHidden = true
+        } else {
+            loaderIndicator.stopAnimating()
+            childViewControllers.last?.view.isHidden = false
+        }
     }
 
 }

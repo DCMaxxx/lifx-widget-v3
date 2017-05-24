@@ -26,12 +26,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="tza-gG-1sw">
+                                <rect key="frame" x="150" y="45" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="uaX-a4-Ew3" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" id="ANN-tN-KQf"/>
+                            <constraint firstItem="tza-gG-1sw" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" id="Nkf-OH-fqN"/>
                             <constraint firstAttribute="bottom" secondItem="uaX-a4-Ew3" secondAttribute="bottom" id="ObX-hf-vp9"/>
                             <constraint firstItem="uaX-a4-Ew3" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="PaP-GG-RDc"/>
                             <constraint firstAttribute="trailing" secondItem="uaX-a4-Ew3" secondAttribute="trailing" id="fkg-ai-axa"/>
+                            <constraint firstItem="tza-gG-1sw" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="irl-eS-QfU"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -42,6 +47,7 @@
                     <size key="freeformSize" width="320" height="110"/>
                     <connections>
                         <outlet property="containerView" destination="uaX-a4-Ew3" id="toU-za-dZg"/>
+                        <outlet property="loaderIndicator" destination="tza-gG-1sw" id="wNZ-DQ-Kkt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
