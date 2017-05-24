@@ -10,7 +10,7 @@ import Foundation
 import LIFXAPIWrapper
 import SwiftyJSON
 
-final class Target: NSObject, Model {
+final class Target: NSObject, Model, LIFXTargetable {
 
     let identifier: String
     let name: String
@@ -109,6 +109,11 @@ final class Target: NSObject, Model {
         case let group as LIFXBaseGroup:    return group.identifier == identifier
         default:                            return false
         }
+    }
+
+    // MARK: LIFXTargetable
+    func targetSelector() -> String! {
+        return selector
     }
 
 }

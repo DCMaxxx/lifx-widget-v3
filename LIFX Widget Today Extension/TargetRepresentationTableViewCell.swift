@@ -24,12 +24,14 @@ final class TargetRepresentationTableViewCell: UITableViewCell, Identifiable {
     @IBOutlet fileprivate weak var brightnessesCollectionView: UICollectionView!
     fileprivate var brightnessesDataSource: BrightnessesPickerDataSource!
 
+    @IBOutlet fileprivate weak var targetContentView: UIView!
     @IBOutlet fileprivate weak var colorsCollectionView: UICollectionView!
     @IBOutlet fileprivate weak var topSpacing: NSLayoutConstraint!
     @IBOutlet fileprivate weak var bottomSpacing: NSLayoutConstraint!
     @IBOutlet fileprivate weak var colorsCollectionViewHeight: NSLayoutConstraint!
     fileprivate var colorsDataSource: ColorsPickerDataSource!
 
+    fileprivate var isAvailable = false
     fileprivate weak var delegate: TargetRepresentationTableViewCellDelegate?
 
     override func awakeFromNib() {
@@ -74,6 +76,17 @@ final class TargetRepresentationTableViewCell: UITableViewCell, Identifiable {
         }
     }
 
+    func animateForUnavailableTargetIfNeeded() -> Bool {
+        if isAvailable {
+            return false
+        }
+        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
+        animation.duration = 0.5
+        animation.values = [-15.0, 15.0, -15.0, 15.0, -10.0, 10.0, -5.0, 5.0, 0.0]
+        targetContentView.layer.add(animation, forKey: nil)
+        return true
+    }
+
 }
 
 // MARK: - Configuration methods
@@ -82,10 +95,12 @@ extension TargetRepresentationTableViewCell {
     func configure(with status: TargetStatus,
                    delegate: TargetRepresentationTableViewCellDelegate?) {
         self.delegate = delegate
+        self.isAvailable = status.isConnected
 
         contentView.backgroundColor = status.currentColor
         titleLabel.text = status.target.name
 
+        brightnessesCollectionView.isHidden = !isAvailable
         brightnessesDataSource.reload(isOn: status.isOn)
         brightnessesDataSource.selectClosestBrightnessCell(with: status.currentBrightness,
                                                            in: brightnessesCollectionView)
@@ -107,14 +122,23 @@ extension TargetRepresentationTableViewCell {
 extension TargetRepresentationTableViewCell: BrightnessesPickerDelegate {
 
     func brightnessPickerDidSelect(brightness: Brightness) {
+        if animateForUnavailableTargetIfNeeded() {
+            return
+        }
         delegate?.userDidSelect(brightness: brightness, in: self)
     }
 
     func brightnessPickerDidSelectPowerOff() {
+        if animateForUnavailableTargetIfNeeded() {
+            return
+        }
         delegate?.userDidPowerOff(in: self)
     }
 
     func brightnessPickerDidSelectPowerOn() {
+        if animateForUnavailableTargetIfNeeded() {
+            return
+        }
         delegate?.userDidPowerOn(in: self)
     }
 

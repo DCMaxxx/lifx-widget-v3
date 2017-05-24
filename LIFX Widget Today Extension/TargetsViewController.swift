@@ -49,7 +49,7 @@ extension TargetsViewController: UITableViewDataSource {
         return cell
     }
 
-    private func getStatus(at indexPath: IndexPath) -> TargetStatus {
+    fileprivate func getStatus(at indexPath: IndexPath) -> TargetStatus {
         return targetsStatuses.statuses[indexPath.row]
     }
 
@@ -62,6 +62,13 @@ extension TargetsViewController: UITableViewDelegate {
             deselectSelectedRow()
             return nil
         }
+
+        if !getStatus(at: indexPath).isConnected {
+            let cell = tableView.cellForRow(at: indexPath) as? TargetRepresentationTableViewCell
+            _ = cell?.animateForUnavailableTargetIfNeeded()
+            return nil
+        }
+
         return indexPath
     }
 
@@ -77,23 +84,47 @@ extension TargetsViewController: UITableViewDelegate {
 extension TargetsViewController: TargetRepresentationTableViewCellDelegate {
 
     func userDidPowerOn(in cell: TargetRepresentationTableViewCell) {
-        deselectSelectedRow()
-        // TODO: Power on the light
+        update(cell: cell) {
+            _ = API.shared.power(target: $0.target, on: true)
+            return self.targetsStatuses.powerOn(target: $0.target)
+        }
     }
 
     func userDidPowerOff(in cell: TargetRepresentationTableViewCell) {
-        deselectSelectedRow()
-        // TODO: Power off the light
+        update(cell: cell) {
+            _ = API.shared.power(target: $0.target, on: false)
+            return self.targetsStatuses.powerOff(target: $0.target)
+        }
     }
 
     func userDidSelect(brightness: Brightness, in cell: TargetRepresentationTableViewCell) {
-        deselectSelectedRow()
-        // TODO: Update the brightness of the light
+        update(cell: cell) {
+            _ = API.shared.update(target: $0.target, with: brightness.updateOperation)
+            return self.targetsStatuses.update(target: $0.target, withBrightness: brightness)
+        }
     }
 
     func userDidSelect(color: Color, in cell: TargetRepresentationTableViewCell) {
+        update(cell: cell) {
+            guard let operation = color.updateOperation else {
+                return []
+            }
+            _ = API.shared.update(target: $0.target, with: operation)
+            return self.targetsStatuses.update(target: $0.target, withColor: color)
+        }
+    }
+
+    private func update(cell: TargetRepresentationTableViewCell, action: (TargetStatus) -> [Int]) {
         deselectSelectedRow()
-        // TODO: Update the color of the light
+        guard let status = getStatus(for: cell) else {
+            return
+        }
+        let indexPaths = action(status).map { IndexPath(row: $0, section: 0) }
+        tableView.reloadRows(at: indexPaths, with: .automatic)
+    }
+
+    private func getStatus(for cell: UITableViewCell) -> TargetStatus? {
+        return tableView.indexPath(for: cell).map { getStatus(at: $0) }
     }
 
 }

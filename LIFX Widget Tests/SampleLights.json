@@ -1,0 +1,146 @@
+[
+   {
+      "id":"4",
+      "uuid":"uuid-0",
+      "label":"Chambre droite",
+      "connected":true,
+      "power":"on",
+      "color":{
+         "hue":0,
+         "saturation":0,
+         "kelvin":3500
+      },
+      "zones":null,
+      "brightness":1,
+      "group":{
+         "id":"5",
+         "name":"Chambre Max"
+      },
+      "location":{
+         "id":"6",
+         "name":"Appart"
+      },
+      "product":{
+         "name":"Original 1000",
+         "identifier":"lifx_original_a21",
+         "company":"LIFX",
+         "capabilities":{
+            "has_color":true,
+            "has_variable_color_temp":true,
+            "has_ir":false,
+            "has_multizone":false
+         }
+      },
+      "infrared":null,
+      "last_seen":"2017-04-04T07:11:37.000+01:00",
+      "seconds_since_seen":47665.187114034
+   },
+   {
+      "id":"7",
+      "uuid":"uuid-1",
+      "label":"Cuisine",
+      "connected":true,
+      "power":"on",
+      "color":{
+         "hue":0,
+         "saturation":0,
+         "kelvin":2750
+      },
+      "zones":null,
+      "brightness":0.7081864652475777,
+      "group":{
+         "id":"8",
+         "name":"Salon Max"
+      },
+      "location":{
+         "id":"6",
+         "name":"Appart"
+      },
+      "product":{
+         "name":"Original 1000",
+         "identifier":"lifx_original_a21",
+         "company":"LIFX",
+         "capabilities":{
+            "has_color":true,
+            "has_variable_color_temp":true,
+            "has_ir":false,
+            "has_multizone":false
+         }
+      },
+      "infrared":null,
+      "last_seen":"2017-04-04T19:46:59.000+01:00",
+      "seconds_since_seen":2343.187187034
+   },
+   {
+      "id":"10",
+      "uuid":"uuid-2",
+      "label":"Salle à manger",
+      "connected":true,
+      "power":"on",
+      "color":{
+         "hue":0,
+         "saturation":0,
+         "kelvin":2750
+      },
+      "zones":null,
+      "brightness":0.7081864652475777,
+      "group":{
+         "id":"8",
+         "name":"Salon Max"
+      },
+      "location":{
+         "id":"6",
+         "name":"Appart"
+      },
+      "product":{
+         "name":"Original 1000",
+         "identifier":"lifx_original_a21",
+         "company":"LIFX",
+         "capabilities":{
+            "has_color":true,
+            "has_variable_color_temp":true,
+            "has_ir":false,
+            "has_multizone":false
+         }
+      },
+      "infrared":null,
+      "last_seen":"2017-04-04T19:41:25.000+01:00",
+      "seconds_since_seen":2677.187355089
+   },
+   {
+      "id":"11",
+      "uuid":"uuid-3",
+      "label":"Chambre gauche",
+      "connected":false,
+      "power":"on",
+      "color":{
+         "hue":0,
+         "saturation":0,
+         "kelvin":3500
+      },
+      "zones":null,
+      "brightness":1,
+      "group":{
+         "id":"5",
+         "name":"Chambre Max"
+      },
+      "location":{
+         "id":"6",
+         "name":"Appart"
+      },
+      "product":{
+         "name":"Original 1000",
+         "identifier":"lifx_original_a21",
+         "company":"LIFX",
+         "capabilities":{
+            "has_color":true,
+            "has_variable_color_temp":true,
+            "has_ir":false,
+            "has_multizone":false
+         }
+      },
+      "infrared":null,
+      "last_seen":"2017-04-04T07:11:36.000+01:00",
+      "seconds_since_seen":47666.187467913
+   }
+]

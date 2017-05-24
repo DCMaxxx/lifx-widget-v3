@@ -1,0 +1,27 @@
+[
+   {
+      "selector":"location_id:6",
+      "name":"Appart",
+      "identifier":"6"
+   },
+   {
+      "selector":"group_id:8",
+      "name":"Salon Max",
+      "identifier":"8"
+   },
+   {
+      "selector":"id:10",
+      "name":"Salle à manger",
+      "identifier":"10"
+   },
+   {
+      "selector":"id:7",
+      "name":"Cuisine",
+      "identifier":"7"
+   },
+   {
+      "selector":"id:11",
+      "name":"Chambre gauche",
+      "identifier":"11"
+   }
+]

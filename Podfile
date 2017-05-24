@@ -39,3 +39,9 @@ target 'LIFX Widget WatchKit Extension' do
 
        api_pods
 end
+
+target 'LIFX Widget Tests' do
+       platform :ios, '9.0'
+
+       api_pods
+end
