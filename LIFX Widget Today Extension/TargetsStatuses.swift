@@ -94,7 +94,7 @@ extension TargetsStatuses {
     }
 
     fileprivate func filterConnectedLights(for target: Target) -> [LIFXLight] {
-        return TargetsStatuses.filter(lights: lights, for: target.identifier)//.filter { $0.isConnected }
+        return TargetsStatuses.filter(lights: lights, for: target.identifier).filter { $0.isConnected }
     }
 
     fileprivate static func filter(lights: [LIFXLight], for identifier: String) -> [LIFXLight] {
