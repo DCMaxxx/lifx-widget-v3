@@ -13,9 +13,7 @@ final class CircleView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        if bounds.width == bounds.height {
-            layer.cornerRadius = bounds.width / 2
-        }
+        layer.cornerRadius = bounds.width / 2
     }
 
 }

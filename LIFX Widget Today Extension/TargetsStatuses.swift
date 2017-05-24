@@ -46,6 +46,7 @@ extension TargetsStatuses {
     func update(target: Target, withBrightness brightness: Brightness) -> [Int] {
         let connectedLights = filterConnectedLights(for: target)
         connectedLights.forEach {
+            $0.isOn = true
             $0.brightness = CGFloat(brightness.value)
         }
         return updateStatuses(of: connectedLights)
@@ -70,6 +71,7 @@ extension TargetsStatuses {
 
         let connectedLights = filterConnectedLights(for: target)
         connectedLights.forEach {
+            $0.isOn = true
             $0.color = lifxColor
             $0.brightness = brightness
         }
@@ -94,7 +96,7 @@ extension TargetsStatuses {
     }
 
     fileprivate func filterConnectedLights(for target: Target) -> [LIFXLight] {
-        return TargetsStatuses.filter(lights: lights, for: target.identifier)//.filter { $0.isConnected }
+        return TargetsStatuses.filter(lights: lights, for: target.identifier).filter { $0.isConnected }
     }
 
     fileprivate static func filter(lights: [LIFXLight], for identifier: String) -> [LIFXLight] {
