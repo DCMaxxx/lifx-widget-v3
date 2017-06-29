@@ -1,15 +1,47 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="LIFX_Widget_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <table alignment="left" id="oMT-21-egL">
+                            <items>
+                                <tableRow identifier="TargetRowController" id="CFP-Gq-dOy" customClass="TargetRowController" customModule="LIFX_Widget_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="jLi-Nc-LvX">
+                                        <items>
+                                            <label width="1" height="1" alignment="left" text="Label" id="cOD-9V-nwa"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="nameLabel" destination="cOD-9V-nwa" id="reM-CD-PwI"/>
+                                        <segue destination="JLJ-vY-pVQ" kind="push" id="Zms-n8-Hzt"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="targetsTable" destination="oMT-21-egL" id="okF-yu-Gax"/>
+                    </connections>
+                </controller>
             </objects>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="qlb-d5-8ui">
+            <objects>
+                <controller id="JLJ-vY-pVQ"/>
+            </objects>
+            <point key="canvasLocation" x="330" y="36"/>
         </scene>
     </scenes>
 </document>

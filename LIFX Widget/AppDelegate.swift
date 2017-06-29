@@ -16,9 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidFinishLaunching(_ application: UIApplication) {
         PersistanceManager.performInitialConfiguration()
+        WatchMobileSession.shared.sendUpdate()
         theme(application: application)
-
-        let _ = WatchMobileSession.shared
     }
 
 }

@@ -84,6 +84,7 @@ extension BrightnessesListViewController {
         }
         PersistanceManager.brightnesses.remove(at: idx)
         PersistanceManager.lastUpdate = Date()
+        WatchMobileSession.shared.sendUpdate()
     }
 
     fileprivate func edit(brightness: Brightness, with newBrightness: Brightness, at indexPath: IndexPath) {
@@ -103,6 +104,7 @@ extension BrightnessesListViewController {
             self.tableView.scrollToRow(at: newIndexPath, at: .bottom, animated: true)
         }
         PersistanceManager.lastUpdate = Date()
+        WatchMobileSession.shared.sendUpdate()
     }
 
 }

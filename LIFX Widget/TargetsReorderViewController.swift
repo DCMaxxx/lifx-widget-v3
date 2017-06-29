@@ -49,6 +49,8 @@ extension TargetsReorderViewController: UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         let target = PersistanceManager.targets.remove(at: sourceIndexPath.row)
         PersistanceManager.targets.insert(target, at: destinationIndexPath.row)
+        PersistanceManager.lastUpdate = Date()
+        WatchMobileSession.shared.sendUpdate()
     }
 
     func getTarget(at indexPath: IndexPath) -> Target {

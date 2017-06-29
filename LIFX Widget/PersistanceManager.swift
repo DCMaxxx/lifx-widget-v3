@@ -9,6 +9,7 @@
 import Foundation
 import SwiftyUserDefaults
 import LIFXAPIWrapper
+import SwiftyJSON
 
 // TODO: Sometime, we'll need to handle the migration process
 
@@ -38,6 +39,31 @@ final class PersistanceManager {
     static var brightnesses: [Brightness] {
         get { return SharedDefaults[.brightnesses] }
         set { SharedDefaults[.brightnesses] = newValue }
+    }
+
+    static var json: [String: Any] {
+        get {
+            return [
+                "targets": targets.map { $0.json.object },
+                "colors": colors.map { $0.json.object },
+                "brightnesses": brightnesses.map { $0.json.object },
+                "lastUpdate": lastUpdate
+            ]
+        }
+        set {
+            if let rawTargets = newValue["targets"], let rawArray = JSON(rawTargets).array {
+                self.targets = rawArray.flatMap(Target.init)
+            }
+            if let rawColors = newValue["colors"], let rawArray = JSON(rawColors).array {
+                self.colors = rawArray.flatMap(Color.init)
+            }
+            if let rawBrightnesses = newValue["brightnesses"], let rawArray = JSON(rawBrightnesses).array {
+                self.brightnesses = rawArray.flatMap(Brightness.init)
+            }
+            if let lastUpdate = newValue["lastUpdate"] as? Date {
+                self.lastUpdate = lastUpdate
+            }
+        }
     }
 
 }

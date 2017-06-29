@@ -32,6 +32,7 @@
 		9C2CCC241E6888B900CEAF2D /* CommonAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C2CCC221E6888B900CEAF2D /* CommonAssets.xcassets */; };
 		9C2CCC271E69622300CEAF2D /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2CCC261E69622300CEAF2D /* CircleView.swift */; };
 		9C2CCC281E69622300CEAF2D /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2CCC261E69622300CEAF2D /* CircleView.swift */; };
+		9C3359731F0528DB008B39F3 /* NSObject+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184B71E5612A900FBF02A /* NSObject+Identifiable.swift */; };
 		9C443AEB1E65D288003C15E5 /* TargetStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C443AEA1E65D288003C15E5 /* TargetStatus.swift */; };
 		9C5184811E54AD5300FBF02A /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184801E54AD5300FBF02A /* Defaults.swift */; };
 		9C5184821E54AD5300FBF02A /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184801E54AD5300FBF02A /* Defaults.swift */; };
@@ -53,6 +54,7 @@
 		9C5184B61E56061000FBF02A /* TargetPickerTableViewCellSelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184B51E56061000FBF02A /* TargetPickerTableViewCellSelectedView.swift */; };
 		9C5184B81E5612A900FBF02A /* NSObject+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184B71E5612A900FBF02A /* NSObject+Identifiable.swift */; };
 		9C5184B91E5612A900FBF02A /* NSObject+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184B71E5612A900FBF02A /* NSObject+Identifiable.swift */; };
+		9C6101001F053E0C00E28E9D /* TargetRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6100FF1F053E0C00E28E9D /* TargetRowController.swift */; };
 		9C7102701E5489F60058E8C4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C71026F1E5489F60058E8C4 /* API.swift */; };
 		9C7102711E5489F60058E8C4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C71026F1E5489F60058E8C4 /* API.swift */; };
 		9C7102721E5489F60058E8C4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C71026F1E5489F60058E8C4 /* API.swift */; };
@@ -244,6 +246,7 @@
 		9C5184B31E5605D600FBF02A /* TargetPickerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetPickerTableViewCell.swift; sourceTree = "<group>"; };
 		9C5184B51E56061000FBF02A /* TargetPickerTableViewCellSelectedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetPickerTableViewCellSelectedView.swift; sourceTree = "<group>"; };
 		9C5184B71E5612A900FBF02A /* NSObject+Identifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Identifiable.swift"; sourceTree = "<group>"; };
+		9C6100FF1F053E0C00E28E9D /* TargetRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetRowController.swift; sourceTree = "<group>"; };
 		9C71026F1E5489F60058E8C4 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = Common/API.swift; sourceTree = SOURCE_ROOT; };
 		9C7102741E548EC10058E8C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9C7102761E548F1F0058E8C4 /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Localized.swift"; path = "Common/String+Localized.swift"; sourceTree = SOURCE_ROOT; };
@@ -605,6 +608,7 @@
 			isa = PBXGroup;
 			children = (
 				9C0585481E545E7900CF3AFA /* InterfaceController.swift */,
+				9C6100FF1F053E0C00E28E9D /* TargetRowController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -1367,11 +1371,13 @@
 				9C88D27C1E65CB07009B0D9B /* PersistanceManager.swift in Sources */,
 				9CBFEEAC1EF4083100138064 /* LIFXWatchSession.swift in Sources */,
 				9C05854B1E545E7900CF3AFA /* ExtensionDelegate.swift in Sources */,
+				9C6101001F053E0C00E28E9D /* TargetRowController.swift in Sources */,
 				9C7102721E5489F60058E8C4 /* API.swift in Sources */,
 				9C5184831E54AD5300FBF02A /* Defaults.swift in Sources */,
 				9C5184A51E55E3C000FBF02A /* Target.swift in Sources */,
 				9C7102791E548F1F0058E8C4 /* String+Localized.swift in Sources */,
 				9CA5D0821E58B78400975C96 /* Color.swift in Sources */,
+				9C3359731F0528DB008B39F3 /* NSObject+Identifiable.swift in Sources */,
 				9C0585491E545E7900CF3AFA /* InterfaceController.swift in Sources */,
 				9C5184A41E55E3C000FBF02A /* JSONable.swift in Sources */,
 			);
