@@ -66,6 +66,7 @@ extension TargetsPickerPersistanceController {
             return
         }
         PersistanceManager.targets.append(target)
+        PersistanceManager.lastUpdate = Date()
     }
 
     private func removeFromTargets(model: LIFXModel) {
@@ -73,6 +74,7 @@ extension TargetsPickerPersistanceController {
             return
         }
         PersistanceManager.targets.remove(at: idx)
+        PersistanceManager.lastUpdate = Date()
     }
 
     private func presentTooManyTargetsAlert() {

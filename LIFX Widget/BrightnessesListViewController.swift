@@ -83,6 +83,7 @@ extension BrightnessesListViewController {
             return
         }
         PersistanceManager.brightnesses.remove(at: idx)
+        PersistanceManager.lastUpdate = Date()
     }
 
     fileprivate func edit(brightness: Brightness, with newBrightness: Brightness, at indexPath: IndexPath) {
@@ -101,6 +102,7 @@ extension BrightnessesListViewController {
         DispatchQueue.main.async {
             self.tableView.scrollToRow(at: newIndexPath, at: .bottom, animated: true)
         }
+        PersistanceManager.lastUpdate = Date()
     }
 
 }

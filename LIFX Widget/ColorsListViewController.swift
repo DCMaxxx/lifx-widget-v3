@@ -87,11 +87,13 @@ extension ColorsListViewController {
             return
         }
         PersistanceManager.colors.remove(at: idx)
+        PersistanceManager.lastUpdate = Date()
         tableView.deleteRows(at: [indexPath], with: .automatic)
     }
 
     fileprivate func edit(color: Color, with newColor: Color, at indexPath: IndexPath) {
         PersistanceManager.colors.replace(element: color, with: newColor)
+        PersistanceManager.lastUpdate = Date()
         tableView.reloadRows(at: [indexPath], with: .automatic)
         DispatchQueue.main.async {
             self.tableView.scrollToRow(at: indexPath, at: .none, animated: true)
@@ -100,6 +102,7 @@ extension ColorsListViewController {
 
     fileprivate func add(color: Color) {
         PersistanceManager.colors.append(color)
+        PersistanceManager.lastUpdate = Date()
 
         let lastIndexPath = IndexPath(row: PersistanceManager.colors.count - 1, section: 0)
         tableView.insertRows(at: [lastIndexPath], with: .automatic)

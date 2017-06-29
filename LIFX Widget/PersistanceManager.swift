@@ -20,6 +20,11 @@ final class PersistanceManager {
 
     static var availableLights: [LIFXLight] = [] // not saved across sessions
 
+    static var lastUpdate: Date {
+        get { return SharedDefaults[.lastUpdate] ?? Date() }
+        set { SharedDefaults[.lastUpdate] = newValue }
+    }
+
     static var targets: [Target] {
         get { return SharedDefaults[.targets] }
         set { SharedDefaults[.targets] = newValue }
@@ -140,6 +145,7 @@ fileprivate extension UserDefaults {
 
 fileprivate extension DefaultsKeys {
 
+    static let lastUpdate = DefaultsKey<Date?>("com.maxime-dechalendar.lastUpdate")
     static let targets = DefaultsKey<[Target]>("com.maxime-dechalendar.targets")
     static let colors = DefaultsKey<[Color]>("com.maxime-dechalendar.colors")
     static let brightnesses = DefaultsKey<[Brightness]>("com.maxime-dechalendar.brightnesses")
