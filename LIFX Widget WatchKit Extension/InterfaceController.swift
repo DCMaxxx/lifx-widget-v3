@@ -24,7 +24,8 @@ class InterfaceController: WKInterfaceController {
         }
     }
 
-    override func contextForSegue(withIdentifier segueIdentifier: String, in table: WKInterfaceTable, rowIndex: Int) -> Any? {
+    override func contextForSegue(withIdentifier segueIdentifier: String,
+                                  in table: WKInterfaceTable, rowIndex: Int) -> Any? {
         return PersistanceManager.targets[rowIndex]
     }
 

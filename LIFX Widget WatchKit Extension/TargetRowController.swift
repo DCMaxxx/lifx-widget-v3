@@ -16,5 +16,5 @@ class TargetRowController: NSObject, Identifiable {
     func configure(with target: Target) {
         nameLabel.setText(target.name)
     }
-    
+
 }

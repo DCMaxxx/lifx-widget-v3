@@ -11,8 +11,10 @@ import BrightFutures
 import SwiftyUserDefaults
 
 // force_cast: We're getting objects from Objective-C APIs, the doc mentions the type but the NSArray aren't typed.
+// force_unwrapping: Same as above
 // line_length: We're dealing with Obj-C's types, with long names
-// swiftlint:disable force_cast line_length
+// variable_name: We want to allow the 'on' parameter name (turn on / turn off)
+// swiftlint:disable force_cast variable_name line_length
 
 final class API {
 
@@ -69,7 +71,8 @@ extension API {
             internAPI.getAllLights(completion: { lights in
                 complete(.success(lights as! [LIFXLight]))
             }, onFailure: { error in
-                complete(.failure(error! as NSError))
+                complete(.failure(error! as NSError)) // swiftlint:disable:this force_unwrapping
+
             })
         }
     }
@@ -79,7 +82,7 @@ extension API {
             internAPI.apply(operation, toTarget: target, onCompletion: { results in
                 complete(.success(results as! [LIFXTargetOperationResult]))
             }, onFailure: { error in
-                complete(.failure(error! as NSError))
+                complete(.failure(error! as NSError)) // swiftlint:disable:this force_unwrapping
             })
         }
     }
@@ -89,7 +92,7 @@ extension API {
             internAPI.changeLightPowerStatus(on, ofTarget: target, onCompletion: { results in
                 complete(.success(results as! [LIFXTargetOperationResult]))
             }, onFailure: { error in
-                complete(.failure(error! as NSError))
+                complete(.failure(error! as NSError)) // swiftlint:disable:this force_unwrapping
             })
         }
     }
