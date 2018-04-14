@@ -8,20 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		3BB9D953993156D809F9F9F6 /* Pods_LIFX_Widget_Today_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AD68985F779096452056C0 /* Pods_LIFX_Widget_Today_Extension.framework */; };
-		567915C8DE392E19EC9018DF /* Pods_LIFX_Widget_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC4E30C8B8AFA86C211E0342 /* Pods_LIFX_Widget_WatchKit_App.framework */; };
 		7261A324F10AC6908E354C51 /* Pods_LIFX_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5098055A89269472C5F1F221 /* Pods_LIFX_Widget.framework */; };
 		9C0585261E545E7900CF3AFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0585251E545E7900CF3AFA /* AppDelegate.swift */; };
 		9C0585281E545E7900CF3AFA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0585271E545E7900CF3AFA /* HomeViewController.swift */; };
 		9C05852B1E545E7900CF3AFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C0585291E545E7900CF3AFA /* Main.storyboard */; };
 		9C05852D1E545E7900CF3AFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C05852C1E545E7900CF3AFA /* Assets.xcassets */; };
 		9C0585301E545E7900CF3AFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C05852E1E545E7900CF3AFA /* LaunchScreen.storyboard */; };
-		9C0585351E545E7900CF3AFA /* LIFX Widget WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 9C0585341E545E7900CF3AFA /* LIFX Widget WatchKit App.app */; };
-		9C05853B1E545E7900CF3AFA /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C0585391E545E7900CF3AFA /* Interface.storyboard */; };
-		9C05853D1E545E7900CF3AFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C05853C1E545E7900CF3AFA /* Assets.xcassets */; };
-		9C0585441E545E7900CF3AFA /* LIFX Widget WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9C0585431E545E7900CF3AFA /* LIFX Widget WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		9C0585491E545E7900CF3AFA /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0585481E545E7900CF3AFA /* InterfaceController.swift */; };
-		9C05854B1E545E7900CF3AFA /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C05854A1E545E7900CF3AFA /* ExtensionDelegate.swift */; };
-		9C05854D1E545E7900CF3AFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C05854C1E545E7900CF3AFA /* Assets.xcassets */; };
 		9C0585631E5460E500CF3AFA /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C0585621E5460E500CF3AFA /* NotificationCenter.framework */; };
 		9C0585661E5460E500CF3AFA /* WidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0585651E5460E500CF3AFA /* WidgetViewController.swift */; };
 		9C0585691E5460E500CF3AFA /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C0585671E5460E500CF3AFA /* MainInterface.storyboard */; };
@@ -35,7 +27,6 @@
 		9C443AEB1E65D288003C15E5 /* TargetStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C443AEA1E65D288003C15E5 /* TargetStatus.swift */; };
 		9C5184811E54AD5300FBF02A /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184801E54AD5300FBF02A /* Defaults.swift */; };
 		9C5184821E54AD5300FBF02A /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184801E54AD5300FBF02A /* Defaults.swift */; };
-		9C5184831E54AD5300FBF02A /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184801E54AD5300FBF02A /* Defaults.swift */; };
 		9C5184891E54B92500FBF02A /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184881E54B92500FBF02A /* TutorialViewController.swift */; };
 		9C51848E1E54BE9800FBF02A /* TutorialAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C51848D1E54BE9800FBF02A /* TutorialAnimatedTransitioning.swift */; };
 		9C5184921E54C42D00FBF02A /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184911E54C42D00FBF02A /* TutorialView.swift */; };
@@ -44,8 +35,6 @@
 		9C51849F1E55E28400FBF02A /* JSONable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C51849E1E55E28400FBF02A /* JSONable.swift */; };
 		9C5184A11E55E3BF00FBF02A /* JSONable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C51849E1E55E28400FBF02A /* JSONable.swift */; };
 		9C5184A21E55E3BF00FBF02A /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184991E55DCF400FBF02A /* Target.swift */; };
-		9C5184A41E55E3C000FBF02A /* JSONable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C51849E1E55E28400FBF02A /* JSONable.swift */; };
-		9C5184A51E55E3C000FBF02A /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184991E55DCF400FBF02A /* Target.swift */; };
 		9C5184AA1E55EB5F00FBF02A /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184A91E55EB5F00FBF02A /* PersistanceManager.swift */; };
 		9C5184B01E56033900FBF02A /* StickyHeaderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184AF1E56033900FBF02A /* StickyHeaderTableViewController.swift */; };
 		9C5184B21E56050600FBF02A /* TargetsPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184B11E56050600FBF02A /* TargetsPickerViewController.swift */; };
@@ -55,18 +44,15 @@
 		9C5184B91E5612A900FBF02A /* NSObject+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184B71E5612A900FBF02A /* NSObject+Identifiable.swift */; };
 		9C7102701E5489F60058E8C4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C71026F1E5489F60058E8C4 /* API.swift */; };
 		9C7102711E5489F60058E8C4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C71026F1E5489F60058E8C4 /* API.swift */; };
-		9C7102721E5489F60058E8C4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C71026F1E5489F60058E8C4 /* API.swift */; };
 		9C7102751E548EC10058E8C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C7102731E548EC10058E8C4 /* Localizable.strings */; };
 		9C7102771E548F1F0058E8C4 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7102761E548F1F0058E8C4 /* String+Localized.swift */; };
 		9C7102781E548F1F0058E8C4 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7102761E548F1F0058E8C4 /* String+Localized.swift */; };
-		9C7102791E548F1F0058E8C4 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7102761E548F1F0058E8C4 /* String+Localized.swift */; };
 		9C7D2D491E5651A4007D89E3 /* UIView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7D2D481E5651A4007D89E3 /* UIView+Animations.swift */; };
 		9C88D2731E65AE7C009B0D9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C88D2721E65AE7C009B0D9B /* Assets.xcassets */; };
 		9C88D2761E65B101009B0D9B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C88D2741E65B101009B0D9B /* Localizable.strings */; };
 		9C88D2781E65BB8B009B0D9B /* UIKit+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51F71E62210F0040E4CC /* UIKit+Localizable.swift */; };
 		9C88D2791E65C788009B0D9B /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184A91E55EB5F00FBF02A /* PersistanceManager.swift */; };
 		9C88D27B1E65C7B4009B0D9B /* TargetRepresentationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C88D27A1E65C7B4009B0D9B /* TargetRepresentationTableViewCell.swift */; };
-		9C88D27C1E65CB07009B0D9B /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5184A91E55EB5F00FBF02A /* PersistanceManager.swift */; };
 		9C96AC1C1E65739C00B588CD /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96AC1B1E65739C00B588CD /* ErrorViewController.swift */; };
 		9C96AC1E1E6573F400B588CD /* TargetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96AC1D1E6573F400B588CD /* TargetsViewController.swift */; };
 		9C96AC211E65755000B588CD /* UIViewController+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96AC201E65755000B588CD /* UIViewController+Storyboard.swift */; };
@@ -74,10 +60,8 @@
 		9CA5D07E1E58B76B00975C96 /* ColorsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D07D1E58B76B00975C96 /* ColorsListViewController.swift */; };
 		9CA5D0801E58B78400975C96 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D07F1E58B78400975C96 /* Color.swift */; };
 		9CA5D0811E58B78400975C96 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D07F1E58B78400975C96 /* Color.swift */; };
-		9CA5D0821E58B78400975C96 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D07F1E58B78400975C96 /* Color.swift */; };
 		9CA5D0841E5B6EE500975C96 /* UIColor+LIFX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D0831E5B6EE500975C96 /* UIColor+LIFX.swift */; };
 		9CA5D0851E5B6EE500975C96 /* UIColor+LIFX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D0831E5B6EE500975C96 /* UIColor+LIFX.swift */; };
-		9CA5D0861E5B6EE500975C96 /* UIColor+LIFX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D0831E5B6EE500975C96 /* UIColor+LIFX.swift */; };
 		9CA5D0881E5B87FD00975C96 /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D0871E5B87FD00975C96 /* ColorTableViewCell.swift */; };
 		9CA5D08C1E5CE29400975C96 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D08B1E5CE29400975C96 /* ColorPickerViewController.swift */; };
 		9CA5D08E1E5CE37500975C96 /* ColorPickerColorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D08D1E5CE37500975C96 /* ColorPickerColorController.swift */; };
@@ -88,7 +72,6 @@
 		9CBC51E31E61B32F0040E4CC /* TargetsPickerFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51E21E61B32F0040E4CC /* TargetsPickerFeedbackViewController.swift */; };
 		9CBC51E61E61CD390040E4CC /* Brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51E51E61CD390040E4CC /* Brightness.swift */; };
 		9CBC51E71E61CD390040E4CC /* Brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51E51E61CD390040E4CC /* Brightness.swift */; };
-		9CBC51E81E61CD390040E4CC /* Brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51E51E61CD390040E4CC /* Brightness.swift */; };
 		9CBC51EC1E61D3DC0040E4CC /* BrightnessesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51EB1E61D3DC0040E4CC /* BrightnessesListViewController.swift */; };
 		9CBC51EE1E61D4630040E4CC /* BrightnessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51ED1E61D4630040E4CC /* BrightnessTableViewCell.swift */; };
 		9CBC51F11E61FB970040E4CC /* BrightnessPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC51F01E61FB970040E4CC /* BrightnessPickerViewController.swift */; };
@@ -115,28 +98,12 @@
 		9CCAA2441E5F4AC700AE10D0 /* WhiteGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA2431E5F4AC700AE10D0 /* WhiteGradientView.swift */; };
 		9CCAA2491E5F4BD700AE10D0 /* WhiteGradientIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA2481E5F4BD700AE10D0 /* WhiteGradientIndicatorView.swift */; };
 		9CCAA24B1E602C1E00AE10D0 /* Comparable+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA24A1E602C1E00AE10D0 /* Comparable+Range.swift */; };
-		9CCAA24C1E602C6600AE10D0 /* Comparable+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA24A1E602C1E00AE10D0 /* Comparable+Range.swift */; };
 		9CCAA24D1E602C6700AE10D0 /* Comparable+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAA24A1E602C1E00AE10D0 /* Comparable+Range.swift */; };
 		9CE2745C1E69B6B700A3C104 /* BrigthnessCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE2745B1E69B6B700A3C104 /* BrigthnessCollectionViewCell.swift */; };
-		D48F821AEB90669BC62BE834 /* Pods_LIFX_Widget_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6C7F0FC16A47CC7DC8C9559 /* Pods_LIFX_Widget_WatchKit_Extension.framework */; };
 		D6D04FCBF7E3FC5CB96BBC44 /* Pods_LIFX_Widget_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A19239F432D1BAD2CBF5C2C /* Pods_LIFX_Widget_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9C0585361E545E7900CF3AFA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9C05851A1E545E7900CF3AFA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9C0585331E545E7900CF3AFA;
-			remoteInfo = "LIFX Widget WatchKit App";
-		};
-		9C0585451E545E7900CF3AFA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9C05851A1E545E7900CF3AFA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9C0585421E545E7900CF3AFA;
-			remoteInfo = "LIFX Widget WatchKit Extension";
-		};
 		9C05856B1E5460E500CF3AFA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9C05851A1E545E7900CF3AFA /* Project object */;
@@ -154,24 +121,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		9C0585541E545E7900CF3AFA /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				9C0585441E545E7900CF3AFA /* LIFX Widget WatchKit Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9C0585581E545E7900CF3AFA /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				9C0585351E545E7900CF3AFA /* LIFX Widget WatchKit App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,15 +163,6 @@
 		9C05852C1E545E7900CF3AFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C05852F1E545E7900CF3AFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C0585311E545E7900CF3AFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9C0585341E545E7900CF3AFA /* LIFX Widget WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LIFX Widget WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C05853A1E545E7900CF3AFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		9C05853C1E545E7900CF3AFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9C05853E1E545E7900CF3AFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9C0585431E545E7900CF3AFA /* LIFX Widget WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "LIFX Widget WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C0585481E545E7900CF3AFA /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
-		9C05854A1E545E7900CF3AFA /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		9C05854C1E545E7900CF3AFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9C05854E1E545E7900CF3AFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C0585601E5460E500CF3AFA /* LIFX Widget Today Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "LIFX Widget Today Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C0585621E5460E500CF3AFA /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		9C0585651E5460E500CF3AFA /* WidgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetViewController.swift; sourceTree = "<group>"; };
@@ -300,14 +246,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9C0585401E545E7900CF3AFA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D48F821AEB90669BC62BE834 /* Pods_LIFX_Widget_WatchKit_Extension.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9C05855D1E5460E500CF3AFA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -322,14 +260,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6D04FCBF7E3FC5CB96BBC44 /* Pods_LIFX_Widget_Tests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C4922CAB5C1A9B21B0DC6437 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				567915C8DE392E19EC9018DF /* Pods_LIFX_Widget_WatchKit_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,8 +287,6 @@
 			isa = PBXGroup;
 			children = (
 				9C0585241E545E7900CF3AFA /* LIFX Widget */,
-				9C0585381E545E7900CF3AFA /* LIFX Widget WatchKit App */,
-				9C0585471E545E7900CF3AFA /* LIFX Widget WatchKit Extension */,
 				9C0585641E5460E500CF3AFA /* LIFX Widget Today Extension */,
 				9CC6D2361E9428360060CE85 /* LIFX Widget Tests */,
 				9C71026E1E5489E40058E8C4 /* Common */,
@@ -372,8 +300,6 @@
 			isa = PBXGroup;
 			children = (
 				9C0585221E545E7900CF3AFA /* LIFX Widget.app */,
-				9C0585341E545E7900CF3AFA /* LIFX Widget WatchKit App.app */,
-				9C0585431E545E7900CF3AFA /* LIFX Widget WatchKit Extension.appex */,
 				9C0585601E5460E500CF3AFA /* LIFX Widget Today Extension.appex */,
 				9CC6D2351E9428360060CE85 /* LIFX Widget Tests.xctest */,
 			);
@@ -391,25 +317,6 @@
 				9C71025E1E5463B60058E8C4 /* Resources */,
 			);
 			path = "LIFX Widget";
-			sourceTree = "<group>";
-		};
-		9C0585381E545E7900CF3AFA /* LIFX Widget WatchKit App */ = {
-			isa = PBXGroup;
-			children = (
-				9C7102621E5463F60058E8C4 /* Storyboards */,
-				9C7102631E5463FC0058E8C4 /* Resources */,
-			);
-			path = "LIFX Widget WatchKit App";
-			sourceTree = "<group>";
-		};
-		9C0585471E545E7900CF3AFA /* LIFX Widget WatchKit Extension */ = {
-			isa = PBXGroup;
-			children = (
-				9C7102661E5464220058E8C4 /* Controllers */,
-				9C7102651E54640F0058E8C4 /* Other sources */,
-				9C7102641E54640A0058E8C4 /* Resources */,
-			);
-			path = "LIFX Widget WatchKit Extension";
 			sourceTree = "<group>";
 		};
 		9C0585611E5460E500CF3AFA /* Frameworks */ = {
@@ -559,48 +466,6 @@
 				9C5184871E54B8F300FBF02A /* Tutorial */,
 				9C5184931E559AA300FBF02A /* Token picker */,
 				9C5184AE1E56032800FBF02A /* Pickers */,
-			);
-			name = Controllers;
-			sourceTree = "<group>";
-		};
-		9C7102621E5463F60058E8C4 /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				9C0585391E545E7900CF3AFA /* Interface.storyboard */,
-			);
-			name = Storyboards;
-			sourceTree = "<group>";
-		};
-		9C7102631E5463FC0058E8C4 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				9C05853C1E545E7900CF3AFA /* Assets.xcassets */,
-				9C05853E1E545E7900CF3AFA /* Info.plist */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		9C7102641E54640A0058E8C4 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				9C05854C1E545E7900CF3AFA /* Assets.xcassets */,
-				9C05854E1E545E7900CF3AFA /* Info.plist */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		9C7102651E54640F0058E8C4 /* Other sources */ = {
-			isa = PBXGroup;
-			children = (
-				9C05854A1E545E7900CF3AFA /* ExtensionDelegate.swift */,
-			);
-			name = "Other sources";
-			sourceTree = "<group>";
-		};
-		9C7102661E5464220058E8C4 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				9C0585481E545E7900CF3AFA /* InterfaceController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -865,58 +730,16 @@
 				9C0585581E545E7900CF3AFA /* Embed Watch Content */,
 				9C0585711E5460E500CF3AFA /* Embed App Extensions */,
 				D49AE47B7BE0B0BBC856868F /* [CP] Embed Pods Frameworks */,
-				B967DF2C27ECFC67CB1C70F8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9C0585371E545E7900CF3AFA /* PBXTargetDependency */,
 				9C05856C1E5460E500CF3AFA /* PBXTargetDependency */,
 			);
 			name = "LIFX Widget";
 			productName = "LIFX Widget";
 			productReference = 9C0585221E545E7900CF3AFA /* LIFX Widget.app */;
 			productType = "com.apple.product-type.application";
-		};
-		9C0585331E545E7900CF3AFA /* LIFX Widget WatchKit App */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9C0585551E545E7900CF3AFA /* Build configuration list for PBXNativeTarget "LIFX Widget WatchKit App" */;
-			buildPhases = (
-				000D5F060789324BE2C0379F /* [CP] Check Pods Manifest.lock */,
-				9C0585321E545E7900CF3AFA /* Resources */,
-				9C0585541E545E7900CF3AFA /* Embed App Extensions */,
-				C4922CAB5C1A9B21B0DC6437 /* Frameworks */,
-				3E82E8BE44DF1830D2950A99 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9C0585461E545E7900CF3AFA /* PBXTargetDependency */,
-			);
-			name = "LIFX Widget WatchKit App";
-			productName = "LIFX Widget WatchKit App";
-			productReference = 9C0585341E545E7900CF3AFA /* LIFX Widget WatchKit App.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		9C0585421E545E7900CF3AFA /* LIFX Widget WatchKit Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9C0585511E545E7900CF3AFA /* Build configuration list for PBXNativeTarget "LIFX Widget WatchKit Extension" */;
-			buildPhases = (
-				9E98B50E9EB61485A0A4514D /* [CP] Check Pods Manifest.lock */,
-				9C05853F1E545E7900CF3AFA /* Sources */,
-				9C0585401E545E7900CF3AFA /* Frameworks */,
-				9C0585411E545E7900CF3AFA /* Resources */,
-				29E9D3E6857FD3895B841D2B /* [CP] Embed Pods Frameworks */,
-				1CC16DD22BFA3BD9294F1B91 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "LIFX Widget WatchKit Extension";
-			productName = "LIFX Widget WatchKit Extension";
-			productReference = 9C0585431E545E7900CF3AFA /* LIFX Widget WatchKit Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
 		};
 		9C05855F1E5460E500CF3AFA /* LIFX Widget Today Extension */ = {
 			isa = PBXNativeTarget;
@@ -926,7 +749,6 @@
 				9C05855C1E5460E500CF3AFA /* Sources */,
 				9C05855D1E5460E500CF3AFA /* Frameworks */,
 				9C05855E1E5460E500CF3AFA /* Resources */,
-				B8B29CDC9FF8CDCDE485D32E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -946,7 +768,6 @@
 				9CC6D2321E9428360060CE85 /* Frameworks */,
 				9CC6D2331E9428360060CE85 /* Resources */,
 				BD11AD292C607F7C718CF834 /* [CP] Embed Pods Frameworks */,
-				2F4E0D45A2CE0F51F7D32D35 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -965,12 +786,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = DCMaxxx;
 				TargetAttributes = {
 					9C0585211E545E7900CF3AFA = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 8DGT2SD8VC;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -978,19 +800,10 @@
 							};
 						};
 					};
-					9C0585331E545E7900CF3AFA = {
-						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 8DGT2SD8VC;
-						ProvisioningStyle = Automatic;
-					};
-					9C0585421E545E7900CF3AFA = {
-						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 8DGT2SD8VC;
-						ProvisioningStyle = Automatic;
-					};
 					9C05855F1E5460E500CF3AFA = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 8DGT2SD8VC;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -1001,6 +814,7 @@
 					9CC6D2341E9428360060CE85 = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = 8DGT2SD8VC;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 9C0585211E545E7900CF3AFA;
 					};
@@ -1021,8 +835,6 @@
 			targets = (
 				9C0585211E545E7900CF3AFA /* LIFX Widget */,
 				9C05855F1E5460E500CF3AFA /* LIFX Widget Today Extension */,
-				9C0585331E545E7900CF3AFA /* LIFX Widget WatchKit App */,
-				9C0585421E545E7900CF3AFA /* LIFX Widget WatchKit Extension */,
 				9CC6D2341E9428360060CE85 /* LIFX Widget Tests */,
 			);
 		};
@@ -1038,23 +850,6 @@
 				9C7102751E548EC10058E8C4 /* Localizable.strings in Resources */,
 				9C05852D1E545E7900CF3AFA /* Assets.xcassets in Resources */,
 				9C05852B1E545E7900CF3AFA /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9C0585321E545E7900CF3AFA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9C05853D1E545E7900CF3AFA /* Assets.xcassets in Resources */,
-				9C05853B1E545E7900CF3AFA /* Interface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9C0585411E545E7900CF3AFA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9C05854D1E545E7900CF3AFA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1081,94 +876,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		000D5F060789324BE2C0379F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		1CC16DD22BFA3BD9294F1B91 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LIFX Widget WatchKit Extension/Pods-LIFX Widget WatchKit Extension-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		29E9D3E6857FD3895B841D2B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LIFX Widget WatchKit Extension/Pods-LIFX Widget WatchKit Extension-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2F4E0D45A2CE0F51F7D32D35 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LIFX Widget Tests/Pods-LIFX Widget Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		3DE7104F8BDEC5185DF01C06 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LIFX Widget-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		3E82E8BE44DF1830D2950A99 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LIFX Widget WatchKit App/Pods-LIFX Widget WatchKit App-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9C71026A1E546A6E0058E8C4 /* SwiftLint */ = {
@@ -1185,60 +908,28 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
-		9E98B50E9EB61485A0A4514D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		B8B29CDC9FF8CDCDE485D32E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LIFX Widget Today Extension/Pods-LIFX Widget Today Extension-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B967DF2C27ECFC67CB1C70F8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LIFX Widget/Pods-LIFX Widget-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		BD11AD292C607F7C718CF834 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LIFX Widget Tests/Pods-LIFX Widget Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/BrightFutures/BrightFutures.framework",
+				"${BUILT_PRODUCTS_DIR}/LIFXAPIWrapper/LIFXAPIWrapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BrightFutures.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LIFXAPIWrapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1251,9 +942,26 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LIFX Widget/Pods-LIFX Widget-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/BrightFutures/BrightFutures.framework",
+				"${BUILT_PRODUCTS_DIR}/LIFXAPIWrapper/LIFXAPIWrapper.framework",
+				"${BUILT_PRODUCTS_DIR}/MSColorPicker/MSColorPicker.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BrightFutures.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LIFXAPIWrapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MSColorPicker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1266,13 +974,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LIFX Widget Today Extension-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD4D7471C70FE3B89E32FFAC /* [CP] Check Pods Manifest.lock */ = {
@@ -1281,13 +992,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LIFX Widget Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1339,25 +1053,6 @@
 				9C0585261E545E7900CF3AFA /* AppDelegate.swift in Sources */,
 				9CBC52001E6231960040E4CC /* TutorialHTMLLabel.swift in Sources */,
 				9CBC51F81E62210F0040E4CC /* UIKit+Localizable.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9C05853F1E545E7900CF3AFA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9CA5D0861E5B6EE500975C96 /* UIColor+LIFX.swift in Sources */,
-				9CBC51E81E61CD390040E4CC /* Brightness.swift in Sources */,
-				9CCAA24C1E602C6600AE10D0 /* Comparable+Range.swift in Sources */,
-				9C88D27C1E65CB07009B0D9B /* PersistanceManager.swift in Sources */,
-				9C05854B1E545E7900CF3AFA /* ExtensionDelegate.swift in Sources */,
-				9C7102721E5489F60058E8C4 /* API.swift in Sources */,
-				9C5184831E54AD5300FBF02A /* Defaults.swift in Sources */,
-				9C5184A51E55E3C000FBF02A /* Target.swift in Sources */,
-				9C7102791E548F1F0058E8C4 /* String+Localized.swift in Sources */,
-				9CA5D0821E58B78400975C96 /* Color.swift in Sources */,
-				9C0585491E545E7900CF3AFA /* InterfaceController.swift in Sources */,
-				9C5184A41E55E3C000FBF02A /* JSONable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1414,16 +1109,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9C0585371E545E7900CF3AFA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9C0585331E545E7900CF3AFA /* LIFX Widget WatchKit App */;
-			targetProxy = 9C0585361E545E7900CF3AFA /* PBXContainerItemProxy */;
-		};
-		9C0585461E545E7900CF3AFA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9C0585421E545E7900CF3AFA /* LIFX Widget WatchKit Extension */;
-			targetProxy = 9C0585451E545E7900CF3AFA /* PBXContainerItemProxy */;
-		};
 		9C05856C1E5460E500CF3AFA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9C05855F1E5460E500CF3AFA /* LIFX Widget Today Extension */;
@@ -1451,14 +1136,6 @@
 				9C05852F1E545E7900CF3AFA /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		9C0585391E545E7900CF3AFA /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9C05853A1E545E7900CF3AFA /* Base */,
-			);
-			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 		9C0585671E5460E500CF3AFA /* MainInterface.storyboard */ = {
@@ -1497,15 +1174,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1547,15 +1232,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1581,85 +1274,10 @@
 			};
 			name = Release;
 		};
-		9C0585521E545E7900CF3AFA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4DF83DF2F0A329487829793C /* Pods-LIFX Widget WatchKit Extension.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				DEVELOPMENT_TEAM = 8DGT2SD8VC;
-				INFOPLIST_FILE = "LIFX Widget WatchKit Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.maxime-dechalendar.LiFXWidget.watchkitapp.watchkitextension";
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.1;
-			};
-			name = Debug;
-		};
-		9C0585531E545E7900CF3AFA /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EEC77FF9B503EB33A34653C2 /* Pods-LIFX Widget WatchKit Extension.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				DEVELOPMENT_TEAM = 8DGT2SD8VC;
-				INFOPLIST_FILE = "LIFX Widget WatchKit Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.maxime-dechalendar.LiFXWidget.watchkitapp.watchkitextension";
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.1;
-			};
-			name = Release;
-		};
-		9C0585561E545E7900CF3AFA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 71B4DA4E02667009ADA6CF61 /* Pods-LIFX Widget WatchKit App.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8DGT2SD8VC;
-				IBSC_MODULE = LIFX_Widget_WatchKit_Extension;
-				INFOPLIST_FILE = "LIFX Widget WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.maxime-dechalendar.LiFXWidget.watchkitapp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.1;
-			};
-			name = Debug;
-		};
-		9C0585571E545E7900CF3AFA /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 47F02010C0E91A9EB00AA391 /* Pods-LIFX Widget WatchKit App.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8DGT2SD8VC;
-				IBSC_MODULE = LIFX_Widget_WatchKit_Extension;
-				INFOPLIST_FILE = "LIFX Widget WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.maxime-dechalendar.LiFXWidget.watchkitapp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.1;
-			};
-			name = Release;
-		};
 		9C05855A1E545E7900CF3AFA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 058D4FB44BB348822E700F24 /* Pods-LIFX Widget.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "LIFX Widget/LIFX Widget.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1668,7 +1286,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.maxime-dechalendar.LiFXWidget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1676,7 +1294,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B35D188BD5DD413FA6CDD8C /* Pods-LIFX Widget.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "LIFX Widget/LIFX Widget.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1685,7 +1302,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.maxime-dechalendar.LiFXWidget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -1700,7 +1317,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.maxime-dechalendar.LiFXWidget.Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1715,7 +1332,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.maxime-dechalendar.LiFXWidget.Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -1731,7 +1348,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.maxime-dechalendar.LIFX-Widget-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LIFX Widget.app/LIFX Widget";
 			};
 			name = Debug;
@@ -1748,7 +1365,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.maxime-dechalendar.LIFX-Widget-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LIFX Widget.app/LIFX Widget";
 			};
 			name = Release;
@@ -1761,24 +1378,6 @@
 			buildConfigurations = (
 				9C05854F1E545E7900CF3AFA /* Debug */,
 				9C0585501E545E7900CF3AFA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9C0585511E545E7900CF3AFA /* Build configuration list for PBXNativeTarget "LIFX Widget WatchKit Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9C0585521E545E7900CF3AFA /* Debug */,
-				9C0585531E545E7900CF3AFA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9C0585551E545E7900CF3AFA /* Build configuration list for PBXNativeTarget "LIFX Widget WatchKit App" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9C0585561E545E7900CF3AFA /* Debug */,
-				9C0585571E545E7900CF3AFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

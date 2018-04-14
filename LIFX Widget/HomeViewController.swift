@@ -91,7 +91,6 @@ extension HomeViewController {
             message = "home.error.invalid_token"
         default:
             message = "home.error.other"
-            break
         }
         message = message.localized(withVariables: ["code": "\(error.code)",
                                                     "desc": error.localizedDescription])

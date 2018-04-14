@@ -18,7 +18,7 @@ final class TutorialHTMLLabel: UILabel {
                  "\(TutorialHTMLLabel.css) \($0)".data(using: .utf8, allowLossyConversion: true)
             }.flatMap {
                 try? NSMutableAttributedString(data: $0,
-                                               options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
+                                               options: [.documentType: NSAttributedString.DocumentType.html],
                                                documentAttributes: nil)
             }
         }

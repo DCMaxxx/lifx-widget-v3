@@ -34,16 +34,16 @@ extension AppDelegate {
         let navbarAppearance = UINavigationBar.appearance()
         navbarAppearance.barTintColor = .black
         navbarAppearance.tintColor = .white
-        navbarAppearance.titleTextAttributes = [ NSForegroundColorAttributeName: UIColor.white ]
+        navbarAppearance.titleTextAttributes = [ .foregroundColor: UIColor.white ]
 
         UIToolbar.appearance().barTintColor = .black
         let barButtonItemAppearance = UIBarButtonItem.appearance()
         barButtonItemAppearance.setTitleTextAttributes([
-            NSForegroundColorAttributeName: UIColor.white,
-            NSFontAttributeName: UIFont.boldSystemFont(ofSize: 14)], for: .normal)
+            .foregroundColor: UIColor.white,
+            .font: UIFont.boldSystemFont(ofSize: 14)], for: .normal)
         barButtonItemAppearance.setTitleTextAttributes([
-            NSForegroundColorAttributeName: UIColor.darkGray,
-            NSFontAttributeName: UIFont.boldSystemFont(ofSize: 14)], for: .disabled)
+            .foregroundColor: UIColor.darkGray,
+            .font: UIFont.boldSystemFont(ofSize: 14)], for: .disabled)
 
         UISlider.appearance().tintColor = mainColor
         UIButton.appearance().tintColor = mainColor

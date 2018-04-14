@@ -166,8 +166,8 @@ extension ColorPickerViewController {
         let font = UIFont.boldSystemFont(ofSize: 14)
         headerButtons.enumerated().forEach { idx, button in
             button.setTitleTextAttributes([
-                NSForegroundColorAttributeName: (idx == index) ? selectedColor : deselectedColor,
-                NSFontAttributeName: font
+                .foregroundColor: (idx == index) ? selectedColor : deselectedColor,
+                .font: font
                 ], for: .normal)
         }
     }

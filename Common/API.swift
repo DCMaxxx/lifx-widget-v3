@@ -33,7 +33,7 @@ extension API {
     static let tokenURL = URL(string: "https://cloud.lifx.com/settings")!
 
     static func validate(token: String) -> Bool {
-        let charsCount = token.characters.count
+        let charsCount = token.count
         let invalidCharsSet = CharacterSet(charactersIn: "0123456789ABCDEFabcdef").inverted
         let invalidCharsRange = token.rangeOfCharacter(from: invalidCharsSet)
 
@@ -61,6 +61,9 @@ extension API {
     }
 
 }
+
+// force_unwrapping: As above
+// swiftlint:disable force_unwrapping
 
 extension API {
 

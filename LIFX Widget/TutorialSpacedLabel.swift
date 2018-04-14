@@ -10,13 +10,13 @@ import UIKit
 
 final class TutorialSpacedLabel: UILabel {
 
-    static let attributes: [String: AnyObject] = {
+    static let attributes: [NSAttributedStringKey: Any] = {
         let style = NSMutableParagraphStyle()
         style.lineSpacing = 8
         style.alignment = .center
 
         return [
-            NSParagraphStyleAttributeName: style
+            .paragraphStyle: style
         ]
     }()
 

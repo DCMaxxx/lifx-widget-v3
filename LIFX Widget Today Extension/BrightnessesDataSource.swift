@@ -54,7 +54,7 @@ final class BrightnessesPickerDataSource: NSObject {
     }
 
     fileprivate func reloadVisiblePowerStatus(in collectionView: UICollectionView) {
-        collectionView.visibleCells.flatMap {
+        collectionView.visibleCells.compactMap {
             $0 as? BrightnessCollectionViewCell
         }.forEach {
             $0.reload(isOn: currentTargetIsOn)

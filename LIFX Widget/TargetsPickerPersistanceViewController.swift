@@ -21,7 +21,7 @@ final class TargetsPickerPersistanceController: TargetsPickerViewController {
     private func preselectIndexPaths() {
         let targets = PersistanceManager.targets
 
-        orderedLIFXModels.enumerated().flatMap { idx, model in
+        orderedLIFXModels.enumerated().compactMap { idx, model in
             targets.contains(where: { $0.targets(model: model) }) ? idx : nil
         }.map {
             IndexPath(row: $0, section: 0)

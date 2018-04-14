@@ -59,7 +59,6 @@ extension TargetsStatuses {
         case .white(let kelvin, let whiteBrightness):
             lifxColor.kelvin = UInt(kelvin)
             brightness = CGFloat(whiteBrightness)
-            break
         case .color(let color):
             guard let hsba = color.hsba else {
                 return []

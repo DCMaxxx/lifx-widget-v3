@@ -60,10 +60,10 @@ extension UIColor {
     }
 
     static var random: UIColor {
-        return UIColor(hue:         CGFloat(arc4random_uniform(100)) / 100,
-                       saturation:  CGFloat(arc4random_uniform(100)) / 100,
-                       brightness:  CGFloat(arc4random_uniform(100)) / 100,
-                       alpha:       1)
+        return UIColor(hue: CGFloat(arc4random_uniform(100)) / 100,
+                       saturation: CGFloat(arc4random_uniform(100)) / 100,
+                       brightness: CGFloat(arc4random_uniform(100)) / 100,
+                       alpha: 1)
     }
 
     var isLight: Bool {
@@ -88,10 +88,10 @@ extension UIColor {
             return self
         }
 
-        return UIColor(hue:         (hsba.hue + otherHsba.hue) / 2,
-                       saturation:  (hsba.saturation + otherHsba.saturation) / 2,
-                       brightness:  (hsba.brightness + otherHsba.brightness) / 2,
-                       alpha:       (hsba.alpha + otherHsba.alpha) / 2)
+        return UIColor(hue: (hsba.hue + otherHsba.hue) / 2,
+                       saturation: (hsba.saturation + otherHsba.saturation) / 2,
+                       brightness: (hsba.brightness + otherHsba.brightness) / 2,
+                       alpha: (hsba.alpha + otherHsba.alpha) / 2)
     }
 
 }

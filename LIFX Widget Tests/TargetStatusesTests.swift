@@ -32,7 +32,8 @@ extension TargetStatusesTests {
 //            2, // Cuisine
 //            // Chambre gauche isn't affected because it's not connected
 //        ]
-//        XCTAssertEqual(affectedIds, expectedAffectedIds, "powerOff should return the ids of the statuses that has changed")
+//        XCTAssertEqual(affectedIds, expectedAffectedIds,
+//                       "powerOff should return the ids of the statuses that has changed")
 //
 //        affectedIds
 //            .map { statuses.statuses[$0] }
@@ -40,7 +41,8 @@ extension TargetStatusesTests {
 //                XCTAssertFalse(status.isOn, "powerOff should set the `isOn` property to false")
 //        }
 //
-//        XCTAssertFalse(statuses.statuses[3].isOn, "powerOff should not have changed the `isOn` property a not-connected light")
+//        XCTAssertFalse(statuses.statuses[3].isOn,
+//                       "powerOff should not have changed the `isOn` property a not-connected light")
     }
 
     func testPowerOffShouldAffectParents() {
@@ -67,7 +69,7 @@ extension TargetStatusesTests {
 
     fileprivate func sampleLights() -> [LIFXLight] {
         let json = parseJSONFile(named: "SampleLights")
-        let parsedLights = json.array?.flatMap { LIFXLight(dictionary: $0.dictionaryObject) }
+        let parsedLights = json.array?.compactMap { LIFXLight(dictionary: $0.dictionaryObject) }
         guard let lights = parsedLights, !lights.isEmpty else {
             fatalError("SampleLights.json doesn't contain any LIFXLight")
         }
@@ -77,7 +79,7 @@ extension TargetStatusesTests {
 
     fileprivate func sampleTargets() -> [Target] {
         let json = parseJSONFile(named: "SampleTargets")
-        let parsedTargets = json.array?.flatMap(Target.init)
+        let parsedTargets = json.array?.compactMap(Target.init)
         guard let targets = parsedTargets, !targets.isEmpty else {
             fatalError("SampleTargets.json doesn't contain any Target")
         }
@@ -93,11 +95,10 @@ extension TargetStatusesTests {
         let data: Data
         do {
             data = try Data(contentsOf: file)
+            return try JSON(data: data)
         } catch let error {
             fatalError("Couldn't read file at \(file): \(error)")
         }
-
-        return JSON(data: data)
     }
 
 }

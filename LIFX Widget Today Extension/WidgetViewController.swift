@@ -60,7 +60,6 @@ extension WidgetViewController {
             context = .invalidToken
         default:
             context = .other(desc: error.localizedDescription)
-            break
         }
 
         displayErrorController(with: context)

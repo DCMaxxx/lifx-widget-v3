@@ -101,7 +101,7 @@ extension TutorialViewController {
 
         self.lights = lights
 
-        hiddenValidOAuthTokenViewConstraint.priority = UILayoutPriorityDefaultLow
+        hiddenValidOAuthTokenViewConstraint.priority = .defaultLow
         scrollView.layoutIfNeeded(animationDuration: 0.5, springDamping: 0.5) { _ in
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 self.scrollTo(page: .conclusion)
@@ -200,12 +200,12 @@ extension TutorialViewController: UIViewControllerTransitioningDelegate {
     }
 
     func layoutHiddenView() {
-        hiddenContentViewConstraint.priority = UILayoutPriorityDefaultHigh
+        hiddenContentViewConstraint.priority = UILayoutPriority.defaultHigh
         view.layoutIfNeeded()
     }
 
     func layoutVisibleView() {
-        hiddenContentViewConstraint.priority = UILayoutPriorityDefaultLow
+        hiddenContentViewConstraint.priority = UILayoutPriority.defaultLow
         view.layoutIfNeeded()
     }
 
