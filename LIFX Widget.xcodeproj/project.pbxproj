@@ -57,6 +57,8 @@
 		9C96AC1E1E6573F400B588CD /* TargetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96AC1D1E6573F400B588CD /* TargetsViewController.swift */; };
 		9C96AC211E65755000B588CD /* UIViewController+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96AC201E65755000B588CD /* UIViewController+Storyboard.swift */; };
 		9C96AE871E6E013E00DA9BAC /* BrightnessesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96AE861E6E013E00DA9BAC /* BrightnessesDataSource.swift */; };
+		9C9AC6902081F7AB00B2C5D8 /* UIDevice+LIFXWidgetSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9AC68F2081F7AB00B2C5D8 /* UIDevice+LIFXWidgetSize.swift */; };
+		9C9AC6912081F7CD00B2C5D8 /* UIDevice+LIFXWidgetSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9AC68F2081F7AB00B2C5D8 /* UIDevice+LIFXWidgetSize.swift */; };
 		9CA5D07E1E58B76B00975C96 /* ColorsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D07D1E58B76B00975C96 /* ColorsListViewController.swift */; };
 		9CA5D0801E58B78400975C96 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D07F1E58B78400975C96 /* Color.swift */; };
 		9CA5D0811E58B78400975C96 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D07F1E58B78400975C96 /* Color.swift */; };
@@ -199,6 +201,7 @@
 		9C96AC1D1E6573F400B588CD /* TargetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetsViewController.swift; sourceTree = "<group>"; };
 		9C96AC201E65755000B588CD /* UIViewController+Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Storyboard.swift"; path = "LIFX Widget Today Extension/UIViewController+Storyboard.swift"; sourceTree = SOURCE_ROOT; };
 		9C96AE861E6E013E00DA9BAC /* BrightnessesDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrightnessesDataSource.swift; sourceTree = "<group>"; };
+		9C9AC68F2081F7AB00B2C5D8 /* UIDevice+LIFXWidgetSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+LIFXWidgetSize.swift"; sourceTree = "<group>"; };
 		9CA5D07D1E58B76B00975C96 /* ColorsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsListViewController.swift; sourceTree = "<group>"; };
 		9CA5D07F1E58B78400975C96 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		9CA5D0831E5B6EE500975C96 /* UIColor+LIFX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+LIFX.swift"; sourceTree = "<group>"; };
@@ -685,6 +688,7 @@
 				9CA5D0831E5B6EE500975C96 /* UIColor+LIFX.swift */,
 				9CCAA24A1E602C1E00AE10D0 /* Comparable+Range.swift */,
 				9C5184B71E5612A900FBF02A /* NSObject+Identifiable.swift */,
+				9C9AC68F2081F7AB00B2C5D8 /* UIDevice+LIFXWidgetSize.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -1037,6 +1041,7 @@
 				9C7102701E5489F60058E8C4 /* API.swift in Sources */,
 				9C5184811E54AD5300FBF02A /* Defaults.swift in Sources */,
 				9C51849A1E55DCF400FBF02A /* Target.swift in Sources */,
+				9C9AC6902081F7AB00B2C5D8 /* UIDevice+LIFXWidgetSize.swift in Sources */,
 				9C5184921E54C42D00FBF02A /* TutorialView.swift in Sources */,
 				9CA5D08E1E5CE37500975C96 /* ColorPickerColorController.swift in Sources */,
 				9CA5D08C1E5CE29400975C96 /* ColorPickerViewController.swift in Sources */,
@@ -1083,6 +1088,7 @@
 				9CC3E1051E6EC6B800D96201 /* ColorsDataSource.swift in Sources */,
 				9C5184B91E5612A900FBF02A /* NSObject+Identifiable.swift in Sources */,
 				9C7102711E5489F60058E8C4 /* API.swift in Sources */,
+				9C9AC6912081F7CD00B2C5D8 /* UIDevice+LIFXWidgetSize.swift in Sources */,
 				9C96AC211E65755000B588CD /* UIViewController+Storyboard.swift in Sources */,
 				9C88D2791E65C788009B0D9B /* PersistanceManager.swift in Sources */,
 				9CAD906B1E6AE63B0071480C /* UIView+Animations.swift in Sources */,

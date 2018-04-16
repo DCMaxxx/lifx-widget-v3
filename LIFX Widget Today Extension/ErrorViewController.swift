@@ -13,12 +13,14 @@ final class ErrorViewController: UIViewController {
     enum Context {
         case noToken
         case invalidToken
+        case noTargets
         case other(desc: String)
 
         var description: String {
             switch self {
             case .noToken:          return "error.description.no_token".localized()
             case .invalidToken:     return "error.description.invalid_token".localized()
+            case .noTargets:        return "error.description.no_targets".localized()
             case .other(let desc):  return desc
             }
         }

@@ -27,6 +27,7 @@ class WidgetViewController: UIViewController {
         super.viewDidLoad()
 
         PersistanceManager.performInitialConfiguration()
+
         setupMaximumHeight()
         setupBaseController()
     }
@@ -41,6 +42,12 @@ extension WidgetViewController {
 
         guard API.shared.isConfigured else {
             let context: ErrorViewController.Context = .noToken
+            displayErrorController(with: context)
+            return
+        }
+
+        guard !PersistanceManager.targets.isEmpty else {
+            let context: ErrorViewController.Context = .noTargets
             displayErrorController(with: context)
             return
         }
@@ -151,18 +158,7 @@ extension WidgetViewController: NCWidgetProviding {
     }
 
     private func setupPreferredContentSizeForOlderOS() {
-        let maxHeight: CGFloat
-
-        // See: http://stackoverflow.com/questions/24815957/maximum-height-of-ios-8-today-extension
-        switch UIDevice.current.userInterfaceIdiom {
-        case .pad:
-            maxHeight = UIScreen.main.bounds.height - 126
-        case .phone:
-            maxHeight = UIScreen.main.bounds.height - 171
-        default:
-            return
-        }
-
+        let maxHeight = UIDevice.current.maxWidgetHeight
         let childSize = childControllerPreferredContentSize
         var size = preferredContentSize
         size.height = min(childSize.height, maxHeight)

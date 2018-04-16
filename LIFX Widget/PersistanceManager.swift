@@ -10,13 +10,29 @@ import Foundation
 import SwiftyUserDefaults
 import LIFXAPIWrapper
 
-// TODO: Sometime, we'll need to handle the migration process
+enum WidgetSizeCalculator {
+    static let cellSize: CGFloat = 110 // Configured in storyboard
+
+    static var warningsTargetsCount: Int? {
+        if #available(iOS 10, *) {
+            return 5
+        } else {
+            return nil
+        }
+    }
+
+    static var maximumTargetsCount: Int? {
+        if #available(iOS 10, *) {
+            return nil
+        } else {
+            let cellsCount = UIDevice.current.maxWidgetHeight / WidgetSizeCalculator.cellSize
+            return Int(cellsCount.rounded(.down))
+        }
+    }
+
+}
 
 final class PersistanceManager {
-
-    static var maximumTargetsCount: Int {
-        return 5 // TODO: Calculate it based on the device and OS version.
-    }
 
     static var availableLights: [LIFXLight] = [] // not saved across sessions
 
@@ -37,6 +53,34 @@ final class PersistanceManager {
 
 }
 
+// MARK: - Migration
+extension PersistanceManager {
+
+    private static let currentVersion = "4.0"
+
+    static func migrateIfNeeded() {
+        guard SharedDefaults[.version] != currentVersion else {
+            return
+        }
+
+        // Backup old values
+        // Should be done for targets, colors & brightnesses too
+        let oldToken = SharedDefaults[.v2APIToken]
+
+        // Clear user defaults, because yolo
+        SharedDefaults.removeAll()
+
+        // Set new version, to it's not run again
+        SharedDefaults[.version] = currentVersion
+
+        // Re-set old values
+        if let token = oldToken {
+            API.shared.configure(token: token)
+        }
+    }
+
+}
+
 // MARK: - Global configuration
 extension PersistanceManager {
 
@@ -50,6 +94,8 @@ extension PersistanceManager {
             NSKeyedUnarchiver.setClass($0, forClassName: $0.archivedClassName)
             NSKeyedArchiver.setClassName($0.archivedClassName, for: $0)
         }
+
+        migrateIfNeeded()
     }
 
 }
@@ -67,7 +113,7 @@ extension PersistanceManager {
 
     private class func setDefaultsTargets(with lights: [LIFXLight]) {
         // Default values for lights are all lights, but no groups / locations.
-        targets = lights.prefix(PersistanceManager.maximumTargetsCount).map(Target.init)
+        targets = lights.prefix(WidgetSizeCalculator.maximumTargetsCount ?? .max).map(Target.init)
     }
 
     private class func filterTargets(with lights: [LIFXLight]) {
@@ -92,8 +138,8 @@ extension PersistanceManager {
             Color(kind: .color(color: #colorLiteral(red: 0.7886506915, green: 0.2526551187, blue: 0.912491858, alpha: 1))),
             Color(kind: .color(color: #colorLiteral(red: 0.4274981618, green: 0.5163844228, blue: 0.9852721095, alpha: 1))),
             Color(kind: .color(color: #colorLiteral(red: 0.1577041149, green: 0.9904380441, blue: 0.9570897222, alpha: 1))),
-            Color(kind: .white(kelvin: Int.maxLifxKelvin, brightness: 1)),
-            Color(kind: .white(kelvin: Int.minLifxKelvin, brightness: 1))
+            Color(kind: .white(kelvin: .maxLifxKelvin, brightness: 1)),
+            Color(kind: .white(kelvin: .minLifxKelvin, brightness: 1))
         ]
     }
 
@@ -145,4 +191,11 @@ fileprivate extension DefaultsKeys {
     static let brightnesses = DefaultsKey<[Brightness]>("com.maxime-dechalendar.brightnesses")
     static let hasSetBrightnesses = DefaultsKey<Bool>("com.maxime-dechalendar.hasSetBrightnesses")
 
+}
+
+fileprivate extension DefaultsKeys {
+
+    static let version = DefaultsKey<String>("com.maxime-dechalendar.version")
+
+    static let v2APIToken = DefaultsKey<String?>("OAuthToken")
 }

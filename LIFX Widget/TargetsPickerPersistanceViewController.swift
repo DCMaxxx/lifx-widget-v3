@@ -36,10 +36,17 @@ final class TargetsPickerPersistanceController: TargetsPickerViewController {
 extension TargetsPickerPersistanceController {
 
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        if PersistanceManager.targets.count == PersistanceManager.maximumTargetsCount {
-            presentTooManyTargetsAlert()
+        let count = PersistanceManager.targets.count
+        if let warn = WidgetSizeCalculator.warningsTargetsCount, warn == count + 1 {
+            presentWarningManyTargetsAlert()
+            return indexPath
+        }
+
+        if let max = WidgetSizeCalculator.maximumTargetsCount, max == count {
+            presentTooManyTargetsAlert(max: max)
             return nil
         }
+
         return indexPath
     }
 
@@ -75,22 +82,28 @@ extension TargetsPickerPersistanceController {
         PersistanceManager.targets.remove(at: idx)
     }
 
-    private func presentTooManyTargetsAlert() {
-        let max = PersistanceManager.maximumTargetsCount
-        let body = "target_picker.alert.too_many_targets.body".localized(withVariables: ["count": "\(max)"])
-        let alertController = UIAlertController(title: "target_picker.alert.too_many_targets.title".localized(),
-                                                message: body,
-                                                preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "target_picker.alert.too_many_targets.cancel".localized(),
-                                                style: .default, handler: nil))
-        present(alertController, animated: true, completion: nil)
+}
+
+extension TargetsPickerPersistanceController {
+
+    private func presentWarningManyTargetsAlert() {
+        presentAlert(key: "target_picker.alert.warning_too_many_targets")
+    }
+
+    private func presentTooManyTargetsAlert(max: Int) {
+        presentAlert(key: "target_picker.alert.no_targets",
+                     body: "target_picker.alert.too_many_targets.body".localized(withVariables: ["count": "\(max)"]))
     }
 
     private func presentEmptyTargetsAlert() {
-        let alertController = UIAlertController(title: "target_picker.alert.no_targets.title".localized(),
-                                                message: "target_picker.alert.no_targets.body".localized(),
+        presentAlert(key: "target_picker.alert.no_targets")
+    }
+
+    private func presentAlert(key: String, title: String? = nil, body: String? = nil, cancel: String? = nil) {
+        let alertController = UIAlertController(title: title ?? "\(key).title".localized(),
+                                                message: body ?? "\(key).body".localized(),
                                                 preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "target_picker.alert.no_targets.cancel".localized(),
+        alertController.addAction(UIAlertAction(title: cancel ?? "\(key).cancel".localized(),
                                                 style: .default, handler: nil))
         present(alertController, animated: true, completion: nil)
     }

@@ -40,6 +40,9 @@
 "target_picker.alert.too_many_targets.title" = "Error";
 "target_picker.alert.too_many_targets.body" = "Given your device, the widget's maximum size only allows you to display {count} targets.";
 "target_picker.alert.too_many_targets.cancel" = "Cancel";
+"target_picker.alert.warning_too_many_targets.title" = "Warning";
+"target_picker.alert.warning_too_many_targets.body" = "Widgets on iOS have a limited height...\nIf you select too many, some might not be displayed.\n\nIt varies depending on your iDevice model and your iOS version.";
+"target_picker.alert.warning_too_many_targets.cancel" = "Ok";
 
 "target_reorder.title" = "Reorder";
 
